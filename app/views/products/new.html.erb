@@ -1,0 +1,6 @@
+<h1>hi</h1>
+<%= form_for Product.new, url: {action: "create"} do |f| %>
+  <%= f.text_field :name %>
+  <%= f.number_field :price %>
+  <%= f.submit "List!" %>
+<% end %>
