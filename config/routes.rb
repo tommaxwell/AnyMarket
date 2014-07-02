@@ -9,7 +9,7 @@ Rails.application.routes.draw do
  
   get "/products/new(.:format)" => "products#new"
   post "/products/create(.:format)" => "products#create"
-
+  get "/products(.:format)" => "products#index"
   
 
   # Example of regular route:
