@@ -14,7 +14,20 @@ class ProductsController < ApplicationController
     end
   end
   
-  # new POSTS to form field data to create action
+  def show
+    @product = Product.find(params[:id])
+    respond_to do |format|
+      format.html
+    end
+  end
+  
+  def user_products
+    @user = User.find(params[:id])
+    @products = @user.products
+    render json: @products
+  end
+  
+  # new is a form that sends data to create action through HTTP POST
   def new 
     respond_to do |format|
 			format.js

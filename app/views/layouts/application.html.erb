@@ -1,12 +1,38 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="en">
+<head meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Salably</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<div class="container-fluid">
+<% if signed_in?(:user) %>
+  
+  <div id="fixed-navbar">
+    <a href="#"><h2>CollegeCommerce</h2></a>
+    <ul id="nav-links">
+      <li><%= link_to "Settings", edit_user_registration_path, :method => :get %> <span class="glyphicon glyphicon-cog"></span></li>
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+      <li><span class="glyphicon glyphicon-log-out"></span> <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+    </ul>
+  </div>
+  
+<% else %>
+  
+  <div id="fixed-navbar">
+    <h2>CollegeCommerce</h2>
+    <ul id="nav-links">
+      <li><%= link_to "Log In", new_user_session_path, :method => :get %></li>
+      <li><%= link_to "Sign Up", new_user_registration_path, :method => :get %></li>
+    </ul>
+  </div>
+  
+<% end %>
+  
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
@@ -15,5 +41,6 @@
 <% end %>
 <%= yield %>
 
+  </div>
 </body>
 </html>
