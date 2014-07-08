@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
     @product.set_user!(current_user)
     respond_to do |format|
       if @product.save
-        flash.now[:notice] = "Successfully listed"
+        flash.now[:notice] = "Your item is for sale!"
         format.html {render :action => "show"}
       else
         format.html{render :action => "create"}
@@ -14,6 +14,22 @@ class ProductsController < ApplicationController
     end
   end
   
+  def edit
+    @product = Product.find(params[:id])
+  end
+  
+  def update
+    @product = Product.find(params[:id])
+    respond_to do |format|
+      if @product.update_attributes(product_params)
+        format.html {render :action => "show"}
+      else
+        format.html {render :action => "edit"}
+      end
+    end
+  end
+  
+  # show requested product
   def show
     @product = Product.find(params[:id])
     respond_to do |format|
@@ -21,6 +37,7 @@ class ProductsController < ApplicationController
     end
   end
   
+  # all products added by a specific user
   def user_products
     @user = User.find(params[:id])
     @products = @user.products
@@ -44,7 +61,7 @@ class ProductsController < ApplicationController
   
   # all the attributes that must be submitted for the product to be listed
   def product_params 
-    params.require(:product).permit(:name, :price)
+    params.require(:product).permit(:name, :price, :description)
   end
   
 end

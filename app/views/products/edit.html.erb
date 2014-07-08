@@ -1,5 +1,5 @@
-<h1>List an item for sale</h1>
-  <%= form_for Product.new, url: {action: "create"} do |f| %>
+<h1>Edit your listing</h1>
+<%= form_for @product, :url => {:action => :update, :method => :patch} do |f| %>
   <div><%= f.label :name %><br />
     <%= f.text_field :name, :placeholder => "Name yourself" %>
   </div>
@@ -10,5 +10,5 @@
     <%= f.text_area :description, :cols => "50", :rows => "10", :placeholder => "Write a few sentences about the item you're listing. Is it in good condition? Are there any accessories included?"%>
   </div>
   <br />
-  <%= f.submit "List!" %>
+  <%= f.submit "Update listing" %>
 <% end %>

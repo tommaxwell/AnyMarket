@@ -1,3 +1,4 @@
-<h1>Some Ecommerce Site for College Students</h1>
-<p>We totes need a name.</p>
-
+<h1>Your listings</h1>
+<% @user.products.each do |f| %>
+<p><%= link_to f.name, view_item_path(f.id) %></p>
+<% end %>

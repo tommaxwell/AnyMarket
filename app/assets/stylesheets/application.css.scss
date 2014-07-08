@@ -22,6 +22,10 @@ body {
   margin-top:50px;
 }
 
+textarea {
+  resize:none;
+}
+
 #fixed-navbar {
   position:fixed;
   top:0;
@@ -32,15 +36,20 @@ body {
   overflow:hidden;
   white-space:nowrap;
 }
+
 #nav-links {
   white-space:nowrap;
   height:1em;
   position:absolute;
   top:30%;
   right:1%;
+  
+  li {
+    display:inline;
+    padding:5px;
+  }
 }
 
-#nav-links li {
-  display:inline;
-  padding:5px;
+#site-header {
+  display:inline-block;
 }
