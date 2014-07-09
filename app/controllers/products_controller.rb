@@ -9,8 +9,20 @@ class ProductsController < ApplicationController
         flash.now[:notice] = "Your item is for sale!"
         format.html {render :action => "show"}
       else
+        flash.now[:alert] = "Woops, looks like something went wrong."
         format.html{render :action => "create"}
       end
+    end
+  end
+  
+  def destroy
+    @product = Product.find(params[:id])
+    if @product.destroy
+      flash.now[:notice] = "Listing successfully deleted."
+      redirect_to "/"
+    else
+      flash.now[:alert] = "Woops, looks like something went wrong."
+      redirect_to "/"
     end
   end
   
@@ -22,12 +34,15 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     respond_to do |format|
       if @product.update_attributes(product_params)
+        flash.now[:notice] = "Changes saved successfully"
         format.html {render :action => "show"}
       else
+        flash.now[:alert] = "Woops, look like something went wrong."
         format.html {render :action => "edit"}
       end
     end
   end
+  
   
   # show requested product
   def show
@@ -61,7 +76,7 @@ class ProductsController < ApplicationController
   
   # all the attributes that must be submitted for the product to be listed
   def product_params 
-    params.require(:product).permit(:name, :price, :description)
+    params.require(:product).permit(:name, :decimal_price, :description, :photo)
   end
   
 end

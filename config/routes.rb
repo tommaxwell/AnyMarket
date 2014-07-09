@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   get "/products/:id(.:format)" => "products#show", :as => "view_item"
   get "/products/:id/edit(.:format)" => "products#edit", :as => "edit_item"
   patch "/products/:id/update(.:format)" => "products#update"
+  delete "/products/:id(.:format)" => "products#destroy", :as => "destroy_item"
 
 end
