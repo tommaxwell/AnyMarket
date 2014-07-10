@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
   
-  def show_user
-    render json: User.find(params[:id])
+  def profile
+    @user = User.find(params[:id])
+    respond_to do |format|
+      format.html
+    end
   end
   
 end

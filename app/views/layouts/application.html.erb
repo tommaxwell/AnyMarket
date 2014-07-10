@@ -16,8 +16,8 @@
     <a href="/"><h2 id="site-header">CollegeCommerce</h2></a>
     <ul id="nav-links">
       <li><%= link_to "List an item", list_item_path, :method => :get %></li>
-      <li><%= link_to "Settings", edit_user_registration_path, :method => :get %> <span class="glyphicon glyphicon-cog"></span></li>
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+      <li><span class="glyphicon glyphicon-cog"></span> <%= link_to "Settings", edit_user_registration_path, :method => :get %></li>
+      <li><a href="/users/<%= current_user.id %>"><%= image_tag current_user.avatar.url(:thumb) %></a></li>
       <li><span class="glyphicon glyphicon-log-out"></span> <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
     </ul>
   </div>

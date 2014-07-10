@@ -1,0 +1,10 @@
+<div>
+  <%= image_tag @user.avatar.url(:medium) %>
+  <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+</div>
+<div>
+  <h2>Current listings</h2>
+  <% @user.products.each do |f| %>
+  <p><%= link_to f.name, view_item_path(f.id) %><%= image_tag f.photo.url(:medium) %></p>
+  <% end %>
+</div>
