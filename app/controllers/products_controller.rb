@@ -76,7 +76,7 @@ class ProductsController < ApplicationController
   
   # all the attributes that must be submitted for the product to be listed
   def product_params 
-    params.require(:product).permit(:name, :decimal_price, :description, :photo)
+    params.require(:product).permit(:name, :decimal_price, :description, :photo, :destroy_photo)
   end
   
 end

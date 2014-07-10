@@ -10,5 +10,17 @@
     <%= f.text_area :description, :cols => "50", :rows => "10", :placeholder => "Write a few sentences about the item you're listing. Is it in good condition? Are there any accessories included?"%>
   </div>
   <br />
+  <div>
+    <% if @product.photo? %>
+      <%= image_tag @product.photo.url(:medium) %><br />
+      <%= f.label "New photo (will replace current one)" %><br />
+      <%= f.file_field :photo %><br />
+      <%= f.label "Delete photo?" %><%= f.check_box :destroy_photo %>
+    
+    <% else %>
+      <%= f.label "Upload photo" %><br />
+      <%= f.file_field :photo %><br />
+    <% end %>
+  </div>
   <%= f.submit "Update listing" %>
 <% end %>

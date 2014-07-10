@@ -5,4 +5,4 @@
 <h3>Listed by <%= User.find(@product.user_id).first_name %> <%= User.find(@product.user_id).last_name %></h3>
 <h3>Description:</h3>
 <p><%= @product.description %></p>
-<%= image_tag @product.photo.url(:medium) %>
+<%= image_tag @product.photo.url(:medium) if @product.photo? %>
