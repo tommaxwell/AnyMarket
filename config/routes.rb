@@ -16,6 +16,13 @@ Rails.application.routes.draw do
   patch "/products/:id/update(.:format)" => "products#update"
   delete "/products/:id(.:format)" => "products#destroy", :as => "destroy_item"
   
+  #categories
+  get "/categories/new(.:format)" => "categories#new"
+  post "/categories/create(.:format)" => "categories#create"
+  get "/categories(.:format)" => "categories#categories"
+  get "/categories/:id(.:format)" => "categories#show", :as => "view_category"
+  
+  
   resources :messages do
   member do
     post :new

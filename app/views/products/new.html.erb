@@ -14,5 +14,9 @@
     <%= f.file_field :photo %>
   </div>
   <br />
+  <div>
+    <%= f.label "Category" %><br />
+    <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => 'Choose a category' %>
+  </div><br />
   <%= f.submit "List!" %>
 <% end %>

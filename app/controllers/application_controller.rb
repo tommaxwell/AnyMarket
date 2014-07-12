@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
   def user
     @user = current_user
   end
+  
+  def categories
+    @categories = Category.all
+  end
 end

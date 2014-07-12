@@ -6,3 +6,5 @@
 <h3>Description:</h3>
 <p><%= @product.description %></p>
 <%= image_tag @product.photo.url(:medium) if @product.photo? %>
+<h3>Category:</h3>
+<p><%= @product.category.name %></p>

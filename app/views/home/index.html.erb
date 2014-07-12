@@ -1,5 +1,4 @@
 <% if signed_in?(:user) %>
-<%= link_to 'My Conversations', :conversations %>
   <h1>Your listings</h1>
   <% @user.products.each do |f| %>
     <p><%= link_to f.name, view_item_path(f.id) %></p>
@@ -7,3 +6,8 @@
 <% else %>
 <h1>FUCK YOU</h1>
 <% end %>
+<%= yield %>
+<%= javascript_include_tag "application" %>
+<script type="text/javascript">
+  $.get("/categories", null, "script");
+</script>

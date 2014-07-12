@@ -15,6 +15,7 @@
   <div id="fixed-navbar">
     <a href="/"><h2 id="site-header">CollegeCommerce</h2></a>
     <ul id="nav-links">
+      <li><a href="/conversations"><span class="glyphicon glyphicon-envelope"></span></a></li>
       <li><%= link_to "List an item", list_item_path, :method => :get %></li>
       <li><span class="glyphicon glyphicon-cog"></span> <%= link_to "Settings", edit_user_registration_path, :method => :get %></li>
       <li><a href="/users/<%= current_user.id %>"><%= image_tag current_user.avatar.url(:thumb) %></a></li>
@@ -41,7 +42,6 @@
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
 <%= yield %>
-
   </div>
 </body>
 </html>
