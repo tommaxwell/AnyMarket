@@ -1,4 +1,6 @@
-<h1><%= @category.name %></h1>
+<div id="category-header">
+  <h1 id="category-page-header" class="page-header"><%= @category.name %> <small id="category-page-description"><%= @category.description %></small></h1>
+</div>
 <% @category.products.each do |f| %>
   <p><%= link_to f.name, view_item_path(f.id) %></p>
 <% end %>

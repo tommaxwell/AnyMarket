@@ -35,6 +35,7 @@ textarea {
   background-color:gray;
   overflow:hidden;
   white-space:nowrap;
+  z-index:1000;
 }
 
 #nav-links {
@@ -48,8 +49,59 @@ textarea {
     display:inline;
     padding:5px;
   }
+  a, a:hover {
+    color:white;
+  }
 }
 
 #site-header {
   display:inline-block;
+}
+
+#category-page-header {
+  @extend #site-header;
+  margin-top:20px;
+}
+
+#your-listings {
+  position:relative;
+  float:left;
+  top:10px;
+  width:80%;
+  max-width:800px;
+  #your-listings-header {
+    margin-top:20px !important;
+  }
+}
+
+div.listing {
+  margin:20px 0 20px 0;
+  padding:10px;
+  background-color: #eeeeee;
+  border-margin:3px;
+  h3 {
+    display:inline;
+  }
+  .price {
+    display:inline;
+    padding-left:10px;
+  }
+}
+
+#categories-index-list {
+  position:relative;
+  float:right;
+  top:30px;
+  padding:20px;
+  margin:0;
+  width:20%;
+  max-width:200px;
+  border-radius:3px;
+  h2 {
+    margin-top:0px;
+  }
+}
+
+#profile_picture {
+  border-radius:3px;
 }

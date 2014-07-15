@@ -1,13 +1,13 @@
 <h1>List an item for sale</h1>
-<%= form_for Product.new, :url => {:action => "create"}, :html => {:multipart => true} do |f| %>
+<%= form_for Product.new, :options => {:id => "new_listing"}, :url => {:action => "create"}, :html => {:multipart => true} do |f| %>
   <div><%= f.label :name %><br />
-    <%= f.text_field :name, :placeholder => "Name yourself" %>
+    <%= f.text_field :name, :id => "name_input", :autofocus => true, :required => true, :placeholder => "Name yourself" %>
   </div>
   <div><%= f.label :price %><br />
-    <%= f.number_field :decimal_price, :step => 'any', :placeholder => "Name your price" %>
+    <%= f.number_field :decimal_price, :step => 'any', :id => "price", :required => true, :placeholder => "Name your price" %>
   </div><br />
   <div><%= f.label :description %><br />
-    <%= f.text_area :description, :cols => "50", :rows => "10", :placeholder => "Write a few sentences about the item you're listing. Is it in good condition? Are there any accessories included?"%>
+    <%= f.text_area :description, :cols => "50", :rows => "10", :id => "description", :required => true, :placeholder => "Write a few sentences about the item you're listing. Is it in good condition? Are there any accessories included?" %>
   </div>
   <div>
     <%= f.label "Add a photo (increases your likelihood of selling)" %><br />
@@ -18,5 +18,9 @@
     <%= f.label "Category" %><br />
     <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => 'Choose a category' %>
   </div><br />
-  <%= f.submit "List!" %>
+<%= f.submit "List!", :id => "submit" %>
 <% end %>
+<%= yield %>
+<%= javascript_include_tag "application" %>
+<script>
+</script>

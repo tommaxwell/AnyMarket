@@ -1,1 +1,1 @@
-$("body").append( "<%=j render :partial => 'categories', :locals => {:categories => @categories} %>" ).trigger("categories");
+$("body > .container-fluid").append( "<%=j render :partial => 'categories', :locals => {:categories => @categories} %>" ).trigger("categories");

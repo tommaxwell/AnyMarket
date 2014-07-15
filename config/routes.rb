@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
 
-  root 'home#index'
+  root "home#index"
   
   #users
   get "/users/:id(.:format)" => "users#profile"
@@ -22,12 +22,21 @@ Rails.application.routes.draw do
   get "/categories(.:format)" => "categories#categories"
   get "/categories/:id(.:format)" => "categories#show", :as => "view_category"
   
+ 
   
-  resources :messages do
+  
+resources :messages do
   member do
     post :new
   end
 end
+
+resources :categories do 
+  member do 
+    get :categories
+  end
+end
+
 resources :conversations do
   member do
     post :reply
