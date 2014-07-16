@@ -11,3 +11,7 @@
 <p><%= @product.category.name %></p>
 <% else %>
 <% end %>
+<form id="checkout" method="post" action="/checkout">
+  <div id="dropin"></div>
+  <input type="submit" value="Pay $10">
+</form>

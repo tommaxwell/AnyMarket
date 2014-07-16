@@ -16,11 +16,8 @@
   <br />
   <div>
     <%= f.label "Category" %><br />
-    <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => 'Choose a category' %>
+    <%= f.collection_select :category_id, Category.all, :id, :name, {:prompt => 'Choose a category'}, {:required => true} %>
   </div><br />
 <%= f.submit "List!", :id => "submit" %>
 <% end %>
-<%= yield %>
-<%= javascript_include_tag "application" %>
-<script>
-</script>
+ 

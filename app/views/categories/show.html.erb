@@ -1,6 +1,10 @@
 <div id="category-header">
-  <h1 id="category-page-header" class="page-header"><%= @category.name %> <small id="category-page-description"><%= @category.description %></small></h1>
-</div>
+  <h1 class="page-header"><%= @category.name %> <small id="category-page-description"><%= @category.description %></small></h1>
 <% @category.products.each do |f| %>
-  <p><%= link_to f.name, view_item_path(f.id) %></p>
+  <div class="listing">
+    <h4><%= link_to f.name, view_item_path(f.id) %></h4><strong><p class="price">$<%= f.decimal_price %></p></strong>
+    <p id="listed_by_name">Listed by <%= User.find(f.user_id).first_name %></p>
+    <p><%= f.description %></p>
+  </div>
 <% end %>
+</div>

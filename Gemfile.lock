@@ -28,11 +28,13 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
-    autoprefixer-rails (2.1.0.20140628)
+    autoprefixer-rails (2.1.1.20140710)
       execjs
     bcrypt (3.1.7)
     bootstrap-sass (3.2.0.0)
       sass (~> 3.2)
+    braintree (2.32.1)
+      builder (>= 2.0.0)
     builder (3.2.2)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
@@ -149,6 +151,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootstrap-sass (~> 3.2.0)
+  braintree
   coffee-rails (~> 4.0.0)
   devise
   jbuilder (~> 2.0)

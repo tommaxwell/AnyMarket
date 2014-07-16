@@ -35,3 +35,6 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem "paperclip", "~> 4.1"
 
 gem "mailboxer"
+
+gem "braintree"
+

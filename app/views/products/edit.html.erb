@@ -1,13 +1,13 @@
 <h1>Edit your listing</h1>
 <%= form_for @product, :url => {:action => :update, :method => :patch} do |f| %>
   <div><%= f.label :name %><br />
-    <%= f.text_field :name, :placeholder => "Name yourself" %>
+    <%= f.text_field :name, :placeholder => "Name yourself", :required => true %>
   </div>
   <div><%= f.label :price %><br />
-    <%= f.number_field :decimal_price, :step => "any", :placeholder => "Name your price" %>
+    <%= f.number_field :decimal_price, :step => "any", :placeholder => "Name your price", :required => true %>
   </div><br />
   <div><%= f.label :description %><br />
-    <%= f.text_area :description, :cols => "50", :rows => "10", :placeholder => "Write a few sentences about the item you're listing. Is it in good condition? Are there any accessories included?"%>
+    <%= f.text_area :description, :cols => "50", :rows => "10", :placeholder => "Write a few sentences about the item you're listing. Is it in good condition? Are there any accessories included?", :required => true%>
   </div>
   <br />
   <div>
@@ -24,7 +24,7 @@
   </div>
   <div>
     <%= f.label "Category" %><br />
-    <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => 'Choose a category' %>
+    <%= f.collection_select :category_id, Category.all, :id, :name, {:prompt => 'Choose a category'}, {:required => true} %>
   </div><br />
   <%= f.submit "Update listing" %>
 <% end %>

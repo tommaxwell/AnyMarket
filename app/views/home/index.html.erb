@@ -1,9 +1,9 @@
 <% if signed_in?(:user) %>
 <div id="your-listings">
-  <h1 id="your-listings-header" class="page-header">What You're Selling</h1>
+  <h3 id="your-listings-header" class="page-header">What You're Selling</h3>
   <% @user.products.each do |f| %>
   <div class="listing">
-    <h3><%= link_to f.name, view_item_path(f.id) %></h3><strong><p class="price">$<%= f.decimal_price %></p></strong>
+    <h4><%= link_to f.name, view_item_path(f.id) %></h4><strong><p class="price">$<%= f.decimal_price %></p></strong>
     <p><%= f.description %></p>
   </div>
   <% end %>
