@@ -26,20 +26,34 @@ textarea {
   resize:none;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 .container-fluid {
   width:90%;
   max-width:1200px;
+  position:relative;
+  bottom:30px;
 }
 
 #fixed-navbar {
-  position:absolute;
+  position:relative;
   top:0;
   left:0;
   width:100%;
   height:50px;
-  overflow:hidden;
-  white-space:nowrap;
-  z-index:1000;
+  margin-bottom:20px;
+  a{
+    position:relative;
+    float:left;
+  }
+  h3{
+    margin-top:24px;
+  }
 }
 
 #nav-links {
@@ -47,11 +61,10 @@ textarea {
   height:50%;
   position:absolute;
   top:25%;
-  right:5%;
-  padding-right:15px;
+  right:0;
   
   li {
-    display:inline;
+    display:inline-block;
     padding:5px;
   }
   a, a:hover {
@@ -61,12 +74,10 @@ textarea {
 
 #site-header {
   display:inline-block;
-  position:absolute;
+  position:relative;
   height:50%;
-  left:5%;
-  padding-left:21px;
   font-weight:800;
-  
+  float:left;
 }
 
 #category-page-header {
@@ -87,7 +98,6 @@ textarea {
 
 div.listing {
   margin:20px 0 20px 0;
-  padding:10px 10px 0 0;
   border-margin:3px;
   h4 {
     display:inline;
@@ -133,4 +143,52 @@ div.listing {
 
 #profile_picture {
   border-radius:50%;
+  position:relative;
+  top:5px;
+}
+
+#listing-new {
+  position:fixed;
+  width:700px;
+  top:0;
+  right:0;
+  bottom:0;
+  background-color:#fff;
+  box-shadow:0 0 20px rgba(0,0,0,0.25);
+  z-index:100;
+  display:none;
+  #list-header{
+    position:relative;
+    left:8%;
+    top:25px;
+    margin-bottom:0;
+  }
+  .new_product{
+    position:relative;
+    left:8%;
+    top:55px;
+    width:65%;
+  }
+  p{
+    @extend #list-header;
+    top:35px;
+  }
+}
+
+#new_product {
+  .form_inputs {
+    background-color:#F7F7F7;
+    border-radius:3px;
+    border-top:1px solid #C4C4C4;
+    border-bottom:1px solid #E2E2E2;
+    border-left:1px solid #DADADA;
+    border-right:1px solid #DADADA;
+    padding:5px;
+    width:100%;
+    margin-bottom:10px;
+  }
+}
+
+#name-input {
+  margin-right:10px;
 }

@@ -1,6 +1,7 @@
 <div>
   <%= image_tag @user.avatar.url(:medium) %>
   <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+  <p>User #<%= @user.id %></p>
 </div>
 <div>
   <h2>Current listings</h2>

@@ -11,8 +11,6 @@
 <% else %>
 <h1>FUCK YOU</h1>
 <% end %>
-<%= yield %>
-<%= javascript_include_tag "application" %>
 <script type="text/javascript">
-  $.get("/categories", null, "script");
+    $.get("/categories", null, "script");
 </script>

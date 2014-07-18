@@ -4,6 +4,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   
+  FIELDS = [:first_name, :last_name, :phone, :website, :company, :fax, :addresses, :credit_cards]
+  
+  attr_accessor *FIELDS
+  
   acts_as_messageable
   
   def name

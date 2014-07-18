@@ -1,28 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Salably</title>
+  <title>AnyMarket</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<div class="container-fluid">
 <% if signed_in?(:user) %>
-  
+  <div id="listing-new">
+   <h3 id="list-header">List an item for sale</h3>
+  <i><p style="color:#bbb">One man's trash is another man's treasure.</p></i>
+  <%= form_for Product.new, :options => {:id => "new_listing"}, :url => {:controller => "products",:action => "create"}, :html => {:multipart => true} do |f| %>
+    <%= f.text_field :name, :id => "name_input", :autofocus => true, :required => true, :placeholder => "Item name", :class => "form_inputs" %><br /><%= f.number_field :decimal_price, :step => 'any', :id => "price", :required => true, :placeholder => "Name your price", :class => "form_inputs" %>
+  <div>
+    <%= f.text_area :description, :cols => "50", :rows => "8", :id => "description", :required => true, :placeholder => "Write a few sentences about the item you're listing. Is it in good condition? Are there any accessories included?", :class => "form_inputs" %>
+  </div>
+  <div>
+    <%= f.label "Add a photo (increases your likelihood of selling)" %><br />
+    <%= f.file_field :photo %>
+  </div>
+  <br />
+  <div>
+    <%= f.label "Category" %><br />
+    <%= f.collection_select :category_id, Category.all, :id, :name, {:prompt => 'Choose a category'}, {:required => true} %>
+  </div><br />
+<%= f.submit "List!", :id => "submit" %>
+<% end %>
+</div>
+<div class="container-fluid">
   <div id="fixed-navbar">
-    <a href="/"><h3 id="site-header">CollegeCommerce</h3></a>
+    <a href="/"><h3 id="site-header">AnyMarket</h3></a>
     <ul id="nav-links">
       <li><a href="/conversations"><span class="glyphicon glyphicon-envelope"></span></a></li>
-      <li><%= link_to "List an item", list_item_path, :method => :get %></li>
+      <li><a id="list-item-btn">List an item</a></li>
       <li><%= link_to "Settings", edit_user_registration_path, :method => :get %></li>
       <li><a href="/users/<%= current_user.id %>"><%= image_tag current_user.avatar.url(:thumb), :id => "profile_picture" %></a></li>
       <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
     </ul>
   </div>
-  
 <% else %>
   
   <div id="fixed-navbar">
@@ -43,5 +60,22 @@
 <% end %>
 <%= yield %>
   </div>
+<%= javascript_include_tag "application" %>
+<script type="text/javascript">
+
+    
+  $("#listing-new").hide();
+
+$(document).on('click',function(e){
+    if (!$('#listing-new').is(e.target) && $('#listing-new').has(e.target).length === 0 && !$('#list-item-btn').is(e.target) && $('#list-item-btn').has(e.target).length === 0){
+        $("#listing-new").hide();
+        $(".container-fluid").css("opacity","1");
+        }
+    else{
+        $("#listing-new").show();
+        $(".container-fluid").css("opacity","0.3");
+        }
+});
+</script>
 </body>
 </html>
