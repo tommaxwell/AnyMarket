@@ -3,6 +3,7 @@ class CustomerController < ApplicationController
 
   def new
     _set_customer_new_tr_data
+    @skip_alert = true
   end
 
   def edit
@@ -16,6 +17,7 @@ class CustomerController < ApplicationController
 
     if @result.success?
       current_user.braintree_customer_id = @result.customer.id
+      current_user.customer_added = true
       current_user.save!
       render :action => "confirm"
     elsif current_user.has_payment_info?
@@ -27,6 +29,7 @@ class CustomerController < ApplicationController
       render :action => "new"
     end
   end
+  
 
   def _set_customer_new_tr_data
     @tr_data = Braintree::TransparentRedirect.

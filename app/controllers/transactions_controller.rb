@@ -5,7 +5,7 @@ class TransactionsController < ApplicationController
     if current_user.has_payment_info?
       current_user.with_braintree_data!
       @credit_card = current_user.default_credit_card
-      @product = Product.find(params[:product_id])
+      @product = Product.find(params[:id])
     else
       redirect_to new_customer_path
     end
@@ -16,8 +16,11 @@ class TransactionsController < ApplicationController
 
     if @result.success?
       render :confirm
+      @product = Product.find(params[:id])
+      @product.sold_value = true
+      @product.save
     else
-      @product = Product.find(params[:product_id])
+      @product = Product.find(params[:id])
       current_user.with_braintree_data!
       @credit_card = current_user.default_credit_card
       render :new

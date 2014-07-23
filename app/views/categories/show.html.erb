@@ -1,10 +1,12 @@
 <div id="category-header">
   <h1 class="page-header"><%= @category.name %> <small id="category-page-description"><%= @category.description %></small></h1>
 <% @category.products.each do |f| %>
-  <div class="listing">
-    <h4><%= link_to f.name, view_item_path(f.id) %></h4><strong><p class="price">$<%= f.decimal_price %></p></strong>
-    <p id="listed_by_name">Listed by <%= User.find(f.user_id).first_name %></p>
-    <p><%= f.description %></p>
-  </div>
+    <% if f.sold_value == false %>
+    <div class="listing">
+      <a href="/users/<%= f.user_id %>" class="nounderline"><%= image_tag User.find(f.user_id).avatar.url(:thumb), :id => "categories_profile_picture", :width => "30", :height => "30" %></a><h4><%= link_to f.name, view_item_path(f.id) %></h4><strong><p class="price">$<%= f.decimal_price %></p></strong>
+      <p><%= f.description %></p>
+    </div>
+  <% else %>
+  <% end %>
 <% end %>
 </div>

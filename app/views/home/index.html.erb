@@ -1,13 +1,23 @@
 <% if signed_in?(:user) %>
 <div id="your-listings">
-  <h3 id="your-listings-header" class="page-header">What You're Selling</h3>
-  <% @user.products.each do |f| %>
-  <div class="listing">
-    <h4><%= link_to f.name, view_item_path(f.id) %></h4><strong><p class="price">$<%= f.decimal_price %></p></strong>
-    <p><%= f.description %></p>
+  <h3 id="your-listings-header" class="page-header"><span class="glyphicon glyphicon-usd"></span> What You're Selling</h3>
+  <% if @user.products.any? %>
+    <% @user.products.each do |f| %>
+    <% if f.sold_value == false %>
+    <div class="listing">
+      <h4><%= link_to f.name, view_item_path(f.id) %></h4><strong><p class="price">$<%= f.decimal_price %></p></strong>
+      <p><%= f.description %></p>
+    </div>
+    <% else %>
+    <% end %>
+    <% end %>
   </div>
+  <% else %>
+<h4 class="no-items">Drats, you haven't listed anything yet! There's no rush. Do so whenever you'd like by clicking "List an Item" in the navigation above.</h4><br />
+<h4 class="no-items">In the meantime, you can find all the items listed by others by clicking the categories to the right.</h4><br />
+<h4 class="no-items">Enjoy!</h4>
+<i><h4 class="no-items">-Team AnyMarket</h4></i>
   <% end %>
-</div>
 <% else %>
 <h1>FUCK YOU</h1>
 <% end %>

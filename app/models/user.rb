@@ -2,9 +2,9 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  :recoverable, :rememberable, :trackable, :validatable, :confirmable
   
-  FIELDS = [:first_name, :last_name, :phone, :website, :company, :fax, :addresses, :credit_cards]
+  FIELDS = [:phone, :website, :company, :fax, :addresses, :credit_cards]
   
   attr_accessor *FIELDS
   
@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   end
 
   has_many :products
-  has_attached_file :avatar, :styles => {:medium => "300x300>", :thumb => "30x30>"}
+  has_attached_file :avatar, :styles => {:medium => "300x300>", :thumb => "30x30>"}, :default_url => "default.png"
   validates_attachment :avatar, :content_type => { :content_type => ["image/jpeg","image/png"]}
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   
