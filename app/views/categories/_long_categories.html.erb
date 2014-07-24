@@ -1,0 +1,6 @@
+<div id="categories-index-long" class="jumbotron">
+  <h3>Categories</h3>
+  <% @categories.each do |f| %>
+    <p><%= link_to f.name, view_category_path(f.id) %></p>
+  <% end %>
+</div>

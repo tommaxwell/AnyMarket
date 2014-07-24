@@ -8,6 +8,7 @@
   </div><br />
   <div><%= f.label :description %><br />
     <%= f.text_area :description, :cols => "50", :rows => "10", :placeholder => "Write a few sentences about the item you're listing. Is it in good condition? Are there any accessories included?", :required => true%>
+    <%= f.text_area :about_delivery, :cols => "10", :rows => "8", :maxlength => 250, :id => "about_delivery", :required => true, :placeholder => "What times of the week are you available to meet? Where around campus would be the best place? You can discuss in further detail with the buyer once your item is sold.", :class => "form_inputs" %>
   </div>
   <br />
   <div>

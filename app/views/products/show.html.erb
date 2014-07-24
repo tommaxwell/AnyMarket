@@ -4,11 +4,15 @@
     <h3>by <%= User.find(@product.user_id).first_name %> <%= User.find(@product.user_id).last_name %><%= image_tag User.find(@product.user_id).avatar.url(:thumb), :id => "product_profile_picture", :width => "30", :height => "30" %></h3>
     <h2>$<%= @product.decimal_price %></h2>
     <% if @product.user_id == current_user.id %>
-      <h3><%= link_to "Edit listing", edit_item_path(@product), :method => :get %></h3>
-      <h3><%= link_to "Delete listing", destroy_item_path(@product), method: :delete, data: { confirm: "Are you sure? Deleting a listing cannot be undone."} %></h3>
+      <h4 style="display:inline; margin-right:10px"><%= link_to "Edit listing", edit_item_path(@product), :method => :get %></h4>
+      <h4 style="display:inline"><%= link_to "Delete listing", destroy_item_path(@product), method: :delete, data: { confirm: "Are you sure? Deleting a listing cannot be undone."} %></h4><br />
     <% end %>
     <input type="submit" value="Purchase" width="200px"><br />
     <p id="guarantee">Risk-free, 100% money-back guarantee.</p>
+    <% if @product.about_delivery? %>
+    <div id="about_delivery_box"><h4>About Delivery</h4><%= @product.about_delivery %></div>
+    <% else %>
+    <% end %>
   </div>
 
   <div id="product_left">

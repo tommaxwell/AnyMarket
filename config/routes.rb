@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get "/categories/new(.:format)" => "categories#new"
   post "/categories/create(.:format)" => "categories#create"
   get "/categories(.:format)" => "categories#categories"
+  get "/categories/long_categories(.:format)" => "categories#long_categories"
   get "/categories/:id(.:format)" => "categories#show", :as => "view_category"
   
 resources :messages do
