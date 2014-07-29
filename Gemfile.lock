@@ -162,6 +162,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
+  bcrypt
   bootstrap-sass (~> 3.2.0)
   braintree
   coffee-rails (~> 4.0.0)
