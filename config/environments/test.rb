@@ -29,15 +29,7 @@ Rails.application.configure do
   # Tell Action Mailer not to deliver emails to the real world.
   # The :test delivery method accumulates sent emails in the
   # ActionMailer::Base.deliveries array.
-  config.action_mailer.delivery_method = :test
-	ActionMailer::Base.smtp_settings = {
-  :address        => "smtp.sendgrid.net",
-  :port           => "587",
-  :authentication => :plain,
-  :user_name      => "app27929014@heroku.com",
-	:password       => "monkeytomm",
-	:domain         => "heroku.com"
-}
+
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
 
