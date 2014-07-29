@@ -30,7 +30,14 @@ Rails.application.configure do
   # The :test delivery method accumulates sent emails in the
   # ActionMailer::Base.deliveries array.
   config.action_mailer.delivery_method = :test
-	config.action_mailer.default_url_options = { :host => 'anymarketapp.heroku.com' }
+	ActionMailer::Base.smtp_settings = {
+  :address        => "smtp.sendgrid.net",
+  :port           => "587",
+  :authentication => :plain,
+  :user_name      => "app27929014@heroku.com",
+	:password       => "monkeytomm",
+	:domain         => "heroku.com"
+}
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
 
