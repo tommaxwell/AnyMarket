@@ -1,24 +1,26 @@
-<h3 id="list-header">List an item for sale</h3>
-  <i><p style="color:#bbb">One man's trash is another man's treasure.</p></i>
-  <%= form_for Product.new, :options => {:id => "new_listing"}, :url => {:controller => "products",:action => "create"}, :html => {:multipart => true} do |f| %>
-    <%= f.text_field :name, :id => "name_input", :autofocus => true, :required => true, :placeholder => "Item name", :class => "form_inputs" %><br /><%= f.number_field :decimal_price, :step => 'any', :id => "price", :required => true, :placeholder => "Name your price", :class => "form_inputs" %>
-  <div>
-    <%= f.text_area :description, :cols => "40", :rows => "8", :maxlength => 250, :id => "description", :required => true, :placeholder => "Write a few sentences about the item you're listing. Is it in good condition? Are there any accessories included?", :class => "form_inputs" %>
-    <%= f.text_area :about_delivery, :cols => "40", :rows => "8", :maxlength => 250, :id => "about_delivery", :required => true, :placeholder => "What times of the week are you available to meet? Where around campus would be the best place? You can discuss in further detail with the buyer once your item is sold.", :class => "form_inputs" %>
-  </div>
-  <div>
-    <%= f.label "Add a photo of your item (increases your likelihood of selling)" %><br />
-    <%= f.file_field :photo %>
-  </div>
-  <br />
-  <div>
-      <%= f.label "Category" %><br />
-      <%= f.collection_select :category_id, Category.all, :id, :name, {:prompt => 'Choose a category'}, {:required => true} %>
-    </div><br />
-      <% if !current_user.braintree_customer_id? %>
-      <%= f.submit "List!", :id => "submit", :disabled => true, :id => "submit_item_btn" %><br /><br />
-      <i>Woops, looks like you haven't added your credit/debit card. Click <a href="/customer/new">here</a>.</i>
-      <% else %>
-      <%= f.submit "List!", :id => "submit",:id => "submit_item_btn" %>
-      <% end %>
-  <% end %>
+<div id="listing-form-wrapper">
+  <h3 id="list-header">List an item for sale</h3>
+    <i><p id="onemantrash" style="color:#bbb">One man's trash is another man's treasure.</p></i>
+    <%= form_for Product.new, :options => {:id => "new_listing"}, :url => {:controller => "products",:action => "create"}, :html => {:multipart => true} do |f| %>
+      <%= f.text_field :name, :id => "name_input", :autofocus => true, :required => true, :placeholder => "Item name", :class => "form_inputs" %><br /><%= f.number_field :decimal_price, :step => 'any', :id => "price", :required => true, :placeholder => "Name your price", :class => "form_inputs" %>
+    <div>
+      <%= f.text_area :description, :cols => "40", :rows => "8", :maxlength => 250, :id => "description", :required => true, :placeholder => "Write a few sentences about the item you're listing. Is it in good condition? Are there any accessories included?", :class => "form_inputs" %>
+      <%= f.text_area :about_delivery, :cols => "40", :rows => "8", :maxlength => 250, :id => "about_delivery", :required => true, :placeholder => "What times of the week are you available to meet? Where around campus would be the best place? You can discuss in further detail with the buyer once your item is sold.", :class => "form_inputs" %>
+    </div>
+    <div>
+      <%= f.label "Add a photo of your item (increases your likelihood of selling)" %><br />
+      <%= f.file_field :photo %>
+    </div>
+    <br />
+    <div>
+        <%= f.label "Category" %><br />
+        <%= f.collection_select :category_id, Category.all, :id, :name, {:prompt => 'Choose a category'}, {:required => true} %>
+      </div><br />
+        <% if !current_user.braintree_customer_id? %>
+        <%= f.submit "List!", :id => "submit", :disabled => true, :id => "submit_item_btn" %><br /><br />
+        <i>Woops, looks like you haven't added your credit/debit card. Click <a href="/customer/new">here</a>.</i>
+        <% else %>
+        <%= f.submit "List!", :id => "submit",:id => "submit_item_btn" %>
+        <% end %>
+    <% end %>
+</div>

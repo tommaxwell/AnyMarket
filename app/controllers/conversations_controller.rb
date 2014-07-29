@@ -11,6 +11,22 @@ class ConversationsController < ApplicationController
 
     redirect_to conversation_path(conversation)
   end
+  
+  def send_message
+    @user = User.find(params[:id])
+    @item = params[:item]
+    respond_to do |format|
+      format.js
+      format.html
+    end
+  end
+  
+  def send_this_message
+    @user = User.find(params[:id])
+    @subject = params[:subject]
+    current_user.send_message(@user, "#{@message}", "#{@subject}")
+    redirect_to conversation_path(conversation)
+  end
 
   def reply
     current_user.reply_to_conversation(conversation, *message_params(:body, :subject))

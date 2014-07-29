@@ -1,26 +1,30 @@
 <div id="profile-heading">
-  <%= image_tag @user.avatar.url(:medium) %>
+  <a href="<%= @user.website %>"><%= image_tag @user.avatar.url(:medium) %></a>
   <h2><%= @user.first_name %> <%= @user.last_name %></h2>
-  <p id="school">University of California, Berkeley</p>
+  <p id="school"><%= @user.school || "University of California, Berkeley" %></p>
   <p>User #<%= @user.id %></p>
 </div>
 <div>
-  <h3 class="page-header"><%= @user.first_name %>'s current listings <span id="listings-toggle"><a>sold listings</a></span></h3>
+  <h3 class="page-header"><a href="#" id="prof_default"><%= @user.first_name %>'s current listings</a> <a href="#" id="listings-toggle">sold listings</a></h3>
   <div id="current-listings">
+    <% i = 0 %>
     <% @user.products.each do |f| %>
+      <% i += 1 %>
       <% if f.sold_value === false %>
           <div class="listing">
-            <h4><%= link_to f.name, view_item_path(f.id) %></h4><strong><p class="price">$<%= f.decimal_price %></p></strong><p><%= f.description[0..70].gsub(/\s\w+\s*$/, '...') %></p>
+            <h4><%= i %>.</h4> <h4><%= link_to f.name, view_item_path(f.id) %></h4><strong><p class="price">$<%= f.decimal_price %></p></strong><p><%= f.description[0..100].gsub(/\s\w+\s*$/, '...') %></p>
           </div>
       <% else %>
       <% end %>
     <% end %>
   </div>
     <div id="past-listings">
+      <% t = 0 %>
       <% @user.products.each do |f| %>
           <% if f.sold_value == true %>
+          <% t += 1 %>
             <div class="listing">
-              <h4><%= link_to f.name, view_item_path(f.id) %></h4><strong><p class="price">$<%= f.decimal_price %></p></strong>
+              <h4><%= t %>.</h4> <h4><%= link_to f.name, view_item_path(f.id) %></h4><strong><p class="price">$<%= f.decimal_price %></p></strong>
               <p><%= f.description[0..70].gsub(/\s\w+\s*$/, '...') %></p>
             </div>
         <% else %>

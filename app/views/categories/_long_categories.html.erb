@@ -1,6 +1,7 @@
-<div id="categories-index-long" class="jumbotron">
-  <h3>Categories</h3>
+<div id="categories-page-wrapper">
+  <h4>Explore categories</h3>
+  <% @categories = Category.all %>
   <% @categories.each do |f| %>
-    <p><%= link_to f.name, view_category_path(f.id) %></p>
+    <p class="category-page-category"><%= link_to f.name, view_category_path(f.id) %></p>
   <% end %>
 </div>

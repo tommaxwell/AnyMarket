@@ -1,18 +1,5 @@
-<%= form_for :conversation, url: :conversations do |f| %>
-  <div>
-    <%= f.label "Receipients" %><br />
-    <%= f.text_field :recipients %>
-  </div>
-  <div>
-  <%= f.label "Subject" %><br />
-  <%= f.text_field :subject %>
-  </div>
-  <div>
-  <%= f.label "Message" %><br />
-  <%= f.text_area :body, as: :text %>
-  </div>
-  <div class="form-actions">
-    <%= f.submit 'Submit', class: 'btn-primary' %>
-    <%= f.submit 'Cancel', type: :reset, method: :post %>
-  </div>
+<%= form_tag("/conversations/send_message", method: "post", url: send_message_path) do  %>
+  <%= hidden_field_tag :id, "#{@user.id}" %>
+  <%= text_area_tag :message, nil, :class => 'form-control', :placeholder => "Message" %>
+  <%= submit_tag "Send", :class => "btn btn-primary" %>
 <% end %>

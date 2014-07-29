@@ -1,10 +1,18 @@
 class User < ActiveRecord::Base
+  after_validation :set_school
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable, :confirmable
+
   
   FIELDS = [:phone, :website, :company, :fax, :addresses, :credit_cards]
+  
+  SCHOOLS = {"berkeley.edu" => "University of California, Berkeley", "uw.edu" => "University of Washington"}
+  
+  def set_school 
+    self.school = SCHOOLS[self.email.split("@").last]
+  end
   
   attr_accessor *FIELDS
   
@@ -18,8 +26,7 @@ class User < ActiveRecord::Base
     email
   end
   
-  berkeley_regex = /\A[\w+\-.]+@berkeley\.edu\z/i
-  validates :email, :presence => true, :format => {:with => berkeley_regex}
+  validates :email, :presence => true, :uniqueness => true, :format => {:with => /\A[\w+\-.]+@(berkeley|uw)\.edu\z/i}
   has_many :products, -> { order "created_at DESC" }
   has_attached_file :avatar, :styles => {:medium => "300x300>", :thumb => "30x30>"}, :default_url => "default.png"
   validates_attachment :avatar, :content_type => { :content_type => ["image/jpeg","image/png"]}

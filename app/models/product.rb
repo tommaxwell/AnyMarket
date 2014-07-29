@@ -8,6 +8,7 @@ class Product < ActiveRecord::Base
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
   
   
+  
   def set_user!(user)
     self.user_id = user.id
 

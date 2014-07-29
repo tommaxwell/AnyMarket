@@ -5,6 +5,7 @@
 <% end %>
 
 <%= form_for :customer,
+      :html => {class: "edit_user_form"},
       :url => Braintree::TransparentRedirect.url,
       :params => @result && @result.params[:customer],
       :existing => current_user,
@@ -13,16 +14,16 @@
   <%= field_set_tag "Customer" do %>
     <dl>
       <dt><%= f.label :first_name, 'First Name' %></dt>
-      <dd><%= f.text_field :first_name %></dd>
+      <dd><%= f.text_field :first_name, :class => "clean" %></dd>
       <dt><%= f.label :last_name, 'Last Name' %></dt>
-      <dd><%= f.text_field :last_name %></dd>
+      <dd><%= f.text_field :last_name, :class => "clean" %></dd>
       <dt><%= f.label :email, 'Email' %></dt>
-      <dd><%= f.text_field :email %></dd>
+      <dd><%= f.text_field :email, :class => "clean" %></dd>
     </dl>
   <% end %>
   <% if @credit_card %>
   <ul>
-      <li><%= @credit_card.masked_number %> (<%= link_to @credit_card.token, edit_credit_card_info_path(:id => @credit_card.token) %>)</li>
+    <li><%= @credit_card.masked_number %> (<%= link_to 'Edit card', edit_credit_card_info_path(:id => @credit_card.token) %>)</li>
   </ul>
   <% end %>
   <%= hidden_field_tag :tr_data, @tr_data %>

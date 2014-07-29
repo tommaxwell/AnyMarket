@@ -9,40 +9,15 @@
 </head>
 <body>
 <% if signed_in?(:user) %>
-  <div id="listing-new">
-   <h3 id="list-header">List an item for sale</h3>
-  <i><p style="color:#bbb">One man's trash is another man's treasure.</p></i>
-  <%= form_for Product.new, :options => {:id => "new_listing"}, :url => {:controller => "products",:action => "create"}, :html => {:multipart => true} do |f| %>
-    <%= f.text_field :name, :id => "name_input", :autofocus => true, :required => true, :placeholder => "Item name", :class => "form_inputs" %><br /><%= f.number_field :decimal_price, :step => 'any', :id => "price", :required => true, :placeholder => "Name your price", :class => "form_inputs" %>
-  <div>
-    <%= f.text_area :description, :cols => "40", :rows => "8", :maxlength => 250, :id => "description", :required => true, :placeholder => "Write a few sentences about the item you're listing. Is it in good condition? Are there any accessories included?", :class => "form_inputs" %>
-    <%= f.text_area :about_delivery, :cols => "40", :rows => "8", :maxlength => 250, :id => "about_delivery", :required => true, :placeholder => "What times of the week are you available to meet? Where around campus would be the best place? You can discuss in further detail with the buyer once your item is sold.", :class => "form_inputs" %>
-  </div>
-  <div>
-    <%= f.label "Add a photo (increases your likelihood of selling)" %><br />
-    <%= f.file_field :photo %>
-  </div>
-  <br />
-  <div>
-    <%= f.label "Category" %><br />
-    <%= f.collection_select :category_id, Category.all, :id, :name, {:prompt => 'Choose a category'}, {:required => true} %>
-  </div><br />
-    <% if !current_user.braintree_customer_id? %>
-    <%= f.submit "List!", :id => "submit", :disabled => true, :id => "submit_item_btn" %><br /><br />
-    <i>Woops, looks like you haven't added your credit/debit card. Click <a href="/customer/new">here</a>.</i>
-    <% else %>
-    <%= f.submit "List!", :id => "submit",:id => "submit_item_btn" %>
-    <% end %>
-<% end %>
-</div>
 <div class="container-fluid">
   <div id="fixed-navbar">
-    <a href="/"><h3 id="site-header">AnyMarket</h3></a><p id="tagline">safe, secure, verified selling</p>
+    <a href="/"><h3 id="site-header">AnyMarket</h3></a><p id="tagline">safe, secure, verified selling.</p>
     <ul id="nav-links">
-      <li><a id="list-item-btn">List an Item</a></li>
+      <li><a href="/conversations"><span class="glyphicon glyphicon-inbox"></span></a></li>
+      <li><a href="/products/new">List an Item</a></li>
       <li><%= link_to "Settings", edit_user_registration_path, :method => :get %></li>
       <li><a href="/users/<%= current_user.id %>"><%= image_tag current_user.avatar.url(:thumb), :id => "profile_picture", :width => "30", :height => "30" %></a></li>
-      <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+      <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
     </ul>
   </div>
   <% if !current_user.braintree_customer_id? %>
@@ -75,21 +50,38 @@
     
   $("#listing-new").hide();
   $("#past-listings").hide();
+  $("#prof_default").addClass("active");
 
 $(document).on('click',function(e){
-    if (!$('#listing-new').is(e.target) && $('#listing-new').has(e.target).length === 0 && !$('#list-item-btn').is(e.target) && $('#list-item-btn').has(e.target).length === 0){
-        $("#listing-new").hide();
+    if (!$('#send_question_wrapper > form').is(e.target) && $('#send_question_wrapper > form').has(e.target).length === 0 && !$('#ask-question').is(e.target) && $('#ask-question').has(e.target).length === 0){
+        $("#send_question_wrapper > form").remove();
         $(".container-fluid").css("opacity","1");
+        $(".container-fluid").css("pointer-events","auto");
         }
     else{
-        $("#listing-new").fadeIn("fast");
+        $("#send_question_wrapper > form").fadeIn("fast");
         $(".container-fluid").css("opacity","0.3");
+        $(".container-fluid").css("pointer-events","none");
         }
 });
   
-  $("#listings-toggle").click(function(){
-    $("#current-listings, #past-listings").toggle().toggleClass("active");
-  })
+  $("#listings-toggle").click(function(event){
+    event.preventDefault();
+    $("#current-listings").hide();
+    $("#past-listings").show();
+    $("#prof_default").removeClass("active");
+    $("#listings-toggle").addClass("active");
+  });
+  
+  $("#prof_default").click(function(event){
+    event.preventDefault();
+    $("#current-listings").show();
+    $("#past-listings").hide();
+    $("#listings-toggle").removeClass("active");
+    $("#prof_default").addClass("active");
+  });
+  
+  $(".alert-success").fadeOut(2000);
 </script>
 </body>
 </html>

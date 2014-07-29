@@ -5,6 +5,7 @@
 <% end %>
 
 <%= form_for :customer,
+      :html => {class: "edit_user_form"},
       :url => Braintree::TransparentRedirect.url,
       :params => @result && @result.params[:customer],
       :builder => ApplicationHelper::BraintreeFormBuilder,
@@ -12,24 +13,24 @@
   <%= field_set_tag "Customer" do %>
     <dl>
       <dt><%= f.label :first_name, 'First Name' %></dt>
-      <dd><%= f.text_field :first_name %></dd>
+      <dd><%= f.text_field :first_name, :class => "clean" %></dd>
       <dt><%= f.label :last_name, 'Last Name' %></dt>
-      <dd><%= f.text_field :last_name %></dd>
+      <dd><%= f.text_field :last_name, :class => "clean" %></dd>
       <dt><%= f.label :phone, 'Phone' %></dt>
-      <dd><%= f.text_field :phone %></dd>
+      <dd><%= f.text_field :phone, :class => "clean" %></dd>
       <dt><%= f.label :email, 'Email' %></dt>
-      <dd><%= f.text_field :email %></dd>
+      <dd><%= f.text_field :email, :class => "clean" %></dd>
     </dl>
   <% end %>
   <%= field_set_tag "Credit Card" do %>
     <% f.fields_for :credit_card do |cc| %>
       <dl>
         <dt><%= cc.label :number, 'Number' %></dt>
-        <dd><%= cc.text_field :number %></dd>
+        <dd><%= cc.text_field :number, :class => "clean" %></dd>
         <dt><%= cc.label :expiration_date, 'Exipration Date (MM/YY)' %></dt>
-        <dd><%= cc.text_field :expiration_date %></dd>
+        <dd><%= cc.text_field :expiration_date, :class => "clean" %></dd>
         <dt><%= cc.label :cvv, 'CVV' %></dt>
-        <dd><%= cc.text_field :cvv %></dd>
+        <dd><%= cc.text_field :cvv, :class => "clean" %></dd>
       </dl>
     <% end %>
   <% end %>

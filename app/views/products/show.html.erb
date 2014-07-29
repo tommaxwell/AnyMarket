@@ -1,24 +1,33 @@
 <div id="listing-container">
   <div id="product_right">
     <h1><%= @product.name %></h1>
-    <h3>by <%= User.find(@product.user_id).first_name %> <%= User.find(@product.user_id).last_name %><%= image_tag User.find(@product.user_id).avatar.url(:thumb), :id => "product_profile_picture", :width => "30", :height => "30" %></h3>
+    <h3>by <a href="/users/<%= @product.user_id %>"><%= User.find(@product.user_id).first_name %> <%= User.find(@product.user_id).last_name %></a><a href="/users/<%= @product.user_id %>"><%= image_tag User.find(@product.user_id).avatar.url(:thumb), :id => "product_profile_picture", :width => "30", :height => "30" %></a></h3>
     <h2>$<%= @product.decimal_price %></h2>
     <% if @product.user_id == current_user.id %>
       <h4 style="display:inline; margin-right:10px"><%= link_to "Edit listing", edit_item_path(@product), :method => :get %></h4>
       <h4 style="display:inline"><%= link_to "Delete listing", destroy_item_path(@product), method: :delete, data: { confirm: "Are you sure? Deleting a listing cannot be undone."} %></h4><br />
     <% end %>
-    <input type="submit" value="Purchase" width="200px"><br />
-    <p id="guarantee">Risk-free, 100% money-back guarantee.</p>
+    <hr>
+    <% if @product.sold_value === true %>
+      <input type="submit" value="Already sold!" width="200px" disabled="true"><br />
+    <% else %>
+      <input type="submit" value="Purchase" width="200px"><br />
+      <p class="guarantee">Risk-free, 100% money-back guarantee.</p>
+      <hr>
+      <input type="submit" value="Ask a question" id="ask-question">
+    <% end %>
+    <hr>
     <% if @product.about_delivery? %>
-    <div id="about_delivery_box"><h4>About Delivery</h4><%= @product.about_delivery %></div>
+    <div id="about_delivery_box"><h4>Seller's Meeting Preference</h4><%= @product.about_delivery %></div>
     <% else %>
     <% end %>
   </div>
 
   <div id="product_left">
-    <%= image_tag @product.photo if @product.photo? %>
+    <%= image_tag @product.photo if @product.photo? %><br />
     <h3>Description:</h3>
     <p><%= @product.description %></p>
+    <hr>
     <% if @product.category_id? %>
       <h3>Category:</h3>
       <a href="/categories/<%= @product.category.id %>"><%= @product.category.name %></a>
@@ -26,3 +35,12 @@
     <% end %>
   </div>
 </div>
+<script type="text/javascript">
+  $("#ask-question").click(function(){
+    $.ajax({
+      url: "/conversations/<%= @product.user_id %>/send_message",
+      type: "get",
+      data: {item: "<%= @product.name %>"}
+    });
+  });
+</script>

@@ -1,11 +1,9 @@
-<%= content_tag_for(:li, conversation) do |conversation| %>
-  <p>
-    <%= link_to conversation.subject, conversation_path(conversation) %>
-    |
+<%= content_tag_for(:div, conversation) do |conversation| %>
+    <% message = conversation.messages.last.body %>
+    <%= link_to message, conversation_path(conversation) %>
+<p>Participants: <% conversation.participants.each do |name| %><%= image_tag name.avatar.url(:thumb), :id => "profile_picture", :width => "30", :height => "30" %><%= name.first_name %> <% end %></p>
     <% if conversation.is_completely_trashed?(current_user) %>
       <%= link_to 'Untrash', untrash_conversation_path(conversation), method: :post %>
     <% else %>
-      <%= link_to 'Move to trash', trash_conversation_path(conversation), method: :post %>
     <% end %>
-  </p>
 <% end %>

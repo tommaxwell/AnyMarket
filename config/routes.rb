@@ -23,6 +23,9 @@ Rails.application.routes.draw do
   get "/categories/long_categories(.:format)" => "categories#long_categories"
   get "/categories/:id(.:format)" => "categories#show", :as => "view_category"
   
+  get "/conversations/:id/send_message(.:format)" => "conversations#send_message", :as => "send_message"
+  post "/conversations/send_this_message(.:format)" => "conversations#send_this_message", :as => "send_this_message"
+  
 resources :messages do
   member do
     post :new

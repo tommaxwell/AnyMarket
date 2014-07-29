@@ -1,14 +1,14 @@
 <h1>Edit your listing</h1>
-<%= form_for @product, :url => {:action => :update, :method => :patch} do |f| %>
+<%= form_for @product, html: {class: "edit_user_form"}, :url => {:action => :update, :method => :patch} do |f| %>
   <div><%= f.label :name %><br />
-    <%= f.text_field :name, :placeholder => "Name yourself", :required => true %>
+    <%= f.text_field :name, :placeholder => "Name yourself", :required => true, :class => "clean" %>
   </div>
   <div><%= f.label :price %><br />
-    <%= f.number_field :decimal_price, :step => "any", :placeholder => "Name your price", :required => true %>
+    <%= f.number_field :decimal_price, :step => "any", :placeholder => "Name your price", :required => true, :class => "clean" %>
   </div><br />
   <div><%= f.label :description %><br />
-    <%= f.text_area :description, :cols => "50", :rows => "10", :placeholder => "Write a few sentences about the item you're listing. Is it in good condition? Are there any accessories included?", :required => true%>
-    <%= f.text_area :about_delivery, :cols => "10", :rows => "8", :maxlength => 250, :id => "about_delivery", :required => true, :placeholder => "What times of the week are you available to meet? Where around campus would be the best place? You can discuss in further detail with the buyer once your item is sold.", :class => "form_inputs" %>
+    <%= f.text_area :description, :cols => "50", :rows => "10", :placeholder => "Write a few sentences about the item you're listing. Is it in good condition? Are there any accessories included?", :required => true, :class => "clean"%>
+    <%= f.text_area :about_delivery, :cols => "10", :rows => "8", :maxlength => 250, :id => "about_delivery", :required => true, :placeholder => "What times of the week are you available to meet? Where around campus would be the best place? You can discuss in further detail with the buyer once your item is sold.", :class => "form_inputs clean" %>
   </div>
   <br />
   <div>

@@ -2,11 +2,12 @@
 <div id="your-listings">
   <h3 id="your-listings-header" class="page-header"><span class="glyphicon glyphicon-usd"></span> What You're Selling</h3>
   <% if @user.products.any? %>
-    <% @user.products.each do |f| %>
+  <% i = 0 %>
+  <% @user.products.each_with_index do |f| %>
+    <% i += 1 %>
     <% if f.sold_value == false %>
     <div class="listing">
-      <h4><%= link_to f.name, view_item_path(f.id) %></h4><strong><p class="price">$<%= f.decimal_price %></p></strong>
-      <p><%= f.description %></p>
+      <h4><%= i %>.</h4> <%= link_to view_item_path(f.id), :method => "get" do  %><h4><%= f.name %></h4><% end %><strong><p class="price">$<%= f.decimal_price %></p></strong><p><%= f.description[0..100].gsub(/\s\w+\s*$/, '...') %></p> <%= link_to destroy_item_path(f.id), :method => "delete", data: { confirm: "Are you sure? Deleting a listing cannot be undone."} do %><span class="glyphicon glyphicon-trash"></span><% end %> &middot; <%= link_to edit_item_path(f.id), :method => "get" do %><span class="glyphicon glyphicon-pencil"></span><% end %>
     </div>
     <% else %>
     <% end %>
@@ -22,5 +23,5 @@
 <h1>FUCK YOU</h1>
 <% end %>
 <script type="text/javascript">
-    $.get("/categories", null, "script");
+  $.get("/categories", null, "script");
 </script>
