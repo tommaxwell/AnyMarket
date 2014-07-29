@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'bcrypt'
 
+gem 'mail'
+
 gem 'rails_12factor', group: :production
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
