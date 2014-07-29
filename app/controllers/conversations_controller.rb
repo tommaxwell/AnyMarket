@@ -11,6 +11,12 @@ class ConversationsController < ApplicationController
 
     redirect_to conversation_path(conversation)
   end
+	
+	def new 
+		respond_to do |format|
+			format.html
+		end
+	end
   
   def send_message
     @user = User.find(params[:id])
