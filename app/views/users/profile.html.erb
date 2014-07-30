@@ -12,7 +12,7 @@
       <% i += 1 %>
       <% if f.sold_value === false %>
           <div class="listing">
-            <h4><%= i %>.</h4> <h4><%= link_to f.name, view_item_path(f.id) %></h4><strong><p class="price">$<%= f.decimal_price %></p></strong><p><%= f.description[0..100].gsub(/\s\w+\s*$/, '...') %></p>
+            <h4><%= i %>.</h4> <h4><%= link_to f.name, view_item_path(f.id) %></h4><strong><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p></strong><p><%= f.description[0..100].gsub(/\s\w+\s*$/, '...') %></p>
           </div>
       <% else %>
       <% end %>
