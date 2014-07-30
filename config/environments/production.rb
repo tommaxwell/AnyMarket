@@ -84,7 +84,7 @@ Rails.application.configure do
 	
 	config.action_mailer.default_url_options = { :host => 'smtp.sendgrid.net'} 
 	
-	config.paperclip.defaults = {
+	config.paperclip_defaults = {
 		:storage => :s3,
 		:s3_credentials => {
 			:bucket => ENV['S3_BUCKET_NAME'],
