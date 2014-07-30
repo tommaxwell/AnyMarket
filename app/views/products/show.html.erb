@@ -2,7 +2,7 @@
   <div id="product_right">
     <h1><%= @product.name %></h1>
     <h3>by <a href="/users/<%= @product.user_id %>"><%= User.find(@product.user_id).first_name %> <%= User.find(@product.user_id).last_name %></a><a href="/users/<%= @product.user_id %>"><%= image_tag User.find(@product.user_id).avatar.url(:thumb), :id => "product_profile_picture", :width => "30", :height => "30" %></a></h3>
-		<h2>$<%= number_to_currency(@product.decimal_price, precision: 2) %></h2>
+		<h2><%= number_to_currency(@product.decimal_price, precision: 2) %></h2>
     <% if @product.user_id == current_user.id %>
       <h4 style="display:inline; margin-right:10px"><%= link_to "Edit listing", edit_item_path(@product), :method => :get %></h4>
       <h4 style="display:inline"><%= link_to "Delete listing", destroy_item_path(@product), method: :delete, data: { confirm: "Are you sure? Deleting a listing cannot be undone."} %></h4><br />
