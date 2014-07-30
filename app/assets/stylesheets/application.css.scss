@@ -545,3 +545,17 @@ text-decoration:none;
 .page-header {
   margin-top:50px !important;
 }
+
+#list-first-wrapper {
+	text-align:center;
+	a {
+		color:black;
+		font-weight:bold;
+  }
+	span{
+		margin-left:20px;
+	}
+	h3{
+		display:inline;
+	}
+}
