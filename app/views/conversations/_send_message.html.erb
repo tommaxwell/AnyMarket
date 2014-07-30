@@ -1,5 +1,5 @@
 <div id="send_question_wrapper">
-  <%= form_tag("/conversations/send_this_message", method: "post", url: send_this_message_path, :class => "edit_user_form") do  %>
+  <%= form_tag("/conversations/send_this_message", method: "post", :class => "edit_user_form") do  %>
     <%= hidden_field_tag :id, "#{@user.id}" %>
     <h3>Send <%= @user.first_name %> a message about the <%= @item %></h3>
   <%= text_area_tag :message, nil, :class => 'form-control clean', :placeholder => "Message" %>
