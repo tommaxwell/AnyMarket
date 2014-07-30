@@ -1,5 +1,5 @@
 <div id="profile-heading">
-  <a href="<%= @user.website %>"><%= image_tag @user.avatar.url(:medium) %></a>
+  <a href="<%= @user.website %>"><%= image_tag @user.avatar.url(:medium).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/') %></a>
   <h2><%= @user.first_name %> <%= @user.last_name %></h2>
   <p id="school"><%= @user.school || "University of California, Berkeley" %></p>
   <p>User #<%= @user.id %></p>
