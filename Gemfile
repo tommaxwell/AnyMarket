@@ -52,5 +52,5 @@ gem 'taps'
 
 gem 'aws-sdk'
 
-
+gem 'asset_sync'
 
