@@ -30,9 +30,9 @@ class ConversationsController < ApplicationController
   def send_this_message
     @user = User.find(params[:id])
 		@message = params[:message]
-		@subject = "New message"
+		@subject = "Question from #{@user}.first_name"
 		current_user.send_message(@user, "#{@message}", "#{@subject}")
-    redirect_to conversation_path(conversation)
+    redirect_to /
   end
 
   def reply
