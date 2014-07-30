@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h3>You have a <%= @subject %> on AnyMarket</h3>
+    <p>
+      Message:
+    </p>
+    <blockquote>
+      <p>
+        <%= raw @message.body %>
+      </p>
+    </blockquote>
+    <p>
+			Visit <a href="/conversations">your conversations</a> to read it.
+    </p>
+  </body>
+</html>
