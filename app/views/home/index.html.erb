@@ -14,17 +14,14 @@
     <% end %>
   </div>
   <% else %>
-<h4 class="no-items">Darn, you haven't listed anything yet! There's no rush. Do so whenever you'd like by clicking "List an Item" in the navigation above.</h4><br />
-<h4 class="no-items">In the meantime, you can find all the items listed by others by clicking the categories to the right.</h4><br />
-<h4 class="no-items">Enjoy!</h4>
-<i><h4 class="no-items">-Team AnyMarket</h4></i>
+<span class="glyphicon glyphicon-plus"></span><h3>List your first item</h3>
   <% end %>
 <% else %>
 <h1>FUCK YOU</h1>
 <% end %>
 <div id="most recent">
 	<% recentlistings = Product.order('created_at DESC').limit(5) %>
-	<h3 id="your-listings-header" class="page-header">Recent Listings At Your School</h3>
+	<h3 id="your-listings-header" class="page-header">Recently Added</h3>
 	<% recentlistings.each do |f| %>
 		<div class="listing">
             <a href="/users/<%= f.user_id %>" class="nounderline"><%= image_tag User.find(f.user_id).avatar.url(:thumb).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/'), :id => "categories_profile_picture", :width => "30", :height => "30" %></a><h4><%= link_to f.name, view_item_path(f.id) %></h4><strong><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p></strong>
