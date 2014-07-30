@@ -16,7 +16,7 @@
       <li><a href="/conversations"><span class="glyphicon glyphicon-inbox"></span></a></li>
       <li><a href="/products/new">List an Item</a></li>
       <li><%= link_to "Settings", edit_user_registration_path, :method => :get %></li>
-      <li><a href="/users/<%= current_user.id %>"><%= image_tag current_user.avatar.url(:thumb), :id => "profile_picture", :width => "30", :height => "30" %></a></li>
+      <li><a href="/users/<%= current_user.id %>"><%= image_tag current_user.avatar.url(:thumb).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/'), :id => "profile_picture", :width => "30", :height => "30" %></a></li>
       <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
     </ul>
   </div>
