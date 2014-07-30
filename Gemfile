@@ -52,6 +52,5 @@ gem 'taps'
 
 gem 'aws-sdk'
 
-gem 'nokogiri', '<1.6'
 
 
