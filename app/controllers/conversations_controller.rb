@@ -31,7 +31,7 @@ class ConversationsController < ApplicationController
     @user = User.find(params[:id])
 		@message = params[:message]
 		@firstname = @user.first_name
-		@subject = "Question from #{@firstname}"
+		@subject = "question from #{@firstname}"
 		current_user.send_message(@user, "#{@message}", "#{@subject}")
     redirect_to "/"
   end
