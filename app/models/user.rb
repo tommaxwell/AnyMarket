@@ -4,6 +4,10 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable, :confirmable
+	
+	def mailboxer_email
+		@mailboxer_email = self.email
+ 	end
 
   
   FIELDS = [:phone, :website, :company, :fax, :addresses, :credit_cards]
