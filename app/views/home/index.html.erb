@@ -23,7 +23,7 @@
 <h1>FUCK YOU</h1>
 <% end %>
 <div id="most recent">
-	<% recentlistings = Product.order(:order => 'created_at DESC').limit(10) %>
+	<% recentlistings = Product.order(:order => 'created_at desc').limit(10) %>
 	<% recentlistings.each do |f| %>
 		<p><%= f.name %></p>
 	<% end %>
