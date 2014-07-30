@@ -50,4 +50,6 @@ end
 
 gem 'taps'
 
+gem 'aws-sdk'
+
 
