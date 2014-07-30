@@ -33,7 +33,7 @@ class ConversationsController < ApplicationController
 		@firstname = @user.first_name
 		@subject = "Question from #{@firstname}"
 		current_user.send_message(@user, "#{@message}", "#{@subject}")
-    redirect_to /
+    redirect_to "/"
   end
 
   def reply
