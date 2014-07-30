@@ -22,6 +22,12 @@
 <% else %>
 <h1>FUCK YOU</h1>
 <% end %>
+<div id="most recent">
+	<% @recentlistings = Product.all(:order => 'created_at DESC', :limit => 10) %>
+	<% @recentlistings.each do |f| %>
+		<p><%= f.name %></p>
+	<% end %>
+</div>
 <script type="text/javascript">
   $.get("/categories", null, "script");
 </script>
