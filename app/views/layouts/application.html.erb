@@ -20,7 +20,7 @@
       <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
     </ul>
   </div>
-  <% if !current_user.braintree_customer_id? %>
+	<% if !current_user.confirmed? || !current_user.first_name? || !current_user.last_name? %>
   <%= render "/layouts/no_cc_alert" unless @skip_alert %>
   <% else %>
   <% end %>
