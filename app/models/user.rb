@@ -31,7 +31,9 @@ class User < ActiveRecord::Base
     user.password = Devise.friendly_token[0,20]
 		user.first_name = auth.info.first_name
 		user.last_name = auth.info.last_name
-    user.avatar = auth.info.image # assuming the user model has an image
+		if auth.info.image.present?
+			avatar_url = process_uri(auth.info.image)
+			user.update_attribute(:avatar, URI.parse(avatar_url))
   end
 end
   
@@ -61,5 +63,15 @@ end
 
     credit_cards.find { |cc| cc.default? }
   end
+
+private
+	
+	def process_uri(uri)
+    require 'open-uri'
+    require 'open_uri_redirections'
+    open(uri, :allow_redirections => :safe) do |r|
+      r.base_uri.to_s
+    end
+	end
   
 end
