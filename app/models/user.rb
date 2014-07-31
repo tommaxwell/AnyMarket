@@ -34,8 +34,9 @@ class User < ActiveRecord::Base
 		if auth.info.image.present?
 			avatar_url = process_uri(auth.info.image)
 			user.update_attribute(:avatar, URI.parse(avatar_url))
+    end
   end
-end
+	end
   
   
   has_many :products, -> { order "created_at DESC" }
