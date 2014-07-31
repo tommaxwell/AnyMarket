@@ -21,7 +21,7 @@
 	<% else %>
 	<h1>FUCK YOU</h1>
 	<% end %>
-	<div id="most recent">
+	<div id="most-recent">
 		<% recentlistings = Product.order('created_at DESC').limit(5) %>
 		<h3 id="your-listings-header" class="page-header"><span class="glyphicon glyphicon-time"></span>Recently Added</h3>
 		<% recentlistings.each do |f| %>
