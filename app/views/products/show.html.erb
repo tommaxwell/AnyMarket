@@ -22,7 +22,7 @@
     <% else %>
     <% end %>
 		<% if User.find(@product.user_id).products.any? %>
-			<% otherlistings = User.find(@product.user_id).products.limit(2).where.not(id: id) %>
+			<% otherlistings = User.find(@product.user_id).products.limit(2).where.not(id: @product.id) %>
 			<% otherlistings.each do |b| %>
 				<%= b.name %>
 			<% end %>
