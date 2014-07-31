@@ -23,8 +23,8 @@
     <% end %>
 		<% otherlistings = User.find(@product.user_id).products.limit(2).where.not(id: @product.id) %>
 		<% if otherlistings.any? %>
+		<h4>Other listings by <%= User.find(@product.user_id).first_name %></h4>
 			<% otherlistings.each do |f| %>
-				<h4>Other listings by <%= User.find(@product.user_id).first_name %></h4>
 				<div class="listing">
             <h4><%= link_to f.name, view_item_path(f.id) %></h4><strong><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p></strong>
             <p><%= f.description[0..100].gsub(/\s\w+\s*$/, '...') %></p>
