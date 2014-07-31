@@ -25,17 +25,26 @@ class User < ActiveRecord::Base
     email
   end
 	
-	def self.from_omniauth(auth)
-  where(auth.slice(:provider, :uid)).first_or_create do |user|
-    user.email = auth.info.email
-    user.password = Devise.friendly_token[0,20]
-		user.first_name = auth.info.first_name
-		user.last_name = auth.info.last_name
-		if auth.info.image.present?
-			avatar_url = process_uri(auth.info.image)
-			user.update_attribute(:avatar, URI.parse(avatar_url))
+	def process_uri(uri)
+    require 'open-uri'
+    require 'open_uri_redirections'
+    open(uri, :allow_redirections => :safe) do |r|
+      r.base_uri.to_s
     end
-  end
+	end
+	
+	def self.from_omniauth(auth)
+		where(auth.slice(:provider, :uid)).first_or_create do |user|
+			user.email = auth.info.email
+			user.password = Devise.friendly_token[0,20]
+			user.first_name = auth.info.first_name
+			user.last_name = auth.info.last_name
+			if auth.info.image.present?
+				avatar_url = process_uri(auth.info.image)
+				user.update_attribute(:avatar, URI.parse(avatar_url))
+			else
+			end
+		end
 	end
   
   
@@ -64,13 +73,5 @@ class User < ActiveRecord::Base
 
     credit_cards.find { |cc| cc.default? }
   end
-	
-	def process_uri(uri)
-    require 'open-uri'
-    require 'open_uri_redirections'
-    open(uri, :allow_redirections => :safe) do |r|
-      r.base_uri.to_s
-    end
-	end
   
 end
