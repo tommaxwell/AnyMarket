@@ -24,14 +24,7 @@ class User < ActiveRecord::Base
   def mailboxer_email(object)
     email
   end
-	
-	def process_uri(uri)
-    require 'open-uri'
-    require 'open_uri_redirections'
-    open(uri, :allow_redirections => :safe) do |r|
-      r.base_uri.to_s
-    end
-	end
+
 	
 	def self.from_omniauth(auth)
 		where(auth.slice(:provider, :uid)).first_or_create do |user|
@@ -40,8 +33,9 @@ class User < ActiveRecord::Base
 			user.first_name = auth.info.first_name
 			user.last_name = auth.info.last_name
 			if auth.info.image.present?
-				avatar_url = process_uri(auth.info.image)
-				user.update_attribute(:avatar, URI.parse(avatar_url))
+				uri = URI.parse(auth.info.image)
+				uri.scheme = 'https'
+				user.avatar = auth.info.image
 			else
 			end
 		end
