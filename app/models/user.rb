@@ -64,8 +64,6 @@ class User < ActiveRecord::Base
 
     credit_cards.find { |cc| cc.default? }
   end
-
-private
 	
 	def process_uri(uri)
     require 'open-uri'
