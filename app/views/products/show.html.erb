@@ -21,8 +21,8 @@
     <div id="about_delivery_box"><h4>Seller's Meeting Preference</h4><%= @product.about_delivery %></div>
     <% else %>
     <% end %>
-		<% if User.find(@product.user_id).products.any.where.not(id: @product.id)? %>
-			<% otherlistings = User.find(@product.user_id).products.limit(2).where.not(id: @product.id) %>
+		<% otherlistings = User.find(@product.user_id).products.limit(2).where.not(id: @product.id) %>
+		<% if otherlistings? %>
 			<% otherlistings.each do |f| %>
 				<h4>Other listings by <%= User.find(@product.user_id).first_name %></h4>
 				<div class="listing">
