@@ -52,3 +52,7 @@ gem 'taps'
 
 gem 'aws-sdk'
 
+gem 'omniauth'
+
+gem 'omniauth-facebook'
+
