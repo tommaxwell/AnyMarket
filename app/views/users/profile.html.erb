@@ -1,4 +1,4 @@
-<%= @title=@user.first_name + ' ' + @user.last_name + '\'s Profile' %>
+<% @title=@user.first_name + ' ' + @user.last_name + '\'s Profile - AnyMarket' %>
 <div id="profile-heading">
   <a href="<%= @user.website %>"><%= image_tag @user.avatar.url(:medium).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/') %></a>
   <h2><%= @user.first_name %> <%= @user.last_name %></h2>
