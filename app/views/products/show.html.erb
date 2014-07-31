@@ -21,6 +21,12 @@
     <div id="about_delivery_box"><h4>Seller's Meeting Preference</h4><%= @product.about_delivery %></div>
     <% else %>
     <% end %>
+		<% if User.find(@product.user_id).products.any? %>
+			<% otherlistings = User.find(@product.user_id).products.limit(2) %>
+			<% otherlistings.each do |b| %>
+				<%= b.name %>
+			<% end %>
+		<% end %>
   </div>
 
   <div id="product_left">
