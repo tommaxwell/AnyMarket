@@ -1,14 +1,5 @@
-<% if !current_user.confirmed? && !current_user.first_name || !current_user.last_name? %>
+<% if !current_user.confirmed? %>
 	<h4 id="no-cc-alert">To-do:<br />
 		1. Your account is not yet confirmed. Please check <%= current_user.email %> for our email.<br />
-		2. Add <a href="/users/edit">some info about you.</a>
   </h4>
-<% elsif !current_user.confirmed? %>
-	<h4 id="no-cc-alert">To-do:<br />
-		1. Your account is not yet confirmed. Please check <%= current_user.email %> for our email.
-  </h4>
-<% else !current_user.first_name || !current_user.last_name? %>
-	<h4 id="no-cc-alert">To-do:<br />
-		1. Add <a href="/users/edit">some info about you.</a>
-	</h4>
 <% end %>
