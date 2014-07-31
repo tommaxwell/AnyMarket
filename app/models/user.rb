@@ -29,8 +29,9 @@ class User < ActiveRecord::Base
   where(auth.slice(:provider, :uid)).first_or_create do |user|
     user.email = auth.info.email
     user.password = Devise.friendly_token[0,20]
-    user.name = auth.info.name   # assuming the user model has a name
-    user.image = auth.info.image # assuming the user model has an image
+		user.first_name = auth.info.first_name
+		user.last_name = auth.info.last_name
+    user.photo = auth.info.image # assuming the user model has an image
   end
 end
   
@@ -39,6 +40,7 @@ end
   has_attached_file :avatar, :styles => {:medium => "300x300>", :thumb => "30x30>"}, :default_url => "default.png"
   validates_attachment :avatar, :content_type => { :content_type => ["image/jpeg","image/png"]}
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/\
+
   
   def has_payment_info?
     !!braintree_customer_id
