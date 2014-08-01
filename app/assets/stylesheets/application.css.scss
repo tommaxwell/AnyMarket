@@ -615,9 +615,13 @@ text-decoration:none;
 	}
 }
 
+#landing-wrapper {
+	width:100%;
+}
+
 #landing-recent {
-	width:50%;
-	max-width:500px;
+	width:40%;
+	max-width:400px;
 	position:relative;
 	float:right;
 }
