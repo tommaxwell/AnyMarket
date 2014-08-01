@@ -38,7 +38,7 @@
 		<%= image_tag @product.photo.url.sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/') if @product.photo? %><br />
     <h3>Description:</h3>
     <p><%= @product.description %></p>
-    <hr>
+    <hr class="black-hr">
     <% if @product.category_id? %>
       <h3>Category:</h3>
       <a href="/categories/<%= @product.category.id %>"><%= @product.category.name %></a>

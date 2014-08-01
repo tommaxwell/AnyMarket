@@ -303,6 +303,9 @@ div.listing {
 			display:block;
 			margin: 0 auto;
     }
+		hr{
+			border-color:#CCC;
+		}
   }
 
   #product_right {
@@ -341,6 +344,9 @@ div.listing {
     .guarantee{
       margin-top:10px;
     }
+		hr{
+			border-color: #CCC !important;
+		}
   }
   
 }
@@ -607,3 +613,4 @@ text-decoration:none;
 		}
 	}
 }
+
