@@ -29,7 +29,7 @@
 	<% else %>
 	<div id="sign_up_and_pitch"></div>
 	<div id="recently_added_preview">
-		<div id="most-recent landing-recent">
+		<div id="landing-recent">
 		<% recentlistings = Product.order('created_at DESC').limit(5).where("sold_value = false") %>
 		<h3 id="your-listings-header" class="page-header"><span class="glyphicon glyphicon-time"></span>Recently Added</h3>
 		<% recentlistings.each do |f| %>
