@@ -111,11 +111,13 @@ button:focus {
   position:relative;
   float:left;
   top:10px;
+	z-index:1000;
   #your-listings-header {
    margin-top:20px !important;
    font-size:21px;
    color:#bbb;
    font-weight:bold;
+	 border-bottom:1px solid #CCC !important;
     .glyphicon-usd{
       font-size:18px;
       top:2px;
