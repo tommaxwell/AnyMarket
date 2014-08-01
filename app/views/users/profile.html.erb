@@ -8,8 +8,9 @@
 <div>
   <h3 class="page-header"><a href="#" id="prof_default"><%= @user.first_name %>'s current listings</a> <a href="#" id="listings-toggle">sold listings</a></h3>
   <div id="current-listings">
+		<% notsold = @user.products.where("sold_value = false").order("created_at DESC") %>
     <% i = 0 %>
-    <% @user.products.each do |f| %>
+		<% notsold.each do |f| %>
       <% i += 1 %>
       <% if f.sold_value === false %>
           <div class="listing">
