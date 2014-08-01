@@ -48,15 +48,13 @@
     <% end %>
   </div>
 </div>
-<% if user_signed_in? %>
-	<script type="text/javascript">
-		$("#ask-question").click(function(){
-			$.ajax({
-				url: "/conversations/<%= @product.user_id %>/send_message",
-				type: "get",
-				data: {item: "<%= @product.name %>"}
-			});
-		});
-	</script>
-<% end %>
+<script type="text/javascript">
+  $("#ask-question").click(function(){
+    $.ajax({
+      url: "/conversations/<%= @product.user_id %>/send_message",
+      type: "get",
+      data: {item: "<%= @product.name %>"}
+    });
+  });
+</script>
 <script type="text/javascript" async  data-pin-hover="true" src="//assets.pinterest.com/js/pinit.js"></script>
