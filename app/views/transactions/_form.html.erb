@@ -31,7 +31,7 @@
                                                                                  :transaction => {
                                                                                    :amount => @product.decimal_price,
                                                                                    :type => "sale",
-                                                                                   :custom_fields => {:product => @product.id, :seller => User.find(@product.user_id).email},
+                                                                                   :custom_fields => {:product => @product.id, :product_name => @product.name, :seller => User.find(@product.user_id).email, :seller_name => User.find(@product.user_id).first_name},
                                                                                    :customer_id => current_user.braintree_customer_id
                                                                                    }) %>
   <%= f.submit 'Confirm Purchase', :class => 'buy', :disable_with => 'Please wait...' %>

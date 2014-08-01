@@ -3,15 +3,13 @@
   <%= render :partial => "categories/long_categories" %>
   <div id="category-header">
     <h2 class="page-header"><%= @category.name %> <small id="category-page-description"><%= @category.description %></small><% if current_user.school == "University of California, Berkeley" %><%= image_tag "ucb-logo.jpg", :class => "school-pic" %><% else %><% end %></h2>
-  <% @category.products.each do |f| %>
-      <% if f.sold_value == false %>
+  <% notsold = @category.products.where("sold_value = false").order("created_at DESC") %>
+		<% notsold.each do |f| %>
         <% if User.find(f.user_id).school == current_user.school %>
           <div class="listing">
             <a href="/users/<%= f.user_id %>" class="nounderline"><%= image_tag User.find(f.user_id).avatar.url(:thumb).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/'), :id => "categories_profile_picture", :width => "30", :height => "30" %></a><h4><%= link_to f.name, view_item_path(f.id) %></h4><strong><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p></strong>
             <p><%= f.description[0..100].gsub(/\s\w+\s*$/, '...') %></p>
           </div>
-        <% else %>
-        <% end %>
       <% else %>
       <% end %>
   <% end %>
