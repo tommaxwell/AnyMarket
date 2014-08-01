@@ -616,13 +616,23 @@ text-decoration:none;
 }
 
 #landing-wrapper {
-	width:100%;
-}
-
-#landing-recent {
-	width:40%;
-	max-width:400px;
+	width:90%;
 	position:relative;
-	float:right;
+	top:40px;
+	#sign_up_and_pitch{
+		display:inline-block;
+		position:relative;
+		float:left;
+		width:50%;
+		max-width:500px;
+	}
+	#recently_added_preview{
+		position:relative;
+		float:right;
+		width:40%;
+		max-width:400px;
+	}
+	h3 {
+		margin:0 !important;
+	}
 }
-
