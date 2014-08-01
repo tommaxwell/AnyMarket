@@ -8,8 +8,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if signed_in?(:user) %>
 <div class="container-fluid">
+<% if signed_in?(:user) %>
   <div id="fixed-navbar">
     <a href="/"><h3 id="site-header">AnyMarket</h3></a><p id="tagline">safe, secure, verified selling.</p>
     <ul id="nav-links">
@@ -27,11 +27,10 @@
 <% else %>
   
   <div id="fixed-navbar">
-    <h2>CollegeCommerce</h2>
+    <a href="/"><h3 id="site-header">AnyMarket</h3></a><p id="tagline">safe, secure, verified selling.</p>
     <ul id="nav-links">
-      <li><%= link_to "Log In", new_user_session_path, :method => :get %></li>
-      <li><%= link_to "Sign Up", new_user_registration_path, :method => :get %></li>
-			<li><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></li>
+			<li><a href="mailto:hi@anymarket.co">Contact Us</a></li>
+			<li><a href="/users/sign_in">Login</a></li>
     </ul>
   </div>
   
