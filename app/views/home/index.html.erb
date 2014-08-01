@@ -4,7 +4,7 @@
 	<div id="your-listings">
 		<h3 id="your-listings-header" class="page-header"><span class="glyphicon glyphicon-usd"></span> What You're Selling</h3>
 		<% if @user.products.any? %>
-		<% @notsold = @user.products.where("sold_value","false") %>
+		<% @notsold = @user.products.where.not(:sold_value, true) %>
 		<% i = 0 %>
 		<% @notsold.each do |f| %>
 			<% i += 1 %>
