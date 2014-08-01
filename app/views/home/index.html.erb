@@ -3,7 +3,7 @@
 <div id="index-wrapper">
 	<div id="your-listings">
 		<h3 id="your-listings-header" class="page-header"><span class="glyphicon glyphicon-usd"></span> What You're Selling</h3>
-		<% notsold = @user.products.where.not(:sold_value, 't') %>
+		<% notsold = @user.products.where("sold_value = 0") %>
 		<% if notsold.any? %>
 		<% i = 0 %>
 		<% notsold.each do |f| %>
