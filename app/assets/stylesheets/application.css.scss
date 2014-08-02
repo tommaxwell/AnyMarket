@@ -626,6 +626,10 @@ text-decoration:none;
 		float:left;
 		width:50%;
 		max-width:500px;
+		p{
+			position:relative;
+			top:60px;
+		}
 		form{
 			position:relative;
 			top:30px;
@@ -657,5 +661,13 @@ text-decoration:none;
 	#pitch{
 		font-weight:bold;
 		line-height:1.3em;
+	}
+	#school-list{
+		display:inline-block;
+		position:relative;
+		top:270px;
+		ul{
+			list-style-type:none;
+		}
 	}
 }
