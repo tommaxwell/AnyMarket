@@ -653,7 +653,7 @@ text-decoration:none;
 		float:right;
 		width:40%;
 		max-width:400px;
-		top:50px;
+		top:100px;
 	}
 	h3 {
 		margin:0 !important;
@@ -665,9 +665,13 @@ text-decoration:none;
 	#schools-list{
 		display:inline-block;
 		position:relative;
-		top:270px;
+		top:300px;
 		ul{
 			list-style-type:none;
+			padding:0 !important;
+			li{
+				padding:20px;
+			}
 		}
 		img{
 			width:100px;
