@@ -665,10 +665,16 @@ text-decoration:none;
 	#schools-list{
 		display:inline-block;
 		position:relative;
-		top:300px;
+		top:270px;
 		ul{
 			list-style-type:none;
 			padding:0 !important;
+			ul h3{
+				position:relative;
+				top:40px;
+				color:#bbb;
+				display:inline;
+			}
 			li{
 				padding:20px;
 				display:inline;
