@@ -9,7 +9,7 @@
 		<% notsold.each do |f| %>
 			<% i += 1 %>
 			<div class="listing">
-				<h4><%= i %>.</h4> <%= link_to view_item_path(f.id), :method => "get" do  %><h4><%= f.name %></h4><% end %><p><%= f.description[0..100].gsub(/\s\w+\s*$/, '...') %></p> <strong><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p></strong><%= link_to destroy_item_path(f.id), :method => "delete", data: { confirm: "Are you sure? Deleting a listing cannot be undone."} do %><span class="glyphicon glyphicon-trash"></span><% end %> &middot; <%= link_to edit_item_path(f.id), :method => "get" do %><span class="glyphicon glyphicon-pencil"></span><% end %>
+				<h4><%= i %>.</h4> <%= link_to view_item_path(f.id), :method => "get" do  %><h4><%= f.name %></h4><% end %><p><%= f.description[0..100].gsub(/\s\w+\s*$/, '...') %></p> <strong><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p></strong> <%= link_to destroy_item_path(f.id), :method => "delete", data: { confirm: "Are you sure? Deleting a listing cannot be undone."} do %><span class="glyphicon glyphicon-trash"></span><% end %> &middot; <%= link_to edit_item_path(f.id), :method => "get" do %><span class="glyphicon glyphicon-pencil"></span><% end %>
 			</div>
 			<% end %>
 		</div>
