@@ -114,7 +114,6 @@ button:focus {
    margin-top:20px !important;
    font-size:21px;
    color:#bbb;
-   font-weight:bold;
 	 border-bottom:1px solid #CCC !important;
     .glyphicon-usd{
       font-size:18px;
@@ -289,8 +288,8 @@ div.listing {
 
 #listing-container {
   position:relative;
-  top:20px;
-	float:left;
+  top:10px;
+	margin-bottom:20px;
   #product_left {
     position:relative;
     float:right;
@@ -375,6 +374,8 @@ div.listing {
 	display:inline-block;
 	width:100%;
 	height:40px;
+	position:relative;
+	top:-15px;
   a{
     color:black;
     text-decoration:underline;
@@ -586,7 +587,7 @@ text-decoration:none;
 
 #otherlistings {
 	margin-top:40px;
-	font-weight:bold;
+	font-size:24px;
 }
 
 .other-listings{
