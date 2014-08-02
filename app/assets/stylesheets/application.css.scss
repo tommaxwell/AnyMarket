@@ -322,7 +322,7 @@ div.listing {
       a:nth-of-type(1){
         color:#bbb;
       }
-			h2{
+			h3{
 				color: #0fc37b;
 				font-weight:bold;
 			}
@@ -658,6 +658,9 @@ text-decoration:none;
 		width:40%;
 		max-width:400px;
 		top:15%;
+	}
+	#landing-recent h3{
+		border-bottom:1px solid #bbb !important;
 	}
 	h3 {
 		margin:0 !important;
