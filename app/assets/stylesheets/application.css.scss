@@ -618,7 +618,7 @@ text-decoration:none;
 #landing-wrapper {
 	width:85%;
 	position:relative;
-	top:40px;
+	top:50px;
 	margin:0 auto;
 	#sign_up_and_pitch{
 		display:inline-block;
@@ -633,9 +633,14 @@ text-decoration:none;
 				width:300px;
 				max-width:300px;
 				margin: 5px 0 5px 0;
+				padding:4px;
 			}
 			input[type="submit"]{
 				width:300px;
+				position:relative;
+				top:10px;
+				padding-top:8px;
+				padding-bottom:8px;
 			}
 		}
 	}
