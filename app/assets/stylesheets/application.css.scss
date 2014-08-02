@@ -626,13 +626,25 @@ text-decoration:none;
 		float:left;
 		width:50%;
 		max-width:500px;
+		form{
+			position:relative;
+			top:30px;
+			input[type="text"]{
+				width:300px;
+				max-width:300px;
+				margin: 5px 0 5px 0;
+			}
+			input[type="submit"]{
+				width:300px;
+			}
+		}
 	}
 	#recently_added_preview{
 		position:relative;
 		float:right;
 		width:40%;
 		max-width:400px;
-		top:40px;
+		top:50px;
 	}
 	h3 {
 		margin:0 !important;
