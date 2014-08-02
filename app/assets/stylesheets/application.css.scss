@@ -627,6 +627,7 @@ text-decoration:none;
 		clear:both;
 		width:50%;
 		max-width:500px;
+		max-height:50%;
 		top:2%;
 		p{
 			position:relative;
@@ -657,6 +658,7 @@ text-decoration:none;
 		float:right;
 		width:40%;
 		max-width:400px;
+		max-height:50%;
 		top:15%;
 	}
 	#landing-recent h3{
@@ -672,7 +674,7 @@ text-decoration:none;
 	#schools-list{
 		display:inline-block;
 		position:absolute;
-		height:10%;
+		max-height:10%;
 		bottom:10%;
 		left:0%;
 		ul{
