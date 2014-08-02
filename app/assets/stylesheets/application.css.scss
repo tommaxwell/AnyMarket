@@ -375,7 +375,6 @@ div.listing {
 	display:inline-block;
 	width:100%;
 	height:40px;
-	margin-top:10px;
   a{
     color:black;
     text-decoration:underline;
@@ -627,13 +626,12 @@ text-decoration:none;
 	margin:0 auto;
 	#sign_up_and_pitch{
 		display:inline-block;
-		position:relative;
-		float:left;
-		clear:both;
+		position:absolute;
 		width:50%;
 		max-width:500px;
 		max-height:50%;
-		top:2%;
+		top:5%;
+		left:0%;
 		p{
 			position:relative;
 			top:60px;
@@ -659,12 +657,12 @@ text-decoration:none;
 		}
 	}
 	#recently_added_preview{
-		position:relative;
-		float:right;
+		position:absolute;
 		width:40%;
 		max-width:400px;
 		max-height:50%;
 		top:15%;
+		right:0;
 	}
 	#landing-recent h3{
 		border-bottom:1px solid #bbb !important;
