@@ -671,6 +671,10 @@ text-decoration:none;
 			padding:0 !important;
 			li{
 				padding:20px;
+				display:inline;
+				position:relative;
+				float:right;
+				clear:both;
 			}
 		}
 		img{
