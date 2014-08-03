@@ -6,7 +6,7 @@
 		<h3 id="green-price"><%= number_to_currency(@product.decimal_price, precision: 2) %></h3>
 		<% if user_signed_in? %>
 			<% if @product.user_id == current_user.id %>
-				<h4 style="display:inline; margin-right:10px"><%= link_to "Edit listing", edit_item_path(@product), :method => :get %></h4>
+				<h4 style="display:inline; margin-right:10px"><%= link_to "Edit listing", edit_item_path(@product), :method => :get %></h4>&middot;
 				<h4 style="display:inline"><%= link_to "Delete listing", destroy_item_path(@product), method: :delete, data: { confirm: "Are you sure? Deleting a listing cannot be undone."} %></h4><br />
 			<% end %>
 		<% end %>
