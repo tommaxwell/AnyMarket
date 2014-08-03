@@ -26,8 +26,7 @@
           <% if f.sold_value == true %>
           <% t += 1 %>
             <div class="listing">
-              <h4><%= t %>.</h4> <h4><%= link_to f.name, view_item_path(f.id) %></h4><strong><p class="price">$<%= f.decimal_price %></p></strong>
-              <p><%= f.description[0..70].gsub(/\s\w+\s*$/, '...') %></p>
+              <h4><%= t %>.</h4> <h4><%= link_to f.name, view_item_path(f.id) %></h4><p><%= f.description[0..70].gsub(/\s\w+\s*$/, '...') %></p><p class="price">$<%= f.decimal_price %></p>
             </div>
         <% else %>
         <% end %>
