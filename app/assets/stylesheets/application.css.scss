@@ -328,6 +328,11 @@ div.listing {
 				color: #0fc37b !important;
 				font-weight:bold;
 			}
+			#by-info{
+				font-size:20px;
+				position:relative;
+				bottom:6px;
+			}
       h3{
         color:#bbb;
         font-size:22px;
@@ -536,6 +541,10 @@ text-decoration:none;
   padding:9px 23px 9px 23px !important;
   color:black !important;
   margin:0 !important;
+}
+
+#ask-question:hover{
+	background-color:#D5D5D5;
 }
 
 #send_question_wrapper {
