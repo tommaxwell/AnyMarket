@@ -20,7 +20,6 @@
 html,body{
 	width:100%;
 	height:100%;
-	font-family:"Open Sans", sans-serif;
 }
 
 textarea {
@@ -64,7 +63,7 @@ button:focus {
     display:inline-block;
     margin-left:10px;
 		position:relative;
-		top:27px;
+		top:28px;
   }
 }
 
@@ -112,12 +111,13 @@ button:focus {
 	z-index:1000;
   #your-listings-header {
    margin-top:20px !important;
-   font-size:18px;
+   font-size:21px;
    color:#bbb;
+   font-weight:bold;
 	 border-bottom:1px solid #CCC !important;
     .glyphicon-usd{
       font-size:18px;
-      top:3px;
+      top:2px;
     }
   }
 }
@@ -130,9 +130,6 @@ div.listing {
     font-weight:bold;
 		margin-right:5px;
   }
-	.counter{
-		font-weight:500;
-	}
   a:nth-of-type(1){
     border-bottom:1px solid rgba(0,0,0,0.1);
     text-decoration:none;
@@ -156,9 +153,7 @@ div.listing {
   }
   .price {
     display:inline;
-    color:#0fc37b !important;
-		font-weight:400;
-		font-size:14px;
+    color:#428bca;
   }
   p{
     margin-bottom:2px;
@@ -293,8 +288,8 @@ div.listing {
 
 #listing-container {
   position:relative;
-  top:10px;
-	margin-bottom:20px;
+  top:20px;
+	float:left;
   #product_left {
     position:relative;
     float:right;
@@ -379,8 +374,7 @@ div.listing {
 	display:inline-block;
 	width:100%;
 	height:40px;
-	position:relative;
-	top:-15px;
+	margin-top:10px;
   a{
     color:black;
     text-decoration:underline;
@@ -592,7 +586,7 @@ text-decoration:none;
 
 #otherlistings {
 	margin-top:40px;
-	font-size:24px;
+	font-weight:bold;
 }
 
 .other-listings{
@@ -611,12 +605,13 @@ text-decoration:none;
 		top:20px;
 		h3{
 			margin-top:20px !important;
-			font-size:18px;
+			font-size:21px;
 			color:#bbb;
+			font-weight:bold;
 			border-bottom:1px solid #CCC !important;
 			.glyphicon-time{
 				font-size:18px;
-				top:3px;
+				top:2px;
 				margin-right:10px;
 			}
 		}
@@ -631,12 +626,13 @@ text-decoration:none;
 	margin:0 auto;
 	#sign_up_and_pitch{
 		display:inline-block;
-		position:absolute;
+		position:relative;
+		float:left;
+		clear:both;
 		width:50%;
 		max-width:500px;
 		max-height:50%;
-		top:5%;
-		left:0%;
+		top:2%;
 		p{
 			position:relative;
 			top:60px;
@@ -662,12 +658,12 @@ text-decoration:none;
 		}
 	}
 	#recently_added_preview{
-		position:absolute;
+		position:relative;
+		float:right;
 		width:40%;
 		max-width:400px;
 		max-height:50%;
 		top:15%;
-		right:0;
 	}
 	#landing-recent h3{
 		border-bottom:1px solid #bbb !important;
