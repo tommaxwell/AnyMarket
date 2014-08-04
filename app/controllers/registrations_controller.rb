@@ -1,6 +1,13 @@
 class RegistrationsController < Devise::RegistrationsController
   before_filter :authenticate_user!, :except => [:after_inactive_sign_up_path_for]
   private
+	
+	def new 
+		respond_to do |format|
+			format.js
+			format.html
+		end
+	end
   
   def after_inactive_sign_up_path_for(user)
     new_customer_path
