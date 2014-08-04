@@ -734,8 +734,8 @@ text-decoration:none;
 	margin-right:8px;
 }
 
-@media screen and (max-height: 670px) {
-	#schools-list{
-		display:none;
-	}
+#available-at {
+	top:5px !important;
+	color:#bbb;
+	margin-bottom:0;
 }
