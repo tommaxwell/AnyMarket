@@ -2,6 +2,7 @@
 <html lang="en">
 <head meta name="viewport" content="width=device-width, initial-scale=1">
 	<title><%= @title %></title>
+	<%= favicon_link_tag 'logo.jpg' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag :defaults %>
@@ -12,7 +13,7 @@
 <div class="container-fluid">
 <% if signed_in?(:user) %>
   <div id="fixed-navbar">
-		<%= image_tag "logo.jpg", :id => "logo" %><a href="/"><h3 id="site-header">AnyMarket</h3></a><p id="tagline">safe, secure, verified selling.</p>
+		<a href="/"><%= image_tag "logo.jpg", :id => "logo" %><h3 id="site-header">AnyMarket</h3></a><p id="tagline">safe, secure, verified selling.</p>
     <ul id="nav-links">
       <li><a href="/conversations"><span class="glyphicon glyphicon-inbox"></span></a></li>
       <li><a href="/products/new">List an Item</a></li>
