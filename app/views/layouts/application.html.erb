@@ -12,7 +12,7 @@
 <div class="container-fluid">
 <% if signed_in?(:user) %>
   <div id="fixed-navbar">
-    <a href="/"><h3 id="site-header">AnyMarket</h3></a><p id="tagline">safe, secure, verified selling.</p>
+		<%= image_tag "logo.jpg" %><a href="/"><h3 id="site-header">AnyMarket</h3></a><p id="tagline">safe, secure, verified selling.</p>
     <ul id="nav-links">
       <li><a href="/conversations"><span class="glyphicon glyphicon-inbox"></span></a></li>
       <li><a href="/products/new">List an Item</a></li>
