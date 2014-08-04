@@ -733,3 +733,9 @@ text-decoration:none;
 	margin-top:23px;
 	margin-right:8px;
 }
+
+@media screen and (min-height: 670px) {
+	#schools-list{
+		display:none;
+	}
+}
