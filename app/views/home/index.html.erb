@@ -29,6 +29,7 @@
 	<div id="landing-wrapper">
 		<div id="sign_up_and_pitch">
 			<h3 id="pitch">Quick, easy,<br /> verified selling at your school.</h3>
+			<p>*Currently available at University of California, Berkeley</p>
 			<%= form_for User.new, :options => {:id => "new_listing"}, :url => {:controller => "registrations",:action => "create"} do |f| %>
 			<%= f.text_field :email, :id => "name_input", :autofocus => true, :required => true, :placeholder => "Email *.edu only", :class => "form_inputs" %><br />
 			<%= f.text_field :password, :id => "name_input", :required => true, :placeholder => "Password", :class => "form_inputs" %><br />
