@@ -14,7 +14,7 @@
       <% i += 1 %>
       <% if f.sold_value === false %>
           <div class="listing">
-            <h4 class="counter"><%= i %>.</h4> <h4><%= link_to f.name, view_item_path(f.id) %></h4><p><%= f.description[0..70].gsub(/\s\w+\s*$/, '...') %></p><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p>
+            <h4 class="counter"><%= i %>.</h4> <h4><%= link_to f.name, view_item_path(f.id) %></h4><p><%= f.description[0..65].gsub(/\s\w+\s*$/, '...') %></p><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p>
           </div>
       <% else %>
       <% end %>
@@ -26,7 +26,7 @@
           <% if f.sold_value == true %>
           <% t += 1 %>
             <div class="listing">
-              <h4 class="counter"><%= t %>.</h4> <h4><%= link_to f.name, view_item_path(f.id) %></h4><p><%= f.description[0..70].gsub(/\s\w+\s*$/, '...') %></p><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p>
+              <h4 class="counter"><%= t %>.</h4> <h4><%= link_to f.name, view_item_path(f.id) %></h4><p><%= f.description[0..65].gsub(/\s\w+\s*$/, '...') %></p><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p>
             </div>
         <% else %>
         <% end %>
