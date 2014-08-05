@@ -7,6 +7,10 @@ class CategoriesController < ApplicationController
        flash.now[:alert] = "Error. Check logs"
     end
   end
+	
+	def destroy
+		@category = Category.find(params[:id])
+	end
   
   def categories
     @categories = Category.all
