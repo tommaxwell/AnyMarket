@@ -70,7 +70,18 @@ $(document).on('click',function(e){
 	$("#login-modal-execute").click(function(){
 		$.get("/home/new", null, "script");
 	});
-
+	
+	if (!$('#login_wrapper > form').is(e.target) && $('#login_wrapper > form').has(e.target).length === 0 && !$('#login-modal-execute').is(e.target) && $('#login-modal-execute').has(e.target).length === 0){
+        $("#login_wrapper > form").remove();
+        $(".container-fluid").css("opacity","1");
+        $(".container-fluid").css("pointer-events","auto");
+        }
+    else{
+        $("#login_wrapper > form").fadeIn("fast");
+        $(".container-fluid").css("opacity","0.3");
+        $(".container-fluid").css("pointer-events","none");
+        }
+});
   
   $("#listings-toggle").click(function(event){
     event.preventDefault();

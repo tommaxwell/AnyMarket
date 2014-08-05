@@ -1,7 +1,7 @@
 <div id="login_wrapper">
 	<%= form_for new_user_session_path, :options => {:id => "new_listing"}, :url => {:controller => "devise/sessions",:action => "new"} do |f| %>
-				<%= f.text_field :email, :id => "name_input", :autofocus => true, :required => true, :placeholder => "Email *.edu only", :class => "form_inputs" %><br />
-				<%= f.text_field :password, :id => "name_input", :required => true, :placeholder => "Password", :class => "form_inputs" %><br />
+				<%= f.email_field :email, autofocus: true %><br />
+				<%= f.password_field :password, autocomplete: "off" %><br />
 				<%= f.submit "Login", :id => "submit",:id => "submit_item_btn" %>
 				<% end %>
 </div>

@@ -31,8 +31,8 @@
 			<h3 id="pitch">Quick, easy,<br /> verified selling at your school.</h3>
 			<p id="available-at">*Currently available at University of California, Berkeley</p>
 			<%= form_for User.new, :options => {:id => "new_listing"}, :url => {:controller => "registrations",:action => "create"} do |f| %>
-			<%= f.text_field :email, :id => "name_input", :autofocus => true, :required => true, :placeholder => "Email *.edu only", :class => "form_inputs" %><br />
-			<%= f.text_field :password, :id => "name_input", :required => true, :placeholder => "Password", :class => "form_inputs" %><br />
+			<%= f.email_field :email, :id => "name_input", :autofocus => true, :required => true, :placeholder => "Email *.edu only", :class => "form_inputs" %><br />
+			<%= f.password_field :password, :id => "name_input", :required => true, :placeholder => "Password", :class => "form_inputs" %><br />
 			<%= f.submit "Join", :id => "submit",:id => "submit_item_btn" %>
 			<% end %>
 			<p>AnyMarket is the simple solution to buying/selling products locally. We provide an environment for people to feel safe, providing users with information on who they are meeting before they purchase an item. No more having to run to the ATM to grab cash or having people outbid you on items. By using AnyMarket, anything you may want is just a few clicks away!</p>
