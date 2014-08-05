@@ -32,7 +32,7 @@
     <a href="/"><%= image_tag "logo.jpg", :id => "logo" %><h3 id="site-header">AnyMarket</h3></a>
     <ul id="nav-links">
 			<li><a href="mailto:hi@anymarket.co">Contact Us</a></li>
-			<li><a href="/users/sign_in">Login</a></li>
+			<li><a href="/users/sign_in" id="login-modal-execute">Login</a></li>
     </ul>
   </div>
   
@@ -84,6 +84,10 @@ $(document).on('click',function(e){
   });
   
   $(".alert-success").fadeOut(2000);
+	
+	$("#login-modal-execute").click(function(){
+		$.get("/registrations/new", null, "script");
+	})
 </script>
 </body>
 </html>

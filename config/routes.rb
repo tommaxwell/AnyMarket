@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   get "/conversations/:id/send_message(.:format)" => "conversations#send_message", :as => "send_message"
   post "/conversations/send_this_message(.:format)" => "conversations#send_this_message", :as => "send_this_message"
   
+	get "/registrations/new(.:format)" => "registrations#new"
+	
 resources :messages do
   member do
     post :new
