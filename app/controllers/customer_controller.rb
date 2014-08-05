@@ -19,7 +19,7 @@ class CustomerController < ApplicationController
       current_user.braintree_customer_id = @result.customer.id
       current_user.customer_added = true
       current_user.save!
-      render :action => "confirm"
+			redirect_to "/"
     elsif current_user.has_payment_info?
       current_user.with_braintree_data!
       _set_customer_edit_tr_data
