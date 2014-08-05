@@ -567,6 +567,10 @@ text-decoration:none;
   }
 }
 
+#login_wrapper {
+	@extend #send_question_wrapper;
+}
+
 .page-header {
   margin-top:50px !important;
 	border-bottom:1px solid #EEE !important;
