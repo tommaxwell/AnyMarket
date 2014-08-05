@@ -570,6 +570,11 @@ text-decoration:none;
 #login_wrapper {
 	@extend #send_question_wrapper;
 	z-index:1000;
+	width:25% !important;
+	input[type="text"], input[type="submit"]{
+		width:100% !important;
+		margin-bottom:10px;
+	}
 }
 
 .page-header {
