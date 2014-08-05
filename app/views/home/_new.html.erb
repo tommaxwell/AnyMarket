@@ -1,6 +1,6 @@
 <div id="login_wrapper">
-	<%= form_for new_user_session_path, :options => {:id => "new_listing"}, :url => {:controller => "devise/sessions",:action => "new"} do |f| %>
-				<%= f.email_field :email, autofocus: true %><br />
+	<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+				<%= f.text_field :email, autofocus: true %><br />
 				<%= f.password_field :password, autocomplete: "off" %><br />
 				<%= f.submit "Login", :id => "submit",:id => "submit_item_btn" %>
 				<% end %>
