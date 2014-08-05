@@ -569,6 +569,7 @@ text-decoration:none;
 
 #login_wrapper {
 	@extend #send_question_wrapper;
+	z-index:1000;
 }
 
 .page-header {
