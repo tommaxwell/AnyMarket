@@ -203,7 +203,6 @@ div.listing {
 
   #list-header{
     position:relative;
-    top:30px;
     margin-bottom:0;
     font-weight:bold;
   }
@@ -211,7 +210,7 @@ div.listing {
   #onemantrash{
     @extend #list-header;
     font-size:17px;
-    font-weight:600;
+    font-weight:400;
     margin-top:5px;
   }
 
@@ -426,7 +425,7 @@ div.listing {
 
 .new_product {
   width:100%;
-  margin-top:50px;
+  margin-top:20px;
 }
 
 #about_delivery_box {
@@ -575,9 +574,13 @@ text-decoration:none;
 		width:100% !important;
 		padding:5px;
 		margin-bottom:10px;
+		border:1px solid #bbb;
 	}
 	input[type="submit"]{
 		width:100%;
+	}
+	input[type="password"]{
+		margin-top:7px;
 	}
 }
 
@@ -673,6 +676,7 @@ text-decoration:none;
 				max-width:300px;
 				margin: 5px 0 5px 0;
 				padding:4px;
+				border:1px solid #bbb;
 			}
 			input[type="submit"]{
 				width:300px;
