@@ -307,6 +307,9 @@ div.listing {
 		hr{
 			border-color:#CCC;
 		}
+		a:hover{
+			color:#428bca;
+		}
   }
 
   #product_right {
@@ -586,7 +589,7 @@ text-decoration:none;
 
 .page-header {
   margin-top:50px !important;
-	border-bottom:1px solid #EEE !important;
+	border-bottom:1px solid #CCC !important;
 }
 
 #list-first-wrapper {

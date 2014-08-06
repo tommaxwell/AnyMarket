@@ -23,9 +23,14 @@
     <div id="about_delivery_box"><h4>Seller's Meeting Preference</h4><%= @product.about_delivery %></div>
     <% else %>
     <% end %>
+		<div id="share-links">
+			<h3>Share this item:</h3>
+			<a href="https://twitter.com/share" class="twitter-share-button" data-via="anymarket" data-related="anymarket" data-count="none">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</div>
 		<% otherlistings = User.find(@product.user_id).products.limit(2).where.not(id: @product.id) %>
 		<% if otherlistings.any? %>
-		<h4 id="otherlistings">Other listings by <%= User.find(@product.user_id).first_name %>:</h4>
+		<h4 id="otherlistings">More listings by <%= User.find(@product.user_id).first_name %>:</h4>
 			<% otherlistings.each do |f| %>
 				<div class="listing">
             <h4 class="other-listings"><%= link_to f.name, view_item_path(f.id) %></h4><p><%= f.description[0..65].gsub(/\s\w+\s*$/, '...') %></p><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p>
@@ -41,7 +46,7 @@
     <hr class="black-hr">
     <% if @product.category_id? %>
       <h3>Category:</h3>
-      <a href="/categories/<%= @product.category.id %>"><%= @product.category.name %></a>
+      <a href="/categories/<%= @product.category.id %>" id="product-category-link"><%= @product.category.name %></a>
     <% else %>
     <% end %>
   </div>
