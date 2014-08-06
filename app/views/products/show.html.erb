@@ -27,6 +27,7 @@
 			<h3 style="color:black">Share this item:</h3>
 			<a href="https://twitter.com/share" class="twitter-share-button" data-via="anymarket" data-related="anymarket" data-count="none">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
 		</div>
 		<hr>
 		<% otherlistings = User.find(@product.user_id).products.limit(2).where.not(id: @product.id) %>
