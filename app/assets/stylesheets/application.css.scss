@@ -767,5 +767,11 @@ text-decoration:none;
 }
 
 .fb_iframe_widget {
-	bottom:5px;
+	iframe {
+		width: auto !important;
+		height: auto !important;
+	}
+	form {
+		margin:5px !important;
+	}
 }
