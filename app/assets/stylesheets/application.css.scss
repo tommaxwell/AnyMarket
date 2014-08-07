@@ -782,5 +782,9 @@ text-decoration:none;
 	float:right;
 	img {
 		margin-top:17px;
+		cursor:pointer;
+	}
+	.dropdown-menu>li>a {
+		width:100%;
 	}
 }
