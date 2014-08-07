@@ -11,11 +11,10 @@
 // about supported directives.
 //
 //= require turbolinks
-//= require jquery.validate
-//= require bootstrap-dropdown
 //= require bootstrap-sprockets
 //= require bootstrap
 //= require jquery
 //= require jquery_ujs
+//= require jquery.validate
 //= require_tree .
 
