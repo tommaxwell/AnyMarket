@@ -17,3 +17,4 @@
 //= require jquery
 //= require jquery.validate
 //= require bootstrap-sprockets
+//= require bootstrap
