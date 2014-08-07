@@ -766,20 +766,12 @@ text-decoration:none;
 	cursor:pointer;
 }
 
-.fb_iframe_widget {
-	iframe {
-		width: auto !important;
-		height: auto !important;
-	}
-	form {
-		margin:5px !important;
-	}
+#like, #tweet, #pin {
+	display:inline-block;
+	margin: 0 5px 0 0;
 }
 
-.pluginConnectButton {
-	margin:5px;
-}
-
-.pluginButton {
-margin:5px !important;
+#like {
+	position:relative;
+	bottom:5px;
 }
