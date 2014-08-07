@@ -632,6 +632,7 @@ text-decoration:none;
 #index-wrapper {
 	position:relative;
 	float:left;
+	clear:both;
 	width:80%;
 	max-width:800px;
 	#most-recent{
@@ -781,10 +782,17 @@ text-decoration:none;
 	position:relative;
 	float:right;
 	img {
-		margin-top:17px;
+		margin-top:17px;	
 		cursor:pointer;
 	}
 	.dropdown-menu>li>a {
 		width:100%;
+	}
+	#mailbox-url {
+		font-size:18px;
+	  span {
+			margin-top:28px;
+			margin-right:20px;
+		}
 	}
 }
