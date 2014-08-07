@@ -24,12 +24,12 @@
   <div id="fixed-navbar">
 			<a href="/"><%= image_tag "logo.jpg", :id => "logo" %><h3 id="site-header">AnyMarket</h3></a><p id="tagline">safe, secure, verified selling.</p>
 		<div id="menu">
+			<a href="/products/new">List an Item</a>
 			<a href="/conversations" id="mailbox-url"><span class="glyphicon glyphicon-inbox"></span></a>
 			<%= image_tag current_user.avatar.url(:thumb).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/'), :id => "profile_picture", :width => "30", :height => "30", :class => "dropdown-toggle", :data => {:toggle => "dropdown"} %>
 			<a href="#" class="user-arrow" id="dropdown-arrow" data-toggle="dropdown"><span class="caret"></span></a>
 		<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
 			<li role="presentation"><a role="menuitem" tabindex="-1" href="/users/<%= current_user.id %>">Profile</a></li>
-			<li role="presentation"><a role="menuitem" tabindex="-1" href="/products/new">List an Item</a></li>
 			<li role="presentation"><a role="menuitem" tabindex="-1" href="/users/edit">Settings</a></li>
 			<li role="presentation"><a role="menuitem" tabindex="-1" href="/users/sign_out">Logout</a></li>
 		</ul>
