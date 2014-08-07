@@ -53,6 +53,7 @@
     <% end %>
   </div>
 </div>
+<%= javascript_include_tag "application" %>
 <script type="text/javascript">
   $("#ask-question").click(function(){
     $.ajax({
@@ -61,5 +62,17 @@
       data: {item: "<%= @product.name %>"}
     });
   });
+	$(document).on('click',function(e){
+    if (!$('#login_wrapper > form').is(e.target) && $('#login_wrapper > form').has(e.target).length === 0 && !$('#login-modal-execute').is(e.target) && $('#login-modal-execute').has(e.target).length === 0){
+        $("#login_wrapper > form").remove();
+        $(".container-fluid").css("opacity","1");
+        $(".container-fluid").css("pointer-events","auto");
+        }
+    else{
+        $("#login_wrapper > form").fadeIn("fast");
+        $(".container-fluid").css("opacity","0.3");
+        $(".container-fluid").css("pointer-events","none");
+        }
+	});
 </script>
 <script type="text/javascript" async  data-pin-hover="true" src="//assets.pinterest.com/js/pinit.js"></script>
