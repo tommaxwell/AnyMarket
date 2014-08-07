@@ -795,4 +795,16 @@ text-decoration:none;
 			margin-right:20px;
 		}
 	}
+	#dropdown-arrow {
+		position:relative;
+		float:right;
+		display:inline;
+		bottom:17px;
+		margin-left:5px;
+		.caret {
+			border-top: 6px solid !important;
+			border-right: 6px solid transparent !important;
+			border-left: 6px solid transparent !important;
+		}
+	}
 }
