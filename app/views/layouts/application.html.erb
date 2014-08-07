@@ -24,7 +24,7 @@
   <div id="fixed-navbar">
 		<a href="/"><%= image_tag "logo.jpg", :id => "logo" %><h3 id="site-header">AnyMarket</h3></a><p id="tagline">safe, secure, verified selling.</p>
     <div class="dropdown">
-    <%= image_tag current_user.avatar.url(:thumb).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/'), :id => "profile_picture", :width => "30", :height => "30", :class => "dropdown-toggle", :html => {data-toggle: "dropdown"} %>
+    <%= image_tag current_user.avatar.url(:thumb).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/'), :id => "profile_picture", :width => "30", :height => "30", :class => "dropdown-toggle", :data => {:toggle => "modal"} %>
   <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
     <li role="presentation"><a role="menuitem" tabindex="-1" href="/users/<%= current_user.id %>">Profile</a></li>
     <li role="presentation"><a role="menuitem" tabindex="-1" href="/products/new">List an Item</a></li>
