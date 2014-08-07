@@ -25,9 +25,9 @@
     <% end %>
 		<div id="share-links">
 			<h3 style="color:black">Share this item:</h3>
-			<%= tweet_button(via: "@anymarket", count: "none") %>
-			<%= like_button(562365530534757) %>
-			<%= pinit_button(media: @product.photo.url, description: @product.description) %>
+			<div id="tweet"><%= tweet_button(via: "anymarket", count: "none") %></div>
+			<div id="like"><%= like_button(app_id: "562365530534757", layout: "button_count") %></div>
+			<div id="pin"><%= pinit_button(media: @product.photo.url.sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/'), description: @product.description) %></div>
 		</div>
 		<hr>
 		<% otherlistings = User.find(@product.user_id).products.limit(2).where.not(id: @product.id) %>
