@@ -172,19 +172,14 @@ div.listing {
 #categories-index-list {
   position:relative;
   float:right;
-  top:30px;
-  padding:20px;
+	clear:both;
+	text-align:right;
   margin:0;
   width:100%;
   max-width:200px;
   border-radius:3px;
-  margin-bottom:36px;
-  border-top:1px solid #C4C4C4;
-  border-bottom:1px solid #E2E2E2;
-  border-left:1px solid #DADADA;
-  border-right:1px solid #DADADA;
   h3 {
-    margin-top:0px;
+    margin-top:30px;
   }
   p{
     font-size:16px;
