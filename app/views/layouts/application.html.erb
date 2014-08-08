@@ -2,6 +2,8 @@
 <html lang="en">
 <head meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:description" content="<%= @product.description %>" />
+	<meta property="og:title" content="<%= @product.name %>" />
+	<meta property="og:image" content="<%= @product.photo.url.sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/') %>" />
 	<title><%= @title %></title>
 	<%= favicon_link_tag 'favicon.ico' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
