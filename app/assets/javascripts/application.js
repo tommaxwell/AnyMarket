@@ -16,5 +16,7 @@
 //= require jquery.validate
 //= require bootstrap-sprockets
 //= require bootstrap
+//= require social
 //= require_tree .
+
 
