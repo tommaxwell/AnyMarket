@@ -609,6 +609,7 @@ text-decoration:none;
 	font-weight:bold;
 	margin-top:0;
 	margin-bottom:15px;
+	font-size:28px;
 }
 
 #otherlistings {
@@ -806,6 +807,9 @@ text-decoration:none;
 			border-right: 5px solid transparent !important;
 			border-left: 5px solid transparent !important;
 		}
+	}
+	#dropdown-arrow:hover {
+		color:#A2A2A2;
 	}
 	#list-btn {
 		font-size:15px;
