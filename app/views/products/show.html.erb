@@ -26,7 +26,7 @@
 		<div id="share-links">
 			<h3 style="color:black">Share this item:</h3>
 			<div id="tweet"><%= tweet_button(via: "anymarket", count: "none") %></div>
-			<div class="fb-share-button" data-href="/products/<%= @product.id %>" data-type="button"></div>
+			<div class="fb-share-button" data-href="/products/<%= @product.id %>" data-type="button" data-description="<%= @product.description %>"></div>
 			<div id="pin"><%= pinit_button(media: @product.photo.url.sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/'), description: @product.description) %></div>
 		</div>
 		<hr>
