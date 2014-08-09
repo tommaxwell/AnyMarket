@@ -123,13 +123,19 @@ button:focus {
 }
 
 div.listing {
-  margin:25px 0 25px 0;
-  border-margin:3px;
+  margin:15px 0 15px 0;
   h4 {
     display:inline;
     font-weight:bold;
-		margin-right:5px;
+		margin-bottom:0;
+		margin-top:0;
   }
+	a{
+		text-align:left;
+		position:relative;
+		float:left;
+		display:inline-block;
+	}
   a:nth-of-type(1){
     border-bottom:1px solid rgba(0,0,0,0.1);
     text-decoration:none;
@@ -737,6 +743,11 @@ text-decoration:none;
 }
 
 .counter {
+	position:relative;
+	float:left;
+	margin-top:0;
+	margin-bottom:0;
+	margin-right:10px;
 	font-weight:500 !important;
 }
 
