@@ -639,8 +639,10 @@ text-decoration:none;
 	width:80%;
 	max-width:800px;
 	#most-recent{
+		display:inline-block;
 		position:relative;
-		top:20px;
+		float:left;
+		top:10px;
 		h3{
 			display:inline-block;
 			margin:20px 0 10px 0 !important;
