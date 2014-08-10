@@ -476,6 +476,7 @@ div.listing {
   border-radius:3px;
   position:relative;
   top:20px;
+	margin-bottom:20px;
   h4{
     display:inline-block;
     position:relative;
@@ -502,9 +503,9 @@ div.listing {
 
 #category-header{
   position:relative;
-  top:10px;
+	top:20px;
   h2{
-    margin:30px 0 20px;
+    margin-bottom:20px;
   }
 }
 
@@ -591,7 +592,6 @@ text-decoration:none;
 }
 
 .page-header {
-  margin-top:50px !important;
 	border-bottom: none !important;
 }
 
@@ -845,5 +845,5 @@ text-decoration:none;
 }
 
 .index_categories{
-	margin-bottom:10px;
+	margin-bottom:20px;
 }
