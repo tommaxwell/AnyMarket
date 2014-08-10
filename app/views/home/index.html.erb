@@ -1,5 +1,11 @@
 <% @title="AnyMarket - Home" %>
 <% if signed_in?(:user) %>
+<div id="categories-page-wrapper">
+  <h4>Explore categories</h3>
+  <% @categories.each do |f| %>
+    <p class="category-page-category"><%= link_to f.name, view_category_path(f.id) %></p>
+  <% end %>
+</div>
 <div id="index-wrapper">
 	<div id="your-listings">
 		<h3 id="your-listings-header" class="page-header"><span class="glyphicon glyphicon-usd"></span> What You're Selling</h3>
@@ -50,8 +56,3 @@
 		</div>
 	<% end %>
 </div>
-<% if user_signed_in? %>
-	<script type="text/javascript">
-		$.get("/categories/long_categories", null, "script");
-	</script>
-<% end %>

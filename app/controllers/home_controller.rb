@@ -10,4 +10,8 @@ class HomeController < ApplicationController
 		end
 	end
 	
+	def categories
+		@categories = Category.all
+	end
+	
 end
