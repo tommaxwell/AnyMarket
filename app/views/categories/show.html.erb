@@ -1,6 +1,11 @@
 <% @title= @category.name + " on AnyMarket" %>
 <div id="category-page-wrapper">
-  <%= render :partial => "categories/long_categories" %>
+  <div id="categories-page-wrapper">
+		<h4>Explore categories</h4>
+		<% @categories.each do |f| %>
+			<p class="category-page-category"><%= link_to f.name, view_category_path(f.id) %></p>
+		<% end %>
+</div>
   <div id="category-header">
     <h2 class="page-header"><%= @category.name %> <small id="category-page-description"><%= @category.description %></small><% if current_user.school == "University of California, Berkeley" %><%= image_tag "ucb-logo.jpg", :class => "school-pic" %><% else %><% end %></h2>
   <% notsold = @category.products.where("sold_value = false").order("created_at DESC") %>
