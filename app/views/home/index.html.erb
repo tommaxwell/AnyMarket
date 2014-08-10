@@ -1,6 +1,6 @@
 <% @title="AnyMarket - Home" %>
 <% if signed_in?(:user) %>
-<div id="categories-page-wrapper">
+<div id="categories-page-wrapper" class="index_categories">
   <h4>Explore categories</h4>
   <% @categories.each do |f| %>
     <p class="category-page-category"><%= link_to f.name, view_category_path(f.id) %></p>
