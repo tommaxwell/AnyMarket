@@ -27,14 +27,6 @@ class CategoriesController < ApplicationController
 		end
   end
   
-  def long_categories
-    @categories = Category.all
-    respond_to do |format|
-			format.js
-      format.html
-    end
-  end
-  
   def show
     @category = Category.find(params[:id])
     respond_to do |format|

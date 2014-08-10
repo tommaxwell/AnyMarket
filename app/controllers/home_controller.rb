@@ -1,4 +1,10 @@
 class HomeController < ApplicationController	
+	before_filter :categories
+	
+	def categories
+		@categories = Category.all 
+	end
+	
   def index
     @user = current_user
   end
