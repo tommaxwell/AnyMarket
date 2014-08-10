@@ -30,6 +30,7 @@ class CategoriesController < ApplicationController
   def long_categories
     @categories = Category.all
     respond_to do |format|
+			format.js
       format.html
     end
   end
