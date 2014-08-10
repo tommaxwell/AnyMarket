@@ -12,14 +12,6 @@ class CategoriesController < ApplicationController
 		@category = Category.find(params[:id])
 	end
   
-  def categories
-    @categories = Category.all
-    respond_to do |format|
-      format.js
-      format.html
-    end
-  end
-  
   def new 
     respond_to do |format|
 			format.js

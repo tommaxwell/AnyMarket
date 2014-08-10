@@ -1,8 +1,0 @@
-<div id="wrapper">
-  <div id="categories-index-list">
-    <h3>Browse Categories</h3>
-    <% @categories.each do |f| %>
-      <p><%= link_to f.name, view_category_path(f.id) %></p>
-    <% end %>
-  </div>
-</div>

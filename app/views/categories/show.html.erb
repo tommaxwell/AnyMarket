@@ -1,8 +1,7 @@
-
+<% @title = @category.name + " on AnyMarket" %>
 <div id="category-page-wrapper">
   <div id="categories-page-wrapper">
 		<h4>Explore categories</h4>
-		<% @categories = Category.all %>
 		<% @categories.each do |f| %>
 			<p class="category-page-category"><%= link_to f.name, view_category_path(f.id) %></p>
 		<% end %>
