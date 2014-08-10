@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class HomeController < ApplicationController	
   def index
     @user = current_user
   end
@@ -8,10 +8,6 @@ class HomeController < ApplicationController
 			format.js
 			format.html
 		end
-	end
-	
-	def categories
-		@categories = Category.all
 	end
 	
 end
