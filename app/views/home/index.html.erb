@@ -3,7 +3,7 @@
 <div id="categories-page-wrapper" class="index_categories">
   <h4>Explore categories</h4>
   <% @categories.each do |f| %>
-    <p class="category-page-category"><%= link_to f.name, view_category_path(f.id) %></p>&middot;
+    <p class="category-page-category"><%= link_to f.name, view_category_path(f.id) %></p>
   <% end %>
 </div>
 <div id="index-wrapper">
