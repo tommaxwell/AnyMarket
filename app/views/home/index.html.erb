@@ -61,7 +61,7 @@
 	$("#preview_toggle").click(function(){
 		
     $.ajax({
-      url: "/products/photo_preview" + $("#preview_toggle").attr("data-id"),
+      url: "/products/photo_preview" + "/" + $("#preview_toggle").attr("data-id"),
       type: "get",
       data: {id: $("#preview_toggle").attr("data-id")}
     });
