@@ -15,7 +15,7 @@
 		<% notsold.each do |f| %>
 			<% i += 1 %>
 			<div class="listing">
-				<h4 class="counter"><%= i %>.</h4> <%= link_to view_item_path(f.id), :method => "get" do  %><h4><%= f.name %></h4><% end %><p><%= truncate(f.description, :length => 80) %></p> <strong><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p></strong><% if f.photo? %><a id="preview_toggle" data-id="<%= f.id %>"><%= image_tag Product.find(f.id).photo.url(:thumb).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/') %></a><% else %><% end %>
+				<h4 class="counter"><%= i %>.</h4> <%= link_to view_item_path(f.id), :method => "get" do  %><h4><%= f.name %></h4><% end %><p><%= truncate(f.description, :length => 80) %></p> <strong><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p></strong><% if f.photo.url? %><a id="preview_toggle" data-id="<%= f.id %>"><%= image_tag Product.find(f.id).photo.url(:thumb).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/') %></a><% else %><% end %>
 			</div>
 			<% end %>
 		</div>
