@@ -59,6 +59,7 @@
 <%= javascript_include_tag "application" %>
 <script type="text/javascript">
 	$("#preview_toggle").click(function(){
+		alert($(this).data("id"));
     $.ajax({
       url: "/products/photo_preview" + "/" + $(this).data("id"),
       type: "get"
