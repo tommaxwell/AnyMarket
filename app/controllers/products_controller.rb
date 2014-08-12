@@ -51,6 +51,13 @@ class ProductsController < ApplicationController
       format.html
     end
   end
+	
+	def photo_preview 
+		respond_to do |format|
+			format.js
+			format.html
+		end
+	end
   
   # all products added by a specific user
   def user_products

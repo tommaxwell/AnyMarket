@@ -1,0 +1,6 @@
+<div id="photo-preview-container">
+	<%= image_tag @product.photo.url(:large).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/') %>
+	<div id="info-preview-container">
+		<h4><%= @product.name %></h4>
+	</div>
+</div>
