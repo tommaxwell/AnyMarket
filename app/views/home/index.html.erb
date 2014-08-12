@@ -59,11 +59,10 @@
 <%= javascript_include_tag "application" %>
 <script type="text/javascript">
 	$("#preview_toggle").click(function(){
-		
     $.ajax({
-      url: "/products/photo_preview" + "/" + $("#preview_toggle").attr("data-id"),
+      url: "/products/photo_preview" + "/" + $("#preview_toggle").data("id"),
       type: "get",
-      data: {id: $("#preview_toggle").attr("data-id")}
+      data: {id: $("#preview_toggle").data("id")}
     });
   });
 	$(document).on('click',function(e){
