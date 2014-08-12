@@ -61,8 +61,7 @@
 	$("#preview_toggle").click(function(){
     $.ajax({
       url: "/products/photo_preview" + "/" + $("#preview_toggle").data("id"),
-      type: "get",
-      data: {id: $("#preview_toggle").data("id")}
+      type: "get"
     });
   });
 	$(document).on('click',function(e){
