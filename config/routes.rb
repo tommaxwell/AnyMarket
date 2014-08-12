@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get "/products/:id/edit(.:format)" => "products#edit", :as => "edit_item"
   patch "/products/:id/update(.:format)" => "products#update"
   delete "/products/:id(.:format)" => "products#destroy", :as => "destroy_item"
-	get "/products/:id/photo_preview(.:format)" => "products#photo_preview"
+	get "/products/photo_preview/:id(.:format)" => "products#photo_preview"
   
   #categories
   get "/categories/new(.:format)" => "categories#new"

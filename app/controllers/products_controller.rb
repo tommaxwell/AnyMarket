@@ -53,6 +53,7 @@ class ProductsController < ApplicationController
   end
 	
 	def photo_preview 
+		@product = Product.find(params[:id])
 		respond_to do |format|
 			format.js
 			format.html
