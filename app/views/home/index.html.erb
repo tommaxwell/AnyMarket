@@ -60,7 +60,7 @@
 <script type="text/javascript">
 	$("#preview_toggle").click(function(){
     $.ajax({
-      url: "/products/photo_preview" + "/" + $("#preview_toggle").data("id"),
+      url: "/products/photo_preview" + "/" + $(this).data("id"),
       type: "get"
     });
   });
