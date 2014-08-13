@@ -857,6 +857,13 @@ text-decoration:none;
 	@extend #send_question_wrapper;
 	z-index:1000;
 	width:600px;
+	background-color:white;
+	border:1px solid #bbb;
+	border-radius:3px;
+	padding:5px;
+	img{
+		width:100%;
+	}
 }
 
 #camera-icon-preview {
