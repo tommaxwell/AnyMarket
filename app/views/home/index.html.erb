@@ -64,16 +64,4 @@
       type: "get"
     });
   });
-	$(document).on('click',function(e){
-    if (!$('div#photo_preview').is(e.target) && $('div#photo_preview').has(e.target).length === 0){
-        $("div#photo_preview").remove();
-        $(".container-fluid").css("opacity","1");
-        $(".container-fluid").css("pointer-events","auto");
-        }
-    else{
-        $("div#photo_preview").fadeIn("fast");
-        $(".container-fluid").css("opacity","0.3");
-        $(".container-fluid").css("pointer-events","none");
-        }
-	});
 </script>
