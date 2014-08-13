@@ -27,7 +27,7 @@
 		<h3 id="your-listings-header" class="page-header"><span class="glyphicon glyphicon-time"></span>Recently Added In Your Network</h3>
 		<% recentlistings.each do |f| %>
 			<div class="listing">
-							<a href="/users/<%= f.user_id %>" class="nounderline"><%= image_tag User.find(f.user_id).avatar.url(:thumb).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/'), :id => "categories_profile_picture", :width => "30", :height => "30" %></a><h4><%= link_to f.name, view_item_path(f.id) %></h4><p><%= truncate(f.description, :length => 80) %></p><strong><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p></strong><% if f.photo? %><a class="preview_toggle" data-id="<%= f.id %>"><%= image_tag Product.find(f.id).photo.url(:thumb).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/'), :width => "30", :height => "30" %></a><% end %>
+							<a href="/users/<%= f.user_id %>" class="nounderline"><%= image_tag User.find(f.user_id).avatar.url(:thumb).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/'), :id => "categories_profile_picture", :width => "30", :height => "30" %></a><h4><%= link_to f.name, view_item_path(f.id) %></h4><p><%= truncate(f.description, :length => 80) %></p><strong><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p></strong><% if f.photo? %><%= image_tag Product.find(f.id).photo.url(:thumb).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/'), :width => "30", :height => "30", :class => "preview_toggle", :data => {:id => "<%= f.id %>"} %><% end %>
 						</div>
 		<% end %>
 	</div>
@@ -59,9 +59,9 @@
 <%= javascript_include_tag "application" %>
 <script type="text/javascript">
 	$(".preview_toggle").click(function(){
-		$.get("/products/photo_preview" + "/" + $(this).data("id"), null, "script").trigger("photoPreview");
+		$.get("/products/photo_preview" + "/" + $(this).data("id"), null, "script");
   });
-	$(document).on('photoPreview',function(e){
+	$(document).on('click',function(e){
     if (!$('#photo_preview > #inner-preview-container').is(e.target) && $('#photo_preview > #inner-preview-container').has(e.target).length === 0 && !$('.preview_toggle').is(e.target) && $('.preview_toggle').has(e.target).length === 0){
         $("#photo_preview > #inner-preview-container").remove();
         $(".container-fluid").css("opacity","1");
