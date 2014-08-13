@@ -2,7 +2,7 @@
 <html lang="en">
 <head meta name="viewport" content="width=device-width, initial-scale=1">
 	<title><%= @title %></title>
-	
+	<%= favicon_link_tag 'favicon.ico' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag :defaults %>
@@ -67,19 +67,18 @@
   $("#past-listings").hide();
   $("#prof_default").addClass("active");
 
-		$(document).on('click',function(e){
-				if (!$('#send_question_wrapper > form').is(e.target) && $('#send_question_wrapper > form').has(e.target).length === 0 && !$('#ask-question').is(e.target) && $('#ask-question').has(e.target).length === 0){
-						$("#send_question_wrapper > form").remove();
-						$(".container-fluid").css("opacity","1");
-						$(".container-fluid").css("pointer-events","auto");
-						}
-				else{
-						$("#send_question_wrapper > form").fadeIn("fast");
-						$(".container-fluid").css("opacity","0.3");
-						$(".container-fluid").css("pointer-events","none");
-						}
-		});
-
+$(document).on('click',function(e){
+    if (!$('#send_question_wrapper > form').is(e.target) && $('#send_question_wrapper > form').has(e.target).length === 0 && !$('#ask-question').is(e.target) && $('#ask-question').has(e.target).length === 0){
+        $("#send_question_wrapper > form").remove();
+        $(".container-fluid").css("opacity","1");
+        $(".container-fluid").css("pointer-events","auto");
+        }
+    else{
+        $("#send_question_wrapper > form").fadeIn("fast");
+        $(".container-fluid").css("opacity","0.3");
+        $(".container-fluid").css("pointer-events","none");
+        }
+});
 	
 	$("#login-modal-execute").click(function(){
 		$.get("/home/new", null, "script");
