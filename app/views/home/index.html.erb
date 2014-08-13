@@ -58,19 +58,4 @@
 </div>
 <%= javascript_include_tag "application" %>
 <script type="text/javascript">
-	$(".preview_toggle").click(function(){
-		$.get("/products/photo_preview" + "/" + $(this).data("id"), null, "script");
-  });
-	$(document).on('click',function(e){
-    if (!$('#photo_preview > #inner-preview-container').is(e.target) && $('#photo_preview > #inner-preview-container').has(e.target).length === 0 && !$('.preview_toggle').is(e.target) && $('.preview_toggle').has(e.target).length === 0){
-        $("#photo_preview > #inner-preview-container").remove();
-        $(".container-fluid").css("opacity","1");
-        $(".container-fluid").css("pointer-events","auto");
-        }
-    else{
-        $("#photo_preview > #inner-preview-container").fadeIn("fast");
-        $(".container-fluid").css("opacity","0.3");
-        $(".container-fluid").css("pointer-events","none");
-        }
-	});
 </script>
