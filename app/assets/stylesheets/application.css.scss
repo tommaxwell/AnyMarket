@@ -852,3 +852,8 @@ text-decoration:none;
 .preview_toggle {
 	cursor:pointer;
 }
+
+#photo_preview {
+	@extend #send_question_wrapper;
+	z-index:1000;
+}

@@ -65,13 +65,13 @@
     });
   });
 	$(document).on('click',function(e){
-    if (!$('#send_question_wrapper').is(e.target) && $('#send_question_wrapper').has(e.target).length === 0 && !$('.preview_toggle').is(e.target) && $('.preview-toggle').has(e.target).length === 0){
-        $("#send_question_wrapper").remove();
+    if (!$('#photo_preview').is(e.target) && $('#photo_preview').has(e.target).length === 0 && !$('.preview_toggle').is(e.target) && $('.preview-toggle').has(e.target).length === 0){
+        $("#photo_preview").remove();
         $(".container-fluid").css("opacity","1");
         $(".container-fluid").css("pointer-events","auto");
         }
     else{
-        $("#send_question_wrapper").fadeIn("fast");
+        $("#photo_preview").fadeIn("fast");
         $(".container-fluid").css("opacity","0.3");
         $(".container-fluid").css("pointer-events","none");
         }
