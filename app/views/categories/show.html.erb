@@ -12,7 +12,7 @@
 		<% notsold.each do |f| %>
         <% if User.find(f.user_id).school == current_user.school %>
           <div class="listing">
-            <a href="/users/<%= f.user_id %>" class="nounderline"><%= image_tag User.find(f.user_id).avatar.url(:thumb).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/'), :id => "categories_profile_picture", :width => "30", :height => "30" %></a><h4><%= link_to f.name, view_item_path(f.id) %></h4><p><%= f.description[0..80].gsub(/\s\w+\s*$/, '...') %></p><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p>
+            <a href="/users/<%= f.user_id %>" class="nounderline"><%= image_tag User.find(f.user_id).avatar.url(:thumb).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/'), :id => "categories_profile_picture", :width => "30", :height => "30" %></a><h4><%= link_to f.name, view_item_path(f.id) %></h4><p><%= f.description[0..80].gsub(/\s\w+\s*$/, '...') %></p><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p><% if f.photo? %><span id="camera-icon-preview" class="glyphicon glyphicon-camera preview_toggle" data-id="<%= f.id %>"></span><% else %><% end %>
           </div>
       <% else %>
       <% end %>
