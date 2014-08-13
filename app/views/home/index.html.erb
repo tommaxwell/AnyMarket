@@ -15,7 +15,7 @@
 		<% notsold.each do |f| %>
 			<% i += 1 %>
 			<div class="listing">
-				<h4 class="counter"><%= i %>.</h4> <%= link_to view_item_path(f.id), :method => "get" do  %><h4><%= f.name %></h4><% end %><p><%= truncate(f.description, :length => 80) %></p> <strong><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p></strong><% if f.photo? %><%= image_tag f.photo.url(:thumb).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/'), :width => "30", :height => "30", :class => "preview_toggle", :data => {:id => f.id} %><% else %><% end %>
+				<h4 class="counter"><%= i %>.</h4> <%= link_to view_item_path(f.id), :method => "get" do  %><h4><%= f.name %></h4><% end %><p><%= truncate(f.description, :length => 80) %></p> <strong><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p></strong><% if f.photo? %><span id="camera-icon-preview" class="glyphicon glyphicon-camera"></span><% else %><% end %>
 			</div>
 			<% end %>
 		</div>
@@ -27,7 +27,7 @@
 		<h3 id="your-listings-header" class="page-header"><span class="glyphicon glyphicon-time"></span>Recently Added In Your Network</h3>
 		<% recentlistings.each do |f| %>
 			<div class="listing">
-							<a href="/users/<%= f.user_id %>" class="nounderline"><%= image_tag User.find(f.user_id).avatar.url(:thumb).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/'), :id => "categories_profile_picture", :width => "30", :height => "30" %></a><h4><%= link_to f.name, view_item_path(f.id) %></h4><p><%= truncate(f.description, :length => 80) %></p><strong><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p></strong><% if f.photo? %><%= image_tag f.photo.url(:thumb).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/'), :width => "30", :height => "30", :class => "preview_toggle", :data => {:id => f.id} %><% else %><% end %>
+							<a href="/users/<%= f.user_id %>" class="nounderline"><%= image_tag User.find(f.user_id).avatar.url(:thumb).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/'), :id => "categories_profile_picture", :width => "30", :height => "30" %></a><h4><%= link_to f.name, view_item_path(f.id) %></h4><p><%= truncate(f.description, :length => 80) %></p><strong><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p></strong><% if f.photo? %><span id="camera-icon-preview" class="glyphicon glyphicon-camera preview_toggle" data-id="<%= f.id %>"></span><% else %><% end %>
 						</div>
 		<% end %>
 	</div>
