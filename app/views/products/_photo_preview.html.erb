@@ -1,6 +1,8 @@
 <div id="photo_preview">
-	<%= image_tag Product.find(@product.id).photo.url(:medium).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/') %>
-	<div id="info-preview-container">
-		<h4><%= @product.name %></h4>
+	<div id="inner-preview-container">
+		<%= image_tag Product.find(@product.id).photo.url(:medium).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/') %>
+		<div id="info-preview-container">
+			<h4><%= @product.name %></h4>
+		</div>
 	</div>
 </div>
