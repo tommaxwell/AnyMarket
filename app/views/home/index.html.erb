@@ -64,16 +64,5 @@
       type: "get"
     });
   });
-	$(document).on('click',function(e){
-    if (!$('#photo_preview').is(e.target) && $('#photo_preview').has(e.target).length === 0 && !$('.preview_toggle').is(e.target) && $('.preview-toggle').has(e.target).length === 0){
-        $("#photo_preview").remove();
-        $(".container-fluid").css("opacity","1 !important");
-        $(".container-fluid").css("pointer-events","auto");
-        }
-    else{
-        $("#photo_preview").show();
-        $(".container-fluid").css("opacity","0.3 !important");
-        $(".container-fluid").css("pointer-events","none");
-        }
-	});
+	
 </script>
