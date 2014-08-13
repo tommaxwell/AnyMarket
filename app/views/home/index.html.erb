@@ -59,10 +59,7 @@
 <%= javascript_include_tag "application" %>
 <script type="text/javascript">
 	$(".preview_toggle").click(function(){
-    $.ajax({
-      url: "/products/photo_preview" + "/" + $(this).data("id"),
-      type: "get"
-    });
+		$.get("/products/photo_preview" + "/" + $(this).data("id"), null, "script");
   });
 	$(document).on('click',function(e){
     if (!$('#photo_preview > #inner-preview-container').is(e.target) && $('#photo_preview > #inner-preview-container').has(e.target).length === 0 && !$('.preview_toggle').is(e.target) && $('.preview_toggle').has(e.target).length === 0){
