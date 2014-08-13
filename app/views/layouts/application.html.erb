@@ -67,18 +67,21 @@
   $("#past-listings").hide();
   $("#prof_default").addClass("active");
 
-$(document).on('click',function(e){
-    if (!$('#send_question_wrapper > form').is(e.target) && $('#send_question_wrapper > form').has(e.target).length === 0 && !$('#ask-question').is(e.target) && $('#ask-question').has(e.target).length === 0){
-        $("#send_question_wrapper > form").remove();
-        $(".container-fluid").css("opacity","1");
-        $(".container-fluid").css("pointer-events","auto");
-        }
-    else{
-        $("#send_question_wrapper > form").fadeIn("fast");
-        $(".container-fluid").css("opacity","0.3");
-        $(".container-fluid").css("pointer-events","none");
-        }
-});
+	<% if !signed_in?(:user) %>
+		$(document).on('click',function(e){
+				if (!$('#send_question_wrapper > form').is(e.target) && $('#send_question_wrapper > form').has(e.target).length === 0 && !$('#ask-question').is(e.target) && $('#ask-question').has(e.target).length === 0){
+						$("#send_question_wrapper > form").remove();
+						$(".container-fluid").css("opacity","1");
+						$(".container-fluid").css("pointer-events","auto");
+						}
+				else{
+						$("#send_question_wrapper > form").fadeIn("fast");
+						$(".container-fluid").css("opacity","0.3");
+						$(".container-fluid").css("pointer-events","none");
+						}
+		});
+	<% else %>
+	<% end %>
 	
 	$("#login-modal-execute").click(function(){
 		$.get("/home/new", null, "script");
