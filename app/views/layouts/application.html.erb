@@ -67,18 +67,18 @@
   $("#past-listings").hide();
   $("#prof_default").addClass("active");
 
-$(document).on('click',function(e){
-    if (!$('#send_question_wrapper > form').is(e.target) && $('#send_question_wrapper > form').has(e.target).length === 0 && !$('#ask-question').is(e.target) && $('#ask-question').has(e.target).length === 0){
-        $("#send_question_wrapper > form").remove();
-        $(".container-fluid").css("opacity","1");
-        $(".container-fluid").css("pointer-events","auto");
-        }
-    else{
-        $("#send_question_wrapper > form").fadeIn("fast");
-        $(".container-fluid").css("opacity","0.3");
-        $(".container-fluid").css("pointer-events","none");
-        }
-});
+	$(document).on('click',function(e){
+			if (!$('#send_question_wrapper > form').is(e.target) && $('#send_question_wrapper > form').has(e.target).length === 0 && !$('#ask-question').is(e.target) && $('#ask-question').has(e.target).length === 0){
+					$("#send_question_wrapper > form").remove();
+					$(".container-fluid").css("opacity","1");
+					$(".container-fluid").css("pointer-events","auto");
+					}
+			else{
+					$("#send_question_wrapper > form").fadeIn("fast");
+					$(".container-fluid").css("opacity","0.3");
+					$(".container-fluid").css("pointer-events","none");
+					}
+	});
 	
 	$("#login-modal-execute").click(function(){
 		$.get("/home/new", null, "script");
@@ -88,9 +88,10 @@ $(document).on('click',function(e){
 		$("#photo-preview").remove();
 	});
 	
-		$(".preview_toggle").click(function(){
+	$(".preview_toggle").click(function(){
 		$.get("/products/photo_preview" + "/" + $(this).data("id"), null, "script");
   });
+	
 	$(document).on('click',function(e){
     if (!$('#photo_preview > #inner-preview-container').is(e.target) && $('#photo_preview > #inner-preview-container').has(e.target).length === 0 && !$('.preview_toggle').is(e.target) && $('.preview_toggle').has(e.target).length === 0){
         $("#photo_preview").remove();
