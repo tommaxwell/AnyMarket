@@ -891,6 +891,13 @@ text-decoration:none;
 		max-width:1100px;
 		padding:40px 15px 40px 15px;
 		margin: 0 auto;
+		p{
+			display:inline;
+			position:relative;
+			float:left;
+			clear:both;
+			margin:20px 0 20px 0;
+		}
 		ul{
 			list-style-type:none;
 			padding:0;
