@@ -1,4 +1,10 @@
 <% @title=@product.name + ' - AnyMarket' %>
+<div id="categories-page-wrapper" class="index_categories">
+  <h4>Explore Categories</h4>
+  <% @categories.each do |f| %>
+    <p class="category-page-category"><%= link_to f.name, view_category_path(f.id) %></p>
+  <% end %>
+</div>
 <div id="listing-container">
   <div id="product_right">
     <h2 id="product-title"><%= @product.name %></h2>
