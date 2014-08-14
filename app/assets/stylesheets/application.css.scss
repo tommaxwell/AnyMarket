@@ -885,4 +885,14 @@ text-decoration:none;
 	bottom:0;
 	width:100%;
 	border-top:1px solid #bbb;
+	#content {
+		width:90%;
+		max-width:1100px;
+		padding:40px 15px 40px 15px;
+		margin: 0 auto;
+		ul{
+			list-style-type:none;
+			padding:0;
+		}
+	}
 }
