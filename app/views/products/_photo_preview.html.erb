@@ -1,6 +1,6 @@
 <div id="photo_preview">
 	<div id="inner-preview-container">
-		<span class="glyphicon glyphicon-remove"></span>
+		<span class="glyphicon glyphicon-remove" id="remove"></span>
 		<%= image_tag Product.find(@product.id).photo.url(:large).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/') %>
 		<div id="info-preview-container">
 			<h4><a href="/products/<%= @product.id %>"><%= @product.name %></a></h4>
