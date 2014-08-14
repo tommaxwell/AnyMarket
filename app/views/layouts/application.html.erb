@@ -84,6 +84,9 @@
 		$.get("/home/new", null, "script");
 	});
 	
+	$("#remove").click(function(){
+		$("#photo-preview").remove();
+	});
 	
 	$(".preview_toggle").click(function(){
 		$.get("/products/photo_preview" + "/" + $(this).data("id"), null, "script");
