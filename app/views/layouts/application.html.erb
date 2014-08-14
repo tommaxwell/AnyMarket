@@ -39,8 +39,6 @@
   <%= render "/layouts/no_cc_alert" unless @skip_alert %>
   <% else %>
   <% end %>
-	<div id="footer-container">
-	</div>
 <% else %>
   
   <div id="fixed-navbar">
@@ -61,6 +59,8 @@
 <% end %>
 <%= yield %>
   </div>
+<div id="footer-container">
+</div>
 <%= javascript_include_tag "application" %>
 <script type="text/javascript">
 
