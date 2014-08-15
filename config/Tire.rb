@@ -1,3 +1,3 @@
 Tire.configure do
-	url ENV["BONSAI_URL"]
+	url: ENV["BONSAI_URL"]
 end
