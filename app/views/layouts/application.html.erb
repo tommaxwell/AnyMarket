@@ -78,22 +78,6 @@
   $("#listing-new").hide();
   $("#past-listings").hide();
   $("#prof_default").addClass("active");
-
-  $(document).on('sendMessage', function(){
-		$(document).on('click',function(e){
-			if (!$('#send_question_wrapper').is(e.target) && $('#send_question_wrapper').has(e.target).length === 0 && !$('#ask-question').is(e.target) && $('#ask-question').has(e.target).length === 0){
-					$("#send_question_wrapper").remove();
-					$(".container-fluid").css("opacity","1 !important");
-					$(".container-fluid").css("pointer-events","auto");
-					}
-			else{
-					$("#send_question_wrapper").fadeIn("fast");
-					$(".container-fluid").css("opacity","0.3 !important");
-					$(".container-fluid").css("pointer-events","none");
-					}
-		});
-		
-	});
 	
 	$("#login-modal-execute").click(function(){
 		$.get("/home/new", null, "script");
