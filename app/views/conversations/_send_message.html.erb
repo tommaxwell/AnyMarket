@@ -1,4 +1,4 @@
-<div id="photo_preview question">
+<div id="photo_preview" class="question">
 	<%= form_tag("/conversations/send_this_message", method: "post", :class => "edit_user_form") do  %>
     <%= hidden_field_tag :id, "#{@user.id}" %>
     <h3>Send <%= @user.first_name %> a message about the <%= raw(@item) %></h3>
