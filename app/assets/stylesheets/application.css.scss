@@ -880,9 +880,8 @@ text-decoration:none;
 }
 
 #footer-container {
-	position:relative;
-	float:left;
-	clear:both;
+	position:absolute;
+	left:0;
 	bottom:0;
 	width:100%;
 	border-top:1px solid #bbb;
