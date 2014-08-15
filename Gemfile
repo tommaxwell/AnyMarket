@@ -61,4 +61,6 @@ gem "elasticsearch-rails"
 
 gem "elasticsearch-model"
 
+gem "bonsai-elasticsearch-rails"
+
 gem "tire"
