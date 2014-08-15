@@ -22,7 +22,7 @@
       <input type="submit" value="Purchase" width="200px"><br />
       <p class="guarantee">Risk-free, 100% money-back guarantee.</p>
       <hr>
-      <input type="submit" value="Ask a question" id="ask-question">
+      <input type="submit" value="Ask a question" class="preview_toggle" id="ask-question">
     <% end %>
     <hr>
     <% if @product.about_delivery? %>
@@ -71,6 +71,8 @@
 		$(document).on('click',function(e){
 			if (!$('#send_question_wrapper').is(e.target) && $('#send_question_wrapper').has(e.target).length === 0 && !$('#ask-question').is(e.target) && $('#ask-question').has(e.target).length === 0){
 					$("#send_question_wrapper").remove();
+					$(".container-fluid").css("opacity","1");
+					$(".container-fluid").css("pointer-events","auto");
 					}
 			else{
 					$("#send_question_wrapper").fadeIn("fast");
