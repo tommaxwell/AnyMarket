@@ -92,4 +92,9 @@ Rails.application.configure do
 			:secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
 			}
 		}
+	if Rails.env.production?
+	 Tire.configure do
+		url "http://localhost:9200"
+	 end
+	end
 end
