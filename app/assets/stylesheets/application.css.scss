@@ -645,7 +645,7 @@ text-decoration:none;
 		top:10px;
 		h3{
 			display:inline-block;
-			margin:20px 0 10px 0 !important;
+			margin:20px 0 5px 0 !important;
 			font-size:18px;
 			color:#bbb;
 			.glyphicon-time{
@@ -910,6 +910,12 @@ text-decoration:none;
 				float:left;
 				margin-right:20px;
 				font-weight:bold;
+				a{
+					color:black !important;
+				}
+				a:hover {
+					color:#428bca;
+				}
 			}
 		}
 	}
