@@ -62,11 +62,7 @@
 <%= javascript_include_tag "application" %>
 <script type="text/javascript">
   $("#ask-question").click(function(){
-    $.ajax({
-      url: "/conversations/<%= @product.user_id %>/send_message",
-      type: "get",
-      data: {item: "<%= @product.name %>"}
-    });
+		$.get("/conversations/<%= @product.user_id %>" + "/" + "send_message");
   });
 		$(document).on('click',function(e){
 			if (!$('#send_question_wrapper').is(e.target) && $('#send_question_wrapper').has(e.target).length === 0 && !$('#ask-question').is(e.target) && $('#ask-question').has(e.target).length === 0){
