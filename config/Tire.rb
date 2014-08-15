@@ -1,3 +1,3 @@
 Tire.configure do
-	url "http://index.bonsai.io"
+	url ENV["BONSAI_URL"]
 end
