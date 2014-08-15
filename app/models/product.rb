@@ -7,12 +7,9 @@ class Product < ActiveRecord::Base
 		
   validates_attachment :photo, :content_type => { :content_type => ["image/jpeg","image/png"]}
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
-	
-	searchable do
-		text :name, :description
-	end
   
-  
+	include Tire::Model::Search
+	include Tire::Model::Callbacks
   
   def set_user!(user)
     self.user_id = user.id

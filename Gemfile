@@ -57,6 +57,8 @@ gem 'omniauth-facebook'
 
 gem "social-buttons", git: "git://github.com/kristianmandrup/social-buttons.git"
 
-gem 'sunspot_rails'
+gem "elasticsearch-rails"
 
-gem 'sunspot_solr'
+gem "elasticsearch-model"
+
+gem "tire"
