@@ -79,7 +79,8 @@
   $("#past-listings").hide();
   $("#prof_default").addClass("active");
 
-	$(document).on('click',function(e){
+  $(document).on('sendMessage', function(){
+		$(document).on('click',function(e){
 			if (!$('#send_question_wrapper > form').is(e.target) && $('#send_question_wrapper > form').has(e.target).length === 0 && !$('#ask-question').is(e.target) && $('#ask-question').has(e.target).length === 0){
 					$("#send_question_wrapper").remove();
 					$(".container-fluid").css("opacity","1 !important");
@@ -90,6 +91,8 @@
 					$(".container-fluid").css("opacity","0.3 !important");
 					$(".container-fluid").css("pointer-events","none");
 					}
+		});
+		
 	});
 	
 	$("#login-modal-execute").click(function(){
