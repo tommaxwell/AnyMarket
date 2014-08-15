@@ -77,11 +77,7 @@ class ProductsController < ApplicationController
   
   # displays every product in the database, rendered in json
   def index
-		if params[:query].present?
-			@products = Product.search(params[:query])
-		else
 			@products = Product.all
-		end
   end
   
   private
