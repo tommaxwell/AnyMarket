@@ -77,7 +77,10 @@ class ProductsController < ApplicationController
   
   # displays every product in the database, rendered in json
   def index
-    render json: Product.all
+		@search = Product.search do
+			fulltext params[:search]
+		end
+		@products = @search.results
   end
   
   private
