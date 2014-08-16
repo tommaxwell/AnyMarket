@@ -9,7 +9,11 @@ class Product < ActiveRecord::Base
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
   
 	include PgSearch
-	pg_search_scope :against => :description
+	multisearchable :against => [:name, :description]
+	
+	def self.rebuild_pg_search_documents
+    find_each { |record| record.update_pg_search_document }
+  end
   
   def set_user!(user)
     self.user_id = user.id
