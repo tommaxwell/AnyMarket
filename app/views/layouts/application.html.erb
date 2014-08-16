@@ -24,11 +24,10 @@
   <div id="fixed-navbar">
 			<a href="/"><%= image_tag "logo.jpg", :id => "logo" %><h3 id="site-header">AnyMarket</h3></a>
 		<div id="menu">
-			<%= form_tag products_index_path, :method => :get do %>
-				<p>
-					<%= text_field_tag :query, params[:query] %>
-					<%= submit_tag "Search", name: nil %>
-				</p>
+			<%= search_id_attr = :q %>
+			<%= form_tag( products_index_path, :method => :get ) do %>
+					<%= text_field_tag( search_id_attr ) %>
+					<%= submit_tag( "Search", name: nil ) %>
 			<% end %>
 			<a href="/products/new" id="list-btn">List an Item</a>
 			<a href="/conversations" id="mailbox-url"><span class="glyphicon glyphicon-inbox"></span></a>
