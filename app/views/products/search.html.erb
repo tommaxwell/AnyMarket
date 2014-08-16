@@ -1,5 +1,5 @@
 <ul class="results">
 	<%= @pg_search_documents.each do |pg_search_document| %>
-	<%= pg_search_document.searchable.name %>
+	<a href="/products/<%= pg_search_document.searchable_id %>"><%= pg_search_document.searchable.name %></a>
 	<% end %>
 </ul>
