@@ -3,7 +3,6 @@ class Product < ActiveRecord::Base
   belongs_to :user
   belongs_to :category, :foreign_key => :category_id
   attr_accessor :destroy_photo
-	self.per_page = 10
 	has_attached_file :photo, :styles => {:large => "600x600>", :medium => "400x400>", :thumb => "100x100>"}
   validates_attachment :photo, :content_type => { :content_type => ["image/jpeg","image/png"]}
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
