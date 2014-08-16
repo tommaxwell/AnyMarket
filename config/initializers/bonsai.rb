@@ -1,6 +1,6 @@
-if ENV['BONSAI_URL']
+if ENV['production']
   Tire.configure do
-    url "http://index.bonsai.io"
+    url ENV['BONSAI_URL']
   end
   BONSAI_INDEX_NAME = ENV['BONSAI_URL'][/[^\/]+$/]
 else
