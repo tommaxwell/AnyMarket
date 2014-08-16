@@ -1,5 +1,5 @@
 <div id="search-results-wrapper">
-	<% if @pg_search_documents %>
+	<% if @pg_search_documents != nil %>
 		<h2>Search results for "<%= @query %>"</h2>
 		<% @pg_search_documents.each do |pg_search_document| %>
 			<div class="listing">
