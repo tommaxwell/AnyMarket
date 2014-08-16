@@ -8,10 +8,8 @@ class Product < ActiveRecord::Base
   validates_attachment :photo, :content_type => { :content_type => ["image/jpeg","image/png"]}
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
   
-	include Tire::Model::Search
-	include Tire::Model::Callbacks
-	
-	index_name BONSAI_INDEX_NAME
+	include PgSearch
+	pg_search_scope :against => :description
   
   def set_user!(user)
     self.user_id = user.id
