@@ -22,13 +22,15 @@
 <div class="container-fluid">
 <% if signed_in?(:user) %>
   <div id="fixed-navbar">
-			<a href="/"><%= image_tag "logo.jpg", :id => "logo" %><h3 id="site-header">AnyMarket</h3></a>
-		<div id="menu">
+		<a href="/"><%= image_tag "logo.jpg", :id => "logo" %><h3 id="site-header">AnyMarket</h3></a>
+		<div id="searchbar">
 			<% search_id_attr = :q %>
 			<%= form_tag( products_index_path, :method => :get ) do %>
 					<%= text_field_tag( search_id_attr ) %>
 					<%= submit_tag( "Search", :name => nil ) %>
 			<% end %>
+		</div>
+		<div id="menu">
 			<a href="/products/new" id="list-btn">List an Item</a>
 			<a href="/conversations" id="mailbox-url"><span class="glyphicon glyphicon-inbox"></span></a>
 			<%= image_tag current_user.avatar.url(:thumb).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/'), :id => "profile_picture", :width => "30", :height => "30", :class => "dropdown-toggle", :data => {:toggle => "dropdown"} %>
