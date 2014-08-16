@@ -1,5 +1,5 @@
 <ul class="results">
 	<%= @pg_search_documents.each do |pg_search_document| %>
-		<%= pg_search_document.name %>
+	<%= pg_search_document.searchable.name %>
 	<% end %>
 </ul>
