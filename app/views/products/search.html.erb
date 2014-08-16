@@ -1,6 +1,6 @@
 <ul class="results">
 	<%= @pg_search_documents.each do |pg_search_document| %>
-		<%= render pg_search_document.name %>
+		<%= render pg_search_documents.name %>
 	<% end %>
 </ul>
 <%= will_paginate @pg_search_documents %>
