@@ -80,7 +80,6 @@ class ProductsController < ApplicationController
 		@pg_search_documents = PgSearch.multisearch( params[:q] )
 		respond_to do |format|
 			format.html
-			format.json {render json: @pg_search_documents}
 		end
   end
   
