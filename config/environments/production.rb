@@ -92,8 +92,4 @@ Rails.application.configure do
 			:secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
 			}
 		}
-
-	Tire.configure do
-		url "http://localhost:9201"
-	end
 end
