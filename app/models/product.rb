@@ -8,7 +8,7 @@ class Product < ActiveRecord::Base
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
   
 	include PgSearch
-	multisearchable :against => [:name, :description], :using => {:tsearch => {:prefix => true}}
+	pg_search_scope :search_by_info, :against => [:name, :description], :using => {:tsearch => {:prefix => true}}
 	
 	def self.rebuild_pg_search_documents
     find_each { |record| record.update_pg_search_document }
