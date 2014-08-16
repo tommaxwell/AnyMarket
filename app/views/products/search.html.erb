@@ -1,4 +1,5 @@
 <div id="search-results-wrapper">
+	<% if @pg_search_documents %>
 		<h2>Search results for "<%= @query %>"</h2>
 		<% @pg_search_documents.each do |pg_search_document| %>
 			<div class="listing">
@@ -6,4 +7,7 @@
 				<a href="/users/<%= @product.user_id %>" class="nounderline"><%= image_tag User.find(@product.user_id).avatar.url(:thumb).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/'), :id => "categories_profile_picture", :width => "30", :height => "30" %></a><h4><%= link_to @product.name, view_item_path(@product.id) %></h4><p><%= @product.description[0..80].gsub(/\s\w+\s*$/, '...') %></p><p class="price"><%= number_to_currency(@product.decimal_price, precision: 2) %></p><% if @product.photo? %><span id="camera-icon-preview" class="glyphicon glyphicon-camera preview_toggle" data-id="<%= @product.id %>"></span><% else %><% end %>
 			</div>
 		<% end %>
+	<% else %>
+	<h2>No results for "<%= @query %>"</h2>
+	<% end %>
 </div>
