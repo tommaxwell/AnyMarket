@@ -76,8 +76,11 @@ class ProductsController < ApplicationController
   end
   
   # displays every product in the database, rendered in json
-  def index
+	def search
 		@pg_search_documents = PgSearch.multisearch( params[:q] )
+		respond_to do |format|
+			format.html
+		end
   end
   
   private

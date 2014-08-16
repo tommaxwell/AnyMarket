@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   #products
   get "/products/new(.:format)" => "products#new", :as => "list_item"
   post "/products/create(.:format)" => "products#create"
-	get "/products(.:format)" => "products#index", :as => "products_index"
+	get "/products(.:format)" => "products#search", :as => "products_index"
   get "/products/:id(.:format)" => "products#show", :as => "view_item"
   get "/products/:id/edit(.:format)" => "products#edit", :as => "edit_item"
   patch "/products/:id/update(.:format)" => "products#update"

@@ -8,7 +8,7 @@
 </div>
   <div id="category-header">
     <h2 class="page-header"><%= @category.name %> <small id="category-page-description"><%= @category.description %></small><% if current_user.school == "University of California, Berkeley" %><%= image_tag "ucb-logo.jpg", :class => "school-pic" %><% else %><% end %></h2>
-  <% notsold = @category.products.where("sold_value = false").order("created_at DESC") %>
+		<% notsold = @category.products.where("sold_value = false").paginate(:page => params[:page]).order("created_at DESC") %>
 		<% notsold.each do |f| %>
         <% if User.find(f.user_id).school == current_user.school %>
           <div class="listing">
@@ -18,4 +18,5 @@
       <% end %>
   <% end %>
   </div>
+	<%= will_paginate @products %>
 </div>
