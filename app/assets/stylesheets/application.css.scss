@@ -888,6 +888,9 @@ text-decoration:none;
 
 #camera-icon-preview {
 	margin-left:10px;
+	position:relative;
+	float:left;
+	top:3px;
 }
 
 #camera-icon-preview:hover {
