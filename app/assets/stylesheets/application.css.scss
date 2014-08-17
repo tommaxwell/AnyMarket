@@ -70,11 +70,13 @@ button:focus {
 	#searchbar{
 		position:relative;
 		float:left;
-		top:25px;
+		top:23px;
 		max-width:300px;
 		left:48px;
 		#q {
-			padding-left:2px;
+			padding:4px;
+			border-radius:3px;
+			border:1px solid #bbb;
 		}
 	}
 }
