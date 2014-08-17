@@ -1,5 +1,5 @@
 <div id="search-results-wrapper">
-		<h2>Search results for "<%= @query %>"</h2>
+		<h2>Listing results for "<%= @query %>"</h2>
 		<% @pg_search_documents.each do |pg_search_document| %>
 			<div class="listing">
 				<% @product = Product.find(pg_search_document.id) %>
