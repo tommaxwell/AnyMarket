@@ -478,8 +478,15 @@ div.listing {
 }
 
 #listing-form-wrapper {
-  width:70%;
-  margin:0 auto;
+  width:60%;
+  position:relative;
+	float:left;
+}
+
+#how-it-works{
+	width:30%;
+	position:relative;
+	float:right;
 }
 
 #categories-page-wrapper {
