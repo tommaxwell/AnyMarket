@@ -100,7 +100,7 @@
   });
 	
 	$(document).on('click',function(e){
-    if (!$('#photo_preview > #inner-preview-container').is(e.target) && !$('#photo_preview > form').is(e.target) && $('#photo_preview > #inner-preview-container').has(e.target).length === 0 && !$('.preview_toggle').is(e.target) && $('.preview_toggle').has(e.target).length === 0 && $('#photo_preview > form').has(e.target).length === 0 ){
+    if (!$('#photo_preview > #inner-preview-container').is(e.target) && !$('#photo_preview > form').is(e.target) && $('#photo_preview > #inner-preview-container').has(e.target).length === 0 && !$('.preview_toggle').is(e.target) && $('.preview_toggle').has(e.target).length === 0 && !$('#ask-question').is(e.target) && $('#photo_preview > form').has(e.target).length === 0 ){
         $("#photo_preview").remove();
         $(".container-fluid").css("opacity","1");
 				$("#footer-container").css("opacity","1");
@@ -115,19 +115,6 @@
         $(".container-fluid").css("pointer-events","none");
         }
 	});
-	
-	$(document).on('click',function(e){
-			if (!$('#photo_preview > form').is(e.target) && $('#photo_preview > form').has(e.target).length === 0 && !$('#ask-question').is(e.target) && $('#ask-question').has(e.target).length === 0){
-					$("#photo_preview").remove();
-					$(".container-fluid").css("opacity","1");
-					$(".container-fluid").css("pointer-events","auto");
-					}
-			else{
-					$("#photo_preview").fadeIn("fast");
-					$(".container-fluid").css("opacity","0.4");
-					$(".container-fluid").css("pointer-events","none");
-					}
-		});
   
   $("#listings-toggle").click(function(event){
     event.preventDefault();
