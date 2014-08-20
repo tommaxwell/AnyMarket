@@ -14,7 +14,7 @@
       <% i += 1 %>
       <% if f.sold_value === false %>
           <div class="listing">
-            <h4 class="counter"><%= i %>.</h4> <h4><%= link_to f.name, view_item_path(f.id) %></h4><p><%= truncate(f.description, length: 80) %></p><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p><% if f.photo? %><span id="camera-icon-preview" class="glyphicon glyphicon-camera preview_toggle" data-id="<%= f.id %>"></span><% else %><% end %>
+            <h4 class="counter"><%= i %>.</h4> <h4><%= link_to f.name, view_item_path(f.id) %></h4><% if f.photo? %><span id="camera-icon-preview" class="glyphicon glyphicon-camera preview_toggle" data-id="<%= f.id %>"></span><% else %><% end %><p><%= truncate(f.description, length: 60) %></p><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p>
           </div>
       <% else %>
       <% end %>
@@ -26,7 +26,7 @@
           <% if f.sold_value == true %>
           <% t += 1 %>
             <div class="listing">
-              <h4 class="counter"><%= t %>.</h4> <h4><%= link_to f.name, view_item_path(f.id) %></h4><p><%= f.description[0..80].gsub(/\s\w+\s*$/, '...') %></p><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p><% if f.photo? %><span id="camera-icon-preview" class="glyphicon glyphicon-camera preview_toggle" data-id="<%= f.id %>"></span><% else %><% end %>
+              <h4 class="counter"><%= t %>.</h4> <h4><%= link_to f.name, view_item_path(f.id) %></h4><% if f.photo? %><span id="camera-icon-preview" class="glyphicon glyphicon-camera preview_toggle" data-id="<%= f.id %>"></span><% else %><% end %><p><%= f.description[0..60].gsub(/\s\w+\s*$/, '...') %></p><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p>
             </div>
         <% else %>
         <% end %>
