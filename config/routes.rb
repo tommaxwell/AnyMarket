@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 	default_url_options :host => "anymarket.herokuapp.com"
 
   root "home#index"
+	
+	get "/terms(.:format)" => "home#terms"
   
   #users
   get "/users/:id(.:format)" => "users#profile"

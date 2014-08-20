@@ -16,4 +16,10 @@ class HomeController < ApplicationController
 		end
 	end
 	
+	def terms
+		respond_to do |format|
+			format.html
+		end
+	end
+	
 end
