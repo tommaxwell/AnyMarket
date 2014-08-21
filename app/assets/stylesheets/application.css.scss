@@ -729,8 +729,7 @@ text-decoration:none;
 
 #landing-wrapper {
 	display:table;
-	width:85%;
-	margin:0 auto;
+	width:100%;
 	margin-bottom:100px;
 	margin-top:100px;
 	#sign_up_and_pitch{
@@ -768,10 +767,8 @@ text-decoration:none;
 	#recently_added_preview{
 		position:relative;
 		float:right;
-		width:40%;
-		max-width:400px;
-		max-height:50%;
-		top:15%;
+		width:50%;
+		top:100px;
 	}
 	#landing-recent h3{
 		border-bottom:1px solid #bbb !important;

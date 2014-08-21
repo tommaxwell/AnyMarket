@@ -47,6 +47,7 @@
 		<div id="recently_added_preview">
 			<div id="landing-recent">
 			<% recentlistings = Product.order('created_at DESC').limit(5).where("sold_value = false") %>
+			<h3 id="your-listings-header" class="page-header">Recently Added Items</h3>
 			<% recentlistings.each do |f| %>
 				<div class="listing">
 								<a href="/users/<%= f.user_id %>" class="nounderline"><%= image_tag User.find(f.user_id).avatar.url(:thumb).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/'), :id => "categories_profile_picture", :width => "30", :height => "30" %></a><h4><%= link_to f.name, view_item_path(f.id) %></h4><strong><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p></strong>
