@@ -50,6 +50,12 @@ button:focus {
   height:5%;
 	#login-button{
 		cursor:pointer;
+		padding:3px 7px 3px 7px;
+		border:1px solid #bbb;
+	}
+	#login-yo{
+		position:relative;
+		top:10px;
 	}
   li{
     font-size:16px;
@@ -730,15 +736,15 @@ text-decoration:none;
 #landing-wrapper {
 	display:table;
 	width:100%;
-	margin-bottom:100px;
-	margin-top:100px;
+	margin-bottom:150px;
+	margin-top:120px;
 	#sign_up_and_pitch{
 		display:inline-block;
 		position:relative;
 		float:left;
 		clear:both;
-		width:50%;
-		max-width:500px;
+		max-width:48%;
+		margin-left:10px;
 		p{
 			position:relative;
 			top:60px;
@@ -767,7 +773,8 @@ text-decoration:none;
 	#recently_added_preview{
 		position:relative;
 		float:right;
-		width:50%;
+		max-width:50%;
+		margin-left:10px;
 		top:100px;
 	}
 	#landing-recent h3{
