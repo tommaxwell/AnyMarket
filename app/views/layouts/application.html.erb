@@ -53,7 +53,7 @@
     <a href="/"><%= image_tag "logo.jpg", :id => "logo" %><h3 id="site-header">AnyMarket</h3></a>
     <ul id="nav-links">
 			<li><a href="mailto:hi@anymarket.co">Contact Us</a></li>
-			<li><a id="ask-question">Login</a></li>
+			<li><a id="login-button">Login</a></li>
     </ul>
   </div>
   
@@ -102,7 +102,7 @@
   });
 	
 	$(document).on('click',function(e){
-    if (!$('#photo_preview > #inner-preview-container').is(e.target) && !$('#photo_preview > form').is(e.target) && $('#photo_preview > #inner-preview-container').has(e.target).length === 0 && !$('.preview_toggle').is(e.target) && $('.preview_toggle').has(e.target).length === 0 && !$('#ask-question').is(e.target) && $('#photo_preview > form').has(e.target).length === 0 ){
+    if (!$('#photo_preview > #inner-preview-container').is(e.target) && !$('#photo_preview > form').is(e.target) && $('#photo_preview > #inner-preview-container').has(e.target).length === 0 && !$('.preview_toggle').is(e.target) && $('.preview_toggle').has(e.target).length === 0 && !$('#login-button').is(e.target) & $('#login-button').has(e.target).length === 0 && !$('#ask-question').is(e.target) && $('#photo_preview > form').has(e.target).length === 0 ){
         $("#photo_preview").remove();
         $(".container-fluid").css("opacity","1");
 				$("#footer-container").css("opacity","1");
