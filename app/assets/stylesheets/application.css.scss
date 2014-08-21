@@ -517,6 +517,7 @@ div.listing {
 }
 
 #categories-page-wrapper {
+	display:inline-block;
   background-color:#eeeeee;
   width:100%;
   padding:20px;
@@ -527,7 +528,8 @@ div.listing {
   border-radius:3px;
   position:relative;
   top:20px;
-	margin-bottom:20px;
+	margin-bottom:10px;
+	padding-bottom:0 !important;
   h4{
     display:inline-block;
     position:relative;
