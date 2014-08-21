@@ -1040,9 +1040,33 @@ text-decoration:none;
 	border:0 !important;
 	top:100px !important;
 }
+#add-payment-header{
+	display:inline-block;
+	position:relative;
+	float:left;
+	top:50px;
+	clear:both;
+	margin:0;
+}
 
 #new-braintree-customer{
 	position:relative;
-	top:100px;
+	top:75px;
 	margin-bottom:100px;
+	display:inline-block;
+	float:left;
+	clear:both;
+	width:50%;
+	fieldset{
+		position:relative;
+		float:left;
+		clear:both;
+		width:100%:
+	}
+	input[type="submit"]{
+		position:relative;
+		float:left;
+		clear:both;
+	}
 }
+
