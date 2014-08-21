@@ -633,6 +633,24 @@ text-decoration:none;
 	}
 }
 
+.login-modal{
+	@extend #send_question_wrapper;
+	z-index:1000;
+	width:25% !important;
+	input[type="text"], input[type="password"]{
+		width:100% !important;
+		padding:5px;
+		margin-bottom:10px;
+		border:1px solid #bbb;
+	}
+	input[type="submit"]{
+		width:100%;
+	}
+	input[type="password"]{
+		margin-top:7px;
+	}
+}
+
 .page-header {
   margin-top:50px !important;
 	border-bottom: none !important;
