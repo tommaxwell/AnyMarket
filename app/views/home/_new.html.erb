@@ -1,4 +1,4 @@
-<div id="photo_preview">
+<div id="photo_preview" class="question">
 		<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 					<h3>Login</h3>
 					<%= f.text_field :email, :id => "name_input", :autofocus => true, :required => true, :placeholder => "Email", :class => "form_inputs" %><br />
