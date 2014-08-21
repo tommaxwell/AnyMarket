@@ -637,6 +637,10 @@ text-decoration:none;
 	@extend #send_question_wrapper;
 	z-index:1000;
 	width:25% !important;
+	top:100px !important;
+	form{
+		border:none !important;
+	}
 	input[type="text"], input[type="password"]{
 		width:100% !important;
 		padding:5px;
