@@ -41,7 +41,7 @@
 		<h4 id="otherlistings">More listings by <%= User.find(@product.user_id).first_name %>:</h4>
 			<% otherlistings.each do |f| %>
 				<div class="listing">
-            <h4 class="other-listings"><%= link_to f.name, view_item_path(f.id) %></h4><p><%= f.description[0..65].gsub(/\s\w+\s*$/, '...') %></p><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p>
+            <h4 class="other-listings"><%= link_to f.name, view_item_path(f.id) %></h4><% if f.photo? %><span id="camera-icon-preview" class="glyphicon glyphicon-camera preview_toggle" data-id="<%= f.id %>"></span><% else %><% end %><p><%= f.description[0..65].gsub(/\s\w+\s*$/, '...') %></p><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p>
           </div>
 			<% end %>
 		<% end %>
