@@ -1,3 +1,9 @@
+<div id="categories-page-wrapper" class="index_categories">
+  <h4>Explore Categories</h4>
+  <% @categories.each do |f| %>
+    <p class="category-page-category"><%= link_to f.name, view_category_path(f.id) %></p>
+  <% end %>
+</div>
 <div id="search-results-wrapper">
 		<h2>Listing results for "<%= @query %>"</h2>
 		<% @pg_search_documents.each do |pg_search_document| %>
