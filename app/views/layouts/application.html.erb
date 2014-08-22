@@ -28,7 +28,6 @@
 			<% search_id_attr = :q %>
 			<%= form_tag( products_index_path, :method => :get ) do %>
 					<%= text_field_tag search_id_attr, nil, :placeholder => "Search listings"  %>
-					<button type="submit" id="eyeglass"><span class="glyphicon glyphicon-search"></span></button>
 			<% end %>
 		</div>
 		<div id="menu">
