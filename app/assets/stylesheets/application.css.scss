@@ -270,15 +270,17 @@ div.listing {
 #profile-heading {
   text-align:center;
   margin-top:50px;
-  img{
+}
+
+#profile-heading img{
     border-radius:50%;
     width:150px;
     height:150px;
   }
-  h2{
-    font-weight:800;
-    margin-bottom:5px;
-  }
+
+#profile-heading h2 {
+	font-weight:800;
+	margin-bottom:5px;
 }
 
 #school {
