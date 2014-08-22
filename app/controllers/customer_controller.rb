@@ -18,6 +18,8 @@ class CustomerController < ApplicationController
     if @result.success?
       current_user.braintree_customer_id = @result.customer.id
       current_user.customer_added = true
+			current_user.first_name = Braintree::Customer.find(braintree_customer_id).first_name
+			current_user.last_name = Braintree::Customer.find(braintree_customer_id)
       current_user.save!
 			redirect_to "/"
     elsif current_user.has_payment_info?
