@@ -515,8 +515,11 @@ div.listing {
 
 #not-verified-yet{
 	width:60%;
-	position:relative;
+	position:absolute;
 	float:left;
+	top:300px;
+	z-index:1000;
+	left:100px;
 }
 
 #how-it-works{
