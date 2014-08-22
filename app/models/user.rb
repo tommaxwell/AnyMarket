@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  # after_validation :set_school
+  after_validation :set_school
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
 		end
 	end
   
-	validates :email, :presence => true, :uniqueness => true, :format => {:with => /\A[\w+\-.]+@(berkeley|uw)\.edu\z/i}
+	# validates :email, :presence => true, :uniqueness => true, :format => {:with => /\A[\w+\-.]+@(berkeley|uw)\.edu\z/i}
   has_many :products, -> { order "created_at DESC" }
   has_attached_file :avatar, :styles => {:medium => "300x300>", :thumb => "30x30>"}, :default_url => "default.png"
   validates_attachment :avatar, :content_type => { :content_type => ["image/jpeg","image/png"]}
