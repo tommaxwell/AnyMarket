@@ -1,6 +1,6 @@
-<% @title=@user.first_name + ' ' + @user.last_name + '\'s Profile - AnyMarket' %>
+<% @title='AnyMarket' %>
 <div id="profile-heading">
-  <a href="<%= @user.website %>"><%= image_tag @user.avatar.url(:medium).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/') %></a>
+<%= image_tag @user.avatar.url(:medium).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/') %>
 	<% if @user.first_name? && @user.last_name? %>
   	<h2><%= @user.first_name %> <%= @user.last_name %></h2>
 	<% else %>
