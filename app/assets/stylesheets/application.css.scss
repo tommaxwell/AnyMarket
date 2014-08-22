@@ -393,6 +393,10 @@ div.listing {
         @extend #submit_item_btn;
         width:300px !important;
       }
+			#purchase-button{
+				opacity:0.3;
+				pointer-events:none;
+			}
     #product_profile_picture{
       border-radius:50%;
       position:relative;
