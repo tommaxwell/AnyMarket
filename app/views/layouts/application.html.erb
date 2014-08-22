@@ -145,8 +145,6 @@
 	
 	<% if signed_in?(:user) %>
 		<% if current_user.confirmed_at === nil %>
-			$('#ask-question').css("opacity","0.3");
-			$('#ask-question').css("pointer-events","none");
 			$("#purchase-button").css("opacity","0.3");
 			$("#purchase-button").css("pointer-events","none");
 			$("#listing-form-wrapper").css("opacity","0.3");
