@@ -144,7 +144,6 @@
 	});
 	
 	<% if signed_in?(:user) %>
-		$("#not-verified-yet").hide();
 		<% if current_user.confirmed_at === nil %>
 			$('#ask-question').css("opacity","0.3");
 			$('#ask-question').css("pointer-events","none");
@@ -152,10 +151,11 @@
 			$("#purchase-button").css("pointer-events","none");
 			$("#listing-form-wrapper").css("opacity","0.3");
 	    $("#listing-form-wrapper").css("pointer-events","none");
+			$("#not-verified-yet").show();
 		<% else %>
+			$("#not-verified-yet").hide();
 		<% end %>
 	<% else %>
-			$("#not-verified-yet").show();
 	<% end %>
 	
 </script>
