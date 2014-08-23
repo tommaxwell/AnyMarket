@@ -280,13 +280,11 @@ div.listing {
   margin-top:50px;
 }
 
-#profile-heading img{
+#profile-heading .user-image-as-background{
     border-radius:50%;
-    width:150px;
-    height:150px;
-		position:relative;
-	  left:165px;
-	  margin-top:50px;
+    display:inline-block;
+	  background-size:cover;
+	  background-repeat:no-repeat;
   }
 
 #profile-heading h2 {
