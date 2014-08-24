@@ -62,8 +62,9 @@ button:focus {
   height:50px;
 	#login-button{
 		cursor:pointer;
-		padding:3px 7px 3px 7px;
+		padding:3px 10px 3px 10px;
 		border:1px solid #bbb;
+		border-radius:3px;
 	}
 	#login-button:hover{
 		background:#bbb;
@@ -1142,5 +1143,11 @@ text-decoration:none;
 	}
 	#tom{
 		text-align:center;
+		h3{
+			font-weight:bold;
+			color:#bbb;
+			margin-top:10px;
+			font-size:26px;
+		}
 	}
 }
