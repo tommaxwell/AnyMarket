@@ -59,7 +59,7 @@ button:focus {
   top:0;
   left:0;
   width:100%;
-  height:5%;
+  height:50px;
 	#login-button{
 		cursor:pointer;
 		padding:3px 7px 3px 7px;
@@ -1125,4 +1125,21 @@ text-decoration:none;
 	margin:0 auto;
 	left:100px;
 	top:20px;
+}
+
+#about-us-container{
+	position:relative;
+	margin-top:40px;
+	#about-top{
+		display:inline-block;
+		position:relative;
+		font-weight:bold;
+		margin-bottom:40px;
+		p{
+			font-size:18px;
+		}
+	}
+	#tom{
+		text-align:center;
+	}
 }
