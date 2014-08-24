@@ -1,6 +1,12 @@
 class HomeController < ApplicationController	
 	before_filter :categories
 	
+	def about
+		respond_to do |format|
+			format.html
+		end
+	end
+	
 	def categories
 		@categories = Category.all 
 	end

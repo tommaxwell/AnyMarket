@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root "home#index"
 	
 	get "/terms(.:format)" => "home#terms"
+	get "/about(.:format)" => "home#about"
   
   #users
   get "/users/:id(.:format)" => "users#profile"
