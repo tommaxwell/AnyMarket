@@ -65,6 +65,8 @@ button:focus {
 		padding:3px 10px 3px 10px;
 		border:1px solid #bbb;
 		border-radius:3px;
+		background:white;
+		transition:background 2s;
 	}
 	#login-button:hover{
 		background:#bbb;
@@ -795,7 +797,7 @@ text-decoration:none;
 	display:table;
 	width:100%;
 	margin-bottom:150px;
-	margin-top:120px;
+	margin-top:100px;
 	#sign_up_and_pitch{
 		display:inline-block;
 		position:relative;
