@@ -21,6 +21,7 @@ class CategoriesController < ApplicationController
   
   def show
     @category = Category.find(params[:id])
+		@products = @category.products.paginate(:page => params[:page])
     respond_to do |format|
       format.html
     end
