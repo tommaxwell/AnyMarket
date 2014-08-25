@@ -1,6 +1,11 @@
 <% @title='AnyMarket' %>
 <div id="profile-heading">
-	<span class="user-image-as-background" size="150" style="background-image: url(<%=  @user.avatar.url(:medium).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/')%>); width: 150px; height: 150px"></span>
+	<% if @user.avatar? %>
+		<span class="user-image-as-background" size="150" style="background-image: url(<%=  @user.avatar.url(:medium).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/')%>); width: 150px; height: 150px"></span>
+	<% else %>
+		<span class="user-image-as-background" size="150" style="background-image: url('/default.png'); width: 150px; height: 150px"></span>
+	<% end %>
+	
 	<% if @user.first_name? && @user.last_name? %>
 	<h2><%= @user.first_name %> <%= @user.last_name %><% if @user.confirmed_at? %><a href="#" data-toggle="tooltip" data-placement="right" title="Verified .edu" id="tool" class="verified-badge"><span class="glyphicon glyphicon-ok-circle"></span></a><% else %><% end %></h2>
 	<% else %>
