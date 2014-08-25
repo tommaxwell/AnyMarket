@@ -1,5 +1,5 @@
 <div id="categories-page-wrapper" class="index_categories">
-  <h4>Explore Categories</h4>
+  <h4>Explore Listings</h4>
   <% @categories.each do |f| %>
     <p class="category-page-category"><%= link_to f.name, view_category_path(f.id) %></p>
   <% end %>
