@@ -7,7 +7,7 @@
   <h3 id="list-header">List An Item For Sale</h3>
     <i><p id="onemantrash" style="color:#bbb">One man's trash is another man's treasure.</p></i>
     <%= form_for Product.new, :options => {:id => "new_listing"}, :url => {:controller => "products",:action => "create"}, :html => {:multipart => true} do |f| %>
-      <%= f.text_field :name, :id => "name_input", :maxlength => 60, :required => true, :placeholder => "Item name", :class => "form_inputs" %><br /><%= f.number_field :decimal_price, :step => 'any', :id => "price", :required => true, :placeholder => "$ Name your price", :class => "form_inputs" %>
+      <%= f.text_field :name, :id => "name_input", :maxlength => 40, :required => true, :placeholder => "Item name", :class => "form_inputs" %><br /><%= f.number_field :decimal_price, :step => 'any', :id => "price", :required => true, :placeholder => "$ Name your price", :class => "form_inputs" %>
     <div>
       <%= f.text_area :description, :cols => "40", :rows => "8", :maxlength => 250, :id => "description", :required => true, :placeholder => "Write a few sentences about the item you're listing. Is it in good condition? Are there any accessories included?", :class => "form_inputs" %>
       <%= f.text_area :about_delivery, :cols => "40", :rows => "8", :maxlength => 250, :id => "about_delivery", :required => true, :placeholder => "What times of the week are you available to meet? Where around campus would be the best place? You can discuss in further detail with the buyer once your item is sold.", :class => "form_inputs" %>
