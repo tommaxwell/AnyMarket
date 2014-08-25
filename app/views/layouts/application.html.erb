@@ -143,6 +143,18 @@
 		$('#tools').tooltip('show');
 	});
 	
+	function updateCountdown() {
+    // 140 is the max message length
+    var remaining = 400 - jQuery('#name_input').val().length;
+    jQuery('.countdown').text(remaining + ' characters remaining.');
+	}
+	
+	jQuery(document).ready(function($) {
+    updateCountdown();
+    $('#name_input').change(updateCountdown);
+    $('#name_input').keyup(updateCountdown);
+	});
+	
 	<% if signed_in?(:user) %>
 		<% if current_user.confirmed_at === nil %>
 			$("#purchase-button").css("opacity","0.3");
