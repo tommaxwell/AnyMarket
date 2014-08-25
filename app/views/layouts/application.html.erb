@@ -144,7 +144,7 @@
 	});
 	
 	function updateCountdown() {
-    // 140 is the max message length
+    // 40 is the max message length
     var remaining = 40 - jQuery('#name_input').val().length;
     jQuery('.countdown').text(remaining + ' characters remaining.');
 	}
@@ -153,6 +153,30 @@
     updateCountdown();
     $('#name_input').change(updateCountdown);
     $('#name_input').keyup(updateCountdown);
+	});
+	
+	function updateCountdown2() {
+    // 40 is the max message length
+    var remaining = 250 - jQuery('#description').val().length;
+    jQuery('.countdown2').text(remaining + ' characters remaining.');
+	}
+	
+	jQuery(document).ready(function($) {
+    updateCountdown();
+    $('#description').change(updateCountdown2);
+    $('#description').keyup(updateCountdown2);
+	});
+	
+	function updateCountdown3() {
+    // 40 is the max message length
+    var remaining = 250 - jQuery('#about_delivery').val().length;
+    jQuery('.countdown3').text(remaining + ' characters remaining.');
+	}
+	
+	jQuery(document).ready(function($) {
+    updateCountdown();
+    $('#about_delivery').change(updateCountdown3);
+    $('#about_delivery').keyup(updateCountdown3);
 	});
 	
 	<% if signed_in?(:user) %>
