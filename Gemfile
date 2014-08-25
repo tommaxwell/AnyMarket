@@ -51,6 +51,10 @@ gem 'taps'
 
 gem 'aws-sdk'
 
+gem 'omniauth'
+
+gem 'omniauth-facebook'
+
 gem "social-buttons", git: "git://github.com/kristianmandrup/social-buttons.git"
 
 gem 'pg_search'
