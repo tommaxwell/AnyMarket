@@ -405,6 +405,9 @@ div.listing {
 				font-size:20px;
 				position:relative;
 				bottom:6px;
+				.verified-badge{
+					font-size:14px !important;
+				}
 			}
       h3{
         color:#bbb;
