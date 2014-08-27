@@ -26,6 +26,17 @@ class CategoriesController < ApplicationController
       format.html
     end
   end
+	
+	def update
+		@category = Category.find(params[:id])
+    respond_to do |format|
+			if @category.update_attributes(category_params)
+        flash.now[:notice] = "Changes saved successfully"
+      else
+        flash.now[:alert] = "Woops, look like something went wrong."
+      end
+    end
+  end
   
   private
   
