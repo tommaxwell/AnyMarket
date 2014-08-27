@@ -29,8 +29,7 @@ class CategoriesController < ApplicationController
   
   private
   
-  # all the attributes that must be submitted for the product to be listed
   def category_params 
-    params.require(:category).permit(:name, :description)
+    params.require(:category).permit(:name, :description, :position)
   end
 end
