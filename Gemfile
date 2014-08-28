@@ -60,3 +60,5 @@ gem "social-buttons", git: "git://github.com/kristianmandrup/social-buttons.git"
 gem 'pg_search'
 
 gem 'newrelic_rpm'
+
+gem 'twilio-ruby'
