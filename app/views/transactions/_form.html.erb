@@ -10,14 +10,14 @@
       :params => @result && @result.params[:transaction],
       :builder => ApplicationHelper::BraintreeFormBuilder,
       :errors => @result && @result.errors.for(:transaction) do |f| %>
-  <h2>Customer Information</h2>
+  <h4>General Customer Info</h4>
   <dl>
     <dt>First Name</dt>
     <dd><%= current_user.first_name %></dd>
     <dt>Last Name</dt>
     <dd><%= current_user.last_name %></dd>
   </dl>
-  <h2>Credit Card Information</h2>
+  <h4>Payment Method</h4>
   <dl>
     <dt>Number</dt>
     <dd><%= @credit_card.masked_number %></dd>
