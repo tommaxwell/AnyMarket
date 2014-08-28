@@ -20,10 +20,11 @@
     <% if @product.sold_value === true %>
       <input type="submit" value="SOLD!" width="200px" disabled="true" style="border:1px solid #ff4415; background-color:#ff4415"><br />
     <% else %>
-      <a href="/transactions/<%= @product.id %>/new"><input type="submit" value="Purchase" width="200px" id="purchase-button"><br /></a>
+      <a href="/transactions/<%= @product.id %>/new"><input type="submit" value="Buy This" width="200px" id="purchase-button"><br /></a>
       <p class="guarantee">100% money-back guarantee.</p>
       <hr>
       <input type="submit" value="Ask a question" class="preview_toggle" id="ask-question"><br />
+			<p class="guarantee">Have an unanswered question about this item? Ask and we'll email the seller.</p>
     <% end %>
     <hr>
     <% if @product.about_delivery? %>
