@@ -410,6 +410,7 @@ div.listing {
 				bottom:6px;
 				.verified-badge{
 					font-size:14px !important;
+		
 				}
 			}
       h3{
@@ -1163,7 +1164,7 @@ text-decoration:none;
 
 .verified-badge{
 	position:relative;
-	left:10px;
+	margin: 0 7px 0 7px;
 	bottom:1px;
 	font-size:21px;
 }
