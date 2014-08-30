@@ -2,7 +2,7 @@
 <div id="about-purchase-container">
 	<%= render "form" %>
 	<div id="about-item">
-		<%= image_tag @product.photo.url.sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/') if @product.photo? %><br />
+		<%= image_tag @product.photo.url(:medium).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/') if @product.photo? %><br />
 		<h3>Description:</h3>
     <p><%= @product.description %></p>
 	</div>
