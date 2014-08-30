@@ -1197,4 +1197,23 @@ text-decoration:none;
 		max-width:400px;
 		float:right;
 	}
+	#seller-buyer-details{
+		position:relative;
+		float:left;
+		width:40%;
+		max-width:400px;
+		#by-info{
+			margin:0 0 10px 0;
+			#product_profile_picture{
+				border-radius:50%;
+				position:relative;
+				bottom:2px;
+				margin-left:10px;
+			}
+			.verified-badge{
+				top:2px !important;
+			}
+		}
+	}
+	
 }
