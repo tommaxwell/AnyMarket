@@ -5,5 +5,9 @@
 		<%= image_tag @product.photo.url(:medium).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/') if @product.photo? %><br />
 		<h3>Description:</h3>
     <p><%= @product.description %></p>
+		<% if @product.about_delivery? %>
+    	<div id="about_delivery_box"><h4>Seller's Meeting Preference</h4><%= @product.about_delivery %></div>
+    <% else %>
+    <% end %>
 	</div>
 </div>

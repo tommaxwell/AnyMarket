@@ -1186,6 +1186,14 @@ text-decoration:none;
 }
 
 #about-purchase-container{
-	@extend #confirm_purchase_info;
-	float:right !important;
+	margin-top:20px;
+	width:100%;
+	form{
+		position:relative;
+		float:left;
+	}
+	#about-item{
+		width:40%;
+		float:right;
+	}
 }
