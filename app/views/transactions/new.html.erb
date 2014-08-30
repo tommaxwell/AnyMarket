@@ -3,6 +3,25 @@
 	<div id="seller-buyer-details">
 		<h4 id="by-info">sold by <a href="/users/<%= @product.user_id %>"><%= User.find(@product.user_id).first_name %> <%= User.find(@product.user_id).last_name %></a><a href="/users/<%= @product.user_id %>"><%= image_tag User.find(@product.user_id).avatar.url(:thumb).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/'), :id => "product_profile_picture", :width => "30", :height => "30" %></a><% if User.find(@product.user_id).confirmed_at? %><a href="#" data-toggle="tooltip" data-placement="right" title="This user has a verified .edu email address." id="tool" class="verified-badge"><span class="glyphicon glyphicon-ok-sign"></span></a><% else %><% end %><% if User.find(@product.user_id).braintree_customer_id? %><a href="#" data-toggle="tooltip" data-placement="right" title="This user has a verified payment method." id="toolz" class="verified-badge verified-method"><span class="glyphicon glyphicon-usd"></span></a><% else %><% end %></h4>
 		<%= render "form" %>
+		<div id="how-it-works">
+	<h3 id="list-header">What happens after you click 'buy'...</h3>
+	<div class="steps">
+		<h4>Step 1: Add your item</h4>
+		<p>Fill out the form to the left with as much detail about your item as possible. Title it, write a description, preferable times & places to meet, add a photo, and choose a category. Then click "List!" and your item will be for sale on AnyMarket.</p>
+	</div>
+	<div class="steps">
+		<h4>Step 2: Answer any questions about your item</h4>
+		<p>If someone has a question about the item you've listed, you'll receive the question in the email inbox associated with your AnyMarket account, along with a link to where you can reply. Be sure to check often for new questions!</p>
+	</div>
+	<div class="steps">
+		<h4>Step 3: Coordinate a meeting time & place with your buyer</h4>
+		<p>Once your item has been sold, you and the buyer of your item will be connected via email to organize a meeting time and place. Please be sure to set a time and make the trade as soon as possible. We'll hold the money for 2 days before sending it to you.</p>
+	</div>
+	<div class="steps">
+		<h4>Step 4: Get paid!</h4>
+		<p>2 days after a sale is complete, we'll send your money to the bank account associated with the credit/debit card you added upon sign-up.</p>
+	</div>
+</div>
 	</div>
 	<div id="about-item">
 		<%= image_tag @product.photo.url(:medium).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/') if @product.photo? %><br />
