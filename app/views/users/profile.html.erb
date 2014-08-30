@@ -12,7 +12,7 @@
 		<h2><a href="/users/edit">What's your name? Let's add it!</a></h2>
 	<% end %>
   <p id="school"><%= @user.school || "University of California, Berkeley" %></p>
-  <p><% if @user.confirmed_at? %><a href="#" data-toggle="tooltip" data-placement="right" title="Verified .edu" id="tool" class="verified-badge"><span class="glyphicon glyphicon-ok-sign"></span></a><% else %><% end %><% if @user.braintree_customer_id? %><a href="#" data-toggle="tooltip" data-placement="right" title="Verified payment method" id="toolz" class="verified-badge verified-method"><span class="glyphicon glyphicon-usd"></span></a><% else %><% end %></p>
+  <p><% if @user.confirmed_at? %><a href="#" data-toggle="tooltip" data-placement="right" title="Verified .edu email address" id="tool" class="verified-badge"><span class="glyphicon glyphicon-ok-sign"></span></a><% else %><% end %><% if @user.braintree_customer_id? %><a href="#" data-toggle="tooltip" data-placement="right" title="Verified payment method" id="toolz" class="verified-badge verified-method"><span class="glyphicon glyphicon-usd"></span></a><% else %><% end %></p>
 </div>
 <div>
 	<h3 class="page-header"><a href="#" id="prof_default"><% if @user.first_name? %><%= @user.first_name %>'s current listings<% else %>Your current listings<% end %></a> <a href="#" id="listings-toggle">sold listings</a></h3>

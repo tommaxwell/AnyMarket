@@ -9,7 +9,7 @@
       :url => Braintree::TransparentRedirect.url,
       :params => @result && @result.params[:transaction],
       :builder => ApplicationHelper::BraintreeFormBuilder,
-      :errors => @result && @result.errors.for(:transaction) do |f| %>
+:errors => @result && @result.errors.for(:transaction), :id => "confirm_purchase_info" do |f| %>
   <h4>General Customer Info</h4>
   <dl>
     <dt>First Name</dt>

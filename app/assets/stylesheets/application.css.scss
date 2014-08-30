@@ -1177,3 +1177,15 @@ text-decoration:none;
 	margin-bottom:10px;
 	color:#bbb;
 }
+
+#confirm_purchase_info{
+	width:50%;
+	margin-top:20px;
+	position:relative;
+	float:left;
+}
+
+#about-purchase-container{
+	@extend #confirm_purchase_info;
+	float:right !important;
+}

@@ -1,0 +1,12 @@
+{
+  "name": "James Hipstour",
+  "version": "0.1",
+  "description": "Replace all mentions of 'hipster' with James Montour.",
+  "content_scripts": [
+    {
+      "matches": ["http://jquery.com/*"],
+      "js": ["jquery-2.1.1.js", "content.js"]
+    }
+  ],
+  "background_page": "background.html"
+}
