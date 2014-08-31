@@ -10,11 +10,10 @@ class RegistrationsController < Devise::RegistrationsController
 	end
   
   def after_inactive_sign_up_path_for(user)
-    new_customer_path
-  end
-  
-  def after_sign_up_path_for(user)
-    new_customer_path
+		redirect_to "/"
+		respond_to do |format|
+			format.js { render :file => "/home/onboarding_modal.js.erb" }
+		end
   end
   
   def sign_up_params
