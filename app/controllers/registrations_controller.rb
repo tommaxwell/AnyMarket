@@ -15,13 +15,6 @@ class RegistrationsController < Devise::RegistrationsController
 			 format.html {render :action => "/"}
     end
   end
-	
-	def after_active_sign_up_path_for(user)
-		respond_to do |format|
-			 flash.now[:onboard]
-			 format.html {render :action => "/"}
-    end
-	end
   
   def sign_up_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :avatar, :school, :provider, :uid)
