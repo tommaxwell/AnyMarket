@@ -60,10 +60,3 @@
 		</div>
 	<% end %>
 </div>
-<%= yield %>
-<%= javascript_include_tag "application" %>
-<script type="text/javascript">
-	<% if flash[:onboard] %>
-		$.get("/home/onboarding_modal", null, "script");
-	<% end %>
-</script>

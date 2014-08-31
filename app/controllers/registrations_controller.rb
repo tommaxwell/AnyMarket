@@ -10,11 +10,17 @@ class RegistrationsController < Devise::RegistrationsController
 	end
   
   def after_inactive_sign_up_path_for(user)
-		redirect_to "/", onboard: 'welcome'
+		respond_to do |format|
+			 flash.now[:onboard]
+			 format.html {render :action => "/"}
+    end
   end
 	
 	def after_active_sign_up_path_for(user)
-		redirect_to "/", onboard: 'welcome'
+		respond_to do |format|
+			 flash.now[:onboard]
+			 format.html {render :action => "/"}
+    end
 	end
   
   def sign_up_params
