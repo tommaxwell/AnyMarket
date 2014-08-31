@@ -1,6 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
   before_filter :authenticate_user!, :except => [:after_inactive_sign_up_path_for]
-  private
 	
 	def new 
 		respond_to do |format|
@@ -39,6 +38,8 @@ class RegistrationsController < Devise::RegistrationsController
 			 format.html {render :action => "/"}
     end
   end
+	
+	private
   
   def sign_up_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :avatar, :school, :provider, :uid)
