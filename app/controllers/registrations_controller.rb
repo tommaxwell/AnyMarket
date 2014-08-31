@@ -10,8 +10,7 @@ class RegistrationsController < Devise::RegistrationsController
 	end
   
   def after_inactive_sign_up_path_for(user)
-		flash.now[:onboard] = "welcome"
-		redirect_to root_path
+		redirect_to root_path, onboard: 'welcome'
   end
 	
 	def after_active_sign_up_path_for(user)
