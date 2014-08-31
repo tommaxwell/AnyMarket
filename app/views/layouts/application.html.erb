@@ -192,7 +192,7 @@
 	<% else %>
 	<% end %>
 			
-	<% if flash[:signed_up] %>
+	<% if signed_up %>
 		$.get("/home/onboarding_modal", null, "script");
 	<% end %>
 			
