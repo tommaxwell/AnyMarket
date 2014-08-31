@@ -60,9 +60,3 @@
 		</div>
 	<% end %>
 </div>
-<% if flash[:onboard] %>
-	<%= javascript_include_tag "application" %>
-	<script type="text/javascript">
-		$.get("/home/onboarding_modal", null, "script");
-	</script>
-<% end %>
