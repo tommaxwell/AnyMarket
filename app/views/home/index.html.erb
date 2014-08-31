@@ -41,7 +41,7 @@
 			<p id="available-at">*Currently available at University of California, Berkeley</p>
 			<%= form_for User.new, :options => {:id => "new_listing"}, :url => {:controller => "registrations",:action => "create"} do |f| %>
 			<%= f.text_field :email, :id => "name_input", :autofocus => true, :required => true, :placeholder => "@berkeley.edu", :class => "form_inputs" %><br />
-			<%= f.password_field :password, :id => "name_input", :required => true, :placeholder => "Password", :class => "form_inputs" %><br />
+			<%= f.password_field :password, :id => "name_input", :required => true, :placeholder => "Password (minimum 8 characters)", :class => "form_inputs" %><br />
 			<%= f.submit "Join", :id => "submit",:id => "submit_item_btn" %>
 			<% end %>
 			<p>AnyMarket is the safe, simple solution to buying & selling locally. Only deal with other students at your school, verified through their .edu email address. All money is held in escrow — backed by our partner at Braintree Payments, the leader in payment processing — until you meet and make the exchange. No dealing with strangers, no finding an ATM to get cash out. Simple. 
