@@ -10,11 +10,11 @@ class RegistrationsController < Devise::RegistrationsController
 	end
   
   def after_inactive_sign_up_path_for(user)
-		redirect_to root_path, onboard: 'welcome'
+		redirect_to "/", onboard: 'welcome'
   end
 	
 	def after_active_sign_up_path_for(user)
-		redirect_to root_path, onboard: 'welcome'
+		redirect_to "/", onboard: 'welcome'
 	end
   
   def sign_up_params
