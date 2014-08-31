@@ -13,6 +13,11 @@ class RegistrationsController < Devise::RegistrationsController
 		flash.now[:onboard]
 		redirect_to root_path
   end
+	
+	def after_active_sign_up_path_for(user)
+		flash.now[:onboard]
+		redirect_to root_path
+	end
   
   def sign_up_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :avatar, :school, :provider, :uid)
