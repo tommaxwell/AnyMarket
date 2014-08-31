@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 	devise_for :users, :controllers => { registrations: 'registrations', omniauth_callbacks: 'users/omniauth_callbacks' }
 	default_url_options :host => "anymarket.herokuapp.com"
 
-  root "home#index"
+  root "home#index" 
 	
 	get "/terms(.:format)" => "home#terms"
 	get "/about(.:format)" => "home#about"
