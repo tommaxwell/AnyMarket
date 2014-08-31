@@ -28,4 +28,10 @@ class HomeController < ApplicationController
 		end
 	end
 	
+	def onboarding_modal
+		respond_to do |format|
+			format.js
+		end
+	end
+	
 end

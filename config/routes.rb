@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 	
 	get "/terms(.:format)" => "home#terms"
 	get "/about(.:format)" => "home#about"
+	
+	get "/home/onboarding_modal(.:format)"
   
   #users
   get "/users/:id(.:format)" => "users#profile"
