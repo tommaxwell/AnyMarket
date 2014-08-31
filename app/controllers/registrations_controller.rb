@@ -11,8 +11,7 @@ class RegistrationsController < Devise::RegistrationsController
   
   def after_inactive_sign_up_path_for(user)
 		respond_to do |format|
-			format.js { render action: "/home/onboarding_modal.js.erb" }
-			format.html {redirect_to "/"}
+			format.html {redirect_to "/", render :partial => "/home/_onboarding_modal.html.erb"}
 		end
   end
   
