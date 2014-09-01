@@ -1260,3 +1260,52 @@ text-decoration:none;
 	}
 	
 }
+
+#how-it-works-container{
+	position:relative;
+	margin-top:50px;
+	h3{
+		text-align:center;
+		margin-bottom:30px;
+		font-weight:bold;
+	}
+	#step-description{
+		.glyphicon-plus{
+			font-size:30px;
+			display:inline;
+			position:relative;
+			float:left;
+		}
+		p{
+			position:relative;
+			display:inline;
+			left:10px;
+		}
+	}
+	#how-it-works-seller{
+		width:50%;
+		position:relative;
+		float:left;
+		h4{
+			margin-bottom:20px;
+		}
+		.steps{
+			h4{
+				font-size:16px;
+			}
+		}
+	}
+	#how-it-works-buyer{
+		width:50%;
+		position:relative;
+		float:right;
+		h4{
+			margin-bottom:20px;
+		}
+		.steps{
+			h4{
+				font-size:16px;
+			}
+		}
+	}
+}
