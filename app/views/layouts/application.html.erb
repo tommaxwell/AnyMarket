@@ -123,7 +123,7 @@
 	
 	$(document).ready(function(){
 		$("body").on("onboardingModal", function(f){
-			if (!$('#photo_preview').is(f.target) && $('#photo_preview').has(f.target).length === 0 && !$('.preview_toggle').is(f.target) && $('.preview_toggle').has(f.target).length === 0 && !$('#ask-question').is(f.target) && $('#ask-question').has(f.target).length === 0 && !$('#login-button').is(f.target) && $('#login-button').has(f.target).length === 0){
+			if (!$('#photo_preview').is(f.target) && $('#photo_preview').has(f.target).length === 0){
         $("#photo_preview").remove();
         $(".container-fluid").css("opacity","1");
 				$("#footer-container").css("opacity","1");
