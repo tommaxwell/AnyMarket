@@ -562,6 +562,10 @@ div.listing {
 	left:70px;
 }
 
+#no-payment-method {
+	@extend #not-verified-yet;
+}
+
 #how-it-works{
 	width:35%;
 	position:relative;
