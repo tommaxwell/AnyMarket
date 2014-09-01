@@ -131,14 +131,13 @@
         $(".container-fluid").css("pointer-events","auto");
         }
     else{
-        $("#photo_preview").fadeIn("fast");
         $(".container-fluid").css("opacity","0.3");
 				$("#footer-container").css("opacity","0.3");
 				$("#footer-container").css("pointer-events","none");
         $(".container-fluid").css("pointer-events","none");
         }
-		})
-	})
+		});
+	});
   
   $("#listings-toggle").click(function(event){
     event.preventDefault();
