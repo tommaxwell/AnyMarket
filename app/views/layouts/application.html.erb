@@ -212,8 +212,7 @@
 		<% if current_user.confirmed_at === nil %>
 			$("#purchase-button").css("opacity","0.3");
 			$("#purchase-button").css("pointer-events","none");
-			$("#listing-form-wrapper").css("opacity","0.3");
-	    $("#listing-form-wrapper").css("pointer-events","none");
+	    $("#listing-form-wrapper").css("display","none");
 			$("#not-verified-yet").show();
 		<% else %>
 			$("#not-verified-yet").hide();
