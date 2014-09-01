@@ -1033,6 +1033,10 @@ text-decoration:none;
 	}
 }
 
+#onboarding-modal{
+	@extend #photo_preview;
+}
+
 #camera-icon-preview {
 	margin-left:10px;
 	position:relative;
