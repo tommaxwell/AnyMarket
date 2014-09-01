@@ -34,4 +34,10 @@ class HomeController < ApplicationController
 		end
 	end
 	
+	def how_it_works
+		respond_to do |format|
+			format.html
+		end
+	end
+	
 end
