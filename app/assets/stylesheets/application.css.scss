@@ -1010,7 +1010,7 @@ text-decoration:none;
 	cursor:pointer;
 }
 
-#photo_preview {
+#photo_preview, #onboarding_modal {
 	@extend #send_question_wrapper;
 	z-index:1000;
 	width:600px;
@@ -1031,10 +1031,6 @@ text-decoration:none;
 		margin-bottom:5px;
 		cursor:pointer;
 	}
-}
-
-#onboarding-modal{
-	@extend #photo_preview;
 }
 
 #camera-icon-preview {
