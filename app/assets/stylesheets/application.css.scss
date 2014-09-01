@@ -563,7 +563,12 @@ div.listing {
 }
 
 #no-payment-method {
-	@extend #not-verified-yet;
+	width:60%;
+	position:absolute;
+	float:left;
+	top:300px;
+	z-index:1000;
+	left:70px;
 }
 
 #how-it-works{
