@@ -127,12 +127,14 @@
 				$("#footer-container").css("opacity","0.3");
 				$("#footer-container").css("pointer-events","none");
         $(".container-fluid").css("pointer-events","none");
-				if(!$('#onboarding_modal').is(f.target) && $('#onboarding_modal').has(e.target).length === 0){
-					$(".container-fluid").css("opacity","0.3");
-					$("#footer-container").css("opacity","0.3");
-					$("#footer-container").css("pointer-events","none");
-        	$(".container-fluid").css("pointer-events","none");
-				}
+				$(document).on('click',function(e){
+					if(!$('#onboarding_modal').is(e.target) && $('#onboarding_modal').has(e.target).length === 0){
+						$(".container-fluid").css("opacity","0.3");
+						$("#footer-container").css("opacity","0.3");
+						$("#footer-container").css("pointer-events","none");
+						$(".container-fluid").css("pointer-events","none");
+					}
+				});
 		});
 	});
   
