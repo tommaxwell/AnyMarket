@@ -208,11 +208,16 @@
 			$("#purchase-button").css("pointer-events","none");
 	    $("#listing-form-wrapper").css("display","none");
 			$("#not-verified-yet").show();
+		<% elsif current_user.braintree_customer_id === nil %>
+			$("#listing-form-wrapper").css("display","none");
+			$("#no-payment-method").show();
 		<% else %>
 			$("#not-verified-yet").hide();
+			$("#no-payment-method").hide();
 		<% end %>
 	<% else %>
 	<% end %>
+			
 			
 	<% if flash[:onboard] %>
 		$.get("/home/onboarding_modal", null, "script");
