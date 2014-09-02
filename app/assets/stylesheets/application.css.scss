@@ -183,6 +183,9 @@ button:focus {
 			font-size:15px;
 			color:#bbb;
 		}
+		.glyphicon-star{
+			margin:0 8px 0 -3px;
+		}
   }
 }
 
@@ -1353,6 +1356,7 @@ text-decoration:none;
 	text-align:justify;
 	font-size:0.1px;
 	min-width:990px;
+	margin-bottom:25px;
 	.page-header{
 		margin-top:20px !important;
 	}
