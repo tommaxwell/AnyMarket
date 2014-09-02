@@ -40,7 +40,9 @@
 			<h3 id="pitch">Quick, easy,<br /> verified selling at your school.</h3>
 			<p id="available-at">*Currently available at University of California, Berkeley</p>
 			<%= form_for User.new, :options => {:id => "new_listing"}, :url => {:controller => "registrations",:action => "create"} do |f| %>
-			<%= f.text_field :email, :id => "name_input", :autofocus => true, :required => true, :placeholder => "@berkeley.edu", :class => "form_inputs" %><br />
+			<%= f.text_field :first_name, :id => "name_input", :autofocus => true, :required => true, :placeholder => "First name", :class => "form_inputs" %><br />
+			<%= f.text_field :last_name, :id => "name_input", :autofocus => true, :required => true, :placeholder => "Last name", :class => "form_inputs" %><br />
+			<%= f.text_field :email, :id => "name_input" :required => true, :placeholder => "@berkeley.edu", :class => "form_inputs" %><br />
 			<%= f.password_field :password, :id => "name_input", :required => true, :placeholder => "Password (minimum 8 characters)", :class => "form_inputs" %><br />
 			<%= f.submit "Join", :id => "submit",:id => "submit_item_btn" %>
 			<% end %>
