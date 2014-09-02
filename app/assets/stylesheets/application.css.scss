@@ -1350,18 +1350,21 @@ text-decoration:none;
 }
 
 #featured{
+	text-align:justify;
+	font-size:0.1px;
+	min-width:990px;
 	.page-header{
 		margin-top:20px !important;
 	}
 	img{
-		max-height:200px;
+		height:200px;
 		width:auto;
-		margin:0 20px 0 20px;
+		display:inline-block;
 	}
 }
 
-#featured > a:nth-of-type(1){
-	img {
-		margin:0 20px 0 0;
-	}
+#featured:after{
+	content:'';
+	width:100%;
+	display:inline-block;
 }
