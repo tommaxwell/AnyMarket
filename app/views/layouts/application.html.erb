@@ -202,24 +202,16 @@
     $('#about_delivery').keyup(updateCountdown3);
 	});
 	
-	<% if signed_in?(:user) %>
-		<% if current_user.confirmed_at === nil %>
-			$("#purchase-button").css("opacity","0.3");
-			$("#purchase-button").css("pointer-events","none");
-	    $("#listing-form-wrapper").css("display","none");
-			$("#not-verified-yet").show();
-			$("#no-payment-method").hide();
-		<% else %>
-			$("#not-verified-yet").hide();
-			$("#no-payment-method").hide();
-		<% end %>
-	<% else %>
-	<% end %>
 			
 	<% if signed_in?(:user) %>
-			<% if current_user.braintree_customer_id === nil %>
+			<% if current_user.braintree_customer_id === nil && current_user.confirmed_at === nil %>
 					$("#listing-form-wrapper").css("display","none");
-					$("#no-payment-method").show();
+					$("not-verified-yet").show();
+			<% elsif current_user.braintree_customer_id === nil %>
+				$("#no-payment-method").show();
+			<% else %>
+				$("#not-verified-yet").hide();
+				$("#no-payment-method").hide();
 			<% end %>
 	<% end %>
 			
