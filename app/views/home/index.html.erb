@@ -10,7 +10,7 @@
 <div id="index-wrapper">
 	<div id="featured">
 		<h3 id="your-listings-header" class="page-header"><span class="glyphicon glyphicon-star"></span>FEATURED <a href="#" data-toggle="tooltip" data-placement="right" title="Featured listings" id="tool"><span class="glyphicon glyphicon-question-sign"></span></a></h3>
-		<% featured = Product.order('created_at DESC').limit(5).where("product.photo_file_name? = true") %>
+		<% featured = Product.order('created_at DESC').limit(5).where("photo_file_name? = true") %>
 		<% featured.each do |f| %>
 		<a href="/products/<%= featured.id %>"><%= image_tag Product.find(featured.id).photo.url(:medium).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/') %></a>
 		<% end %>
