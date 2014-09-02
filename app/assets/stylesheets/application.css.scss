@@ -719,6 +719,7 @@ text-decoration:none;
 	@extend #send_question_wrapper;
 	z-index:1000;
 	width:25% !important;
+	top:200px !important;
 	form{
 		border:none !important;
 	}
@@ -733,10 +734,6 @@ text-decoration:none;
 		width:100% !important;
 		margin-top:5px;
 	}
-}
-
-.login-modal #photo_preview {
-	top:100px !important;
 }
 
 .page-header {
@@ -1056,7 +1053,7 @@ text-decoration:none;
 	border:1px solid #bbb;
 	border-radius:3px;
 	padding:5px;
-	top:50px !important;
+	top:50px;
 	img{
 		width:100%;
 		max-width:600px;
