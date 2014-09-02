@@ -741,7 +741,6 @@ text-decoration:none;
 
 .page-header {
   margin-top:50px !important;
-	border-bottom: none !important;
 }
 
 #list-first-wrapper {
@@ -788,11 +787,11 @@ text-decoration:none;
 	width:100%;
 	#most-recent{
 		display:inline-block;
+		width:100%;
 		position:relative;
 		float:left;
 		top:10px;
 		h3{
-			display:inline-block;
 			margin:20px 0 5px 0 !important;
 			font-size:18px;
 			color:#bbb;
