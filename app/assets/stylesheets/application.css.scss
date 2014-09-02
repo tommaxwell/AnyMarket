@@ -719,7 +719,6 @@ text-decoration:none;
 	@extend #send_question_wrapper;
 	z-index:1000;
 	width:25% !important;
-	top:100px !important;
 	form{
 		border:none !important;
 	}
@@ -734,6 +733,10 @@ text-decoration:none;
 		width:100% !important;
 		margin-top:5px;
 	}
+}
+
+#photo_preview .login-modal {
+	top:100px !important;
 }
 
 .page-header {
