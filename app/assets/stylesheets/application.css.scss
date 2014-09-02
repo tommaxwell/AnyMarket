@@ -862,6 +862,9 @@ text-decoration:none;
 				border:1px solid #bbb;
 				border-radius:3px;
 			}
+			input[type="text"], input[type="password"]:focus{
+				border:1px solid #999;
+			}
 			input[type="submit"]{
 				width:300px;
 				position:relative;
