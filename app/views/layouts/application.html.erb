@@ -207,7 +207,7 @@
 			<% if current_user.braintree_customer_id === nil && current_user.confirmed_at === nil %>
 					$("#listing-form-wrapper").css("display","none");
 					$("not-verified-yet").show();
-			<% elsif current_user.braintree_customer_id === nil %>
+			<% elsif current_user.braintree_customer_id === nil && current_user.confirmed_at %>
 				$("#no-payment-method").show();
 			<% else %>
 				$("#not-verified-yet").hide();
