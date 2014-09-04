@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
     @product.set_user!(current_user)
     respond_to do |format|
       if @product.save
-				if current_user.braintree_customer_id.present?
+				if current_user.braintree_customer_id?
 					flash.now[:notice] = "Your item is for sale!"
 					redirect_to view_item_path(@product.id)
 				else
