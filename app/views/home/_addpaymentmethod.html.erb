@@ -1,5 +1,21 @@
 <div id="onboarding_modal">
 	<div id="inner-preview">
-		<%= render :partial => '/credit_card_info/form' %>
+		<%= form_for :credit_card,
+      :html => {class:"edit_user_form"},
+      :url => Braintree::TransparentRedirect.url,
+      :params => @result && @result.params[:credit_card],
+      :builder => ApplicationHelper::BraintreeFormBuilder,
+      :existing => @credit_card,
+      :errors => @result && @result.errors.for(:credit_card) do |f| %>
+  <%= field_set_tag "Credit Card" do %>
+    <dl>
+      <dt><%= f.label :number, 'Number' %></dt>
+      <dd><%= f.text_field :number, :class => "clean" %></dd>
+      <dt><%= f.label :expiration_date, 'Expiration Date (MM/YY)' %></dt>
+      <dd><%= f.text_field :expiration_date, :class => "clean" %></dd>
+      <dt><%= f.label :cvv, 'CVV' %></dt>
+      <dd><%= f.text_field :cvv, :class => "clean" %></dd>
+    </dl>
+  <% end %>
 	</div>
 </div>

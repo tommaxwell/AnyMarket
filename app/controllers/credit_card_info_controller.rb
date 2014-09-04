@@ -9,7 +9,7 @@ class CreditCardInfoController < ApplicationController
     @result = Braintree::TransparentRedirect.confirm(request.query_string)
 
     if @result.success?
-			redirect_to "/"
+			session[:return_to] = request.referer
     else
       @credit_card = Braintree::CreditCard.find(@result.params[:payment_method_token])
       render :action => "edit"
