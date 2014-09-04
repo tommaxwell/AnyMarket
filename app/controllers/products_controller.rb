@@ -7,6 +7,13 @@ class ProductsController < ApplicationController
       format.html
     end
   end
+	
+	def new 
+    respond_to do |format|
+			format.js
+			format.html
+		end
+  end
   
   def create
     @product = Product.new(product_params)
@@ -17,7 +24,7 @@ class ProductsController < ApplicationController
 					flash.now[:addmethod] = ""
 					redirect_to view_item_path(@product.id)
 				else
-					format.html {render :action => "show"}
+					redirect_to view_item_path(@product.id)
 				end
       else
         flash.now[:alert] = "Woops, looks like something went wrong."
