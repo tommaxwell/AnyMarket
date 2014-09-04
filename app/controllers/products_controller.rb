@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
     @product.set_user!(current_user)
       if @product.save
 				if !current_user.braintree_customer_id?
-					flash.now[:addmethod] = ""
+					flash.now[:addmethod]
 					redirect_to view_item_path(@product.id)
 				else
 					redirect_to view_item_path(@product.id)
