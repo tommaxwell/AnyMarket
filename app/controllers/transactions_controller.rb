@@ -7,6 +7,8 @@ class TransactionsController < ApplicationController
       @credit_card = current_user.default_credit_card
       @product = Product.find(params[:id])
     else
+			@product = Product.find(params[:id])
+			session[:stored_product_id] = "/transactions/" + @product.id.to_s + "/new"
       redirect_to new_customer_path
     end
   end
