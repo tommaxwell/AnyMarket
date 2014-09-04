@@ -1,5 +1,12 @@
 class ProductsController < ApplicationController
 	before_action :authenticate_user!, :only => [:create, :destroy, :edit, :update, :new]
+	
+	def show
+    @product = Product.find(params[:id])
+    respond_to do |format|
+      format.html
+    end
+  end
   
   def create
     @product = Product.new(product_params)
@@ -50,12 +57,6 @@ class ProductsController < ApplicationController
   
   
   # show requested product
-  def show
-    @product = Product.find(params[:id])
-    respond_to do |format|
-      format.html
-    end
-  end
 	
 	def photo_preview 
 		@product = Product.find(params[:id])
