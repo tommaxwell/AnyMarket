@@ -6,11 +6,11 @@ class ProductsController < ApplicationController
     @product.set_user!(current_user)
     respond_to do |format|
       if @product.save
-				if current_user.braintree_customer_id.exists?
-					flash.now[:addmethod]
+				if current_user = User.where(:braintree_customer_id).present?
+					flash.now[:notice] = "Your item is for sale!"
         	format.html {render :action => "show"}
 				else
-					flash.now[:notice] = "Your item is for sale!"
+					flash.now[:addmethod]
         	format.html {render :action => "show"}
 				end
       else
