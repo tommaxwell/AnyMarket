@@ -10,7 +10,7 @@
 <div id="index-wrapper">
 	<div id="featured">
 		<h3 id="your-listings-header" class="page-header"><span class="glyphicon glyphicon-star"></span>FEATURED <a href="#" data-toggle="tooltip" data-placement="right" title="Listings featured by the AnyMarket team" id="tool"><span class="glyphicon glyphicon-question-sign"></span></a></h3>
-		<% featured = Product.order('created_at DESC').limit(5).where("photo_file_name IS NOT NULL") %>
+		<% featured = Product.order('created_at DESC').limit(5).where.not(photo_file_name: nil, sold_value: true) %>
 		<% featured.each do |f| %>
 		<a href="/products/<%= f.id %>"><%= image_tag Product.find(f.id).photo.url(:medium).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/'), :class => "featured_product" %></a>
 		<% end %>
