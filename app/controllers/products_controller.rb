@@ -6,8 +6,13 @@ class ProductsController < ApplicationController
     @product.set_user!(current_user)
     respond_to do |format|
       if @product.save
-        flash.now[:notice] = "Your item is for sale!"
-        format.html {render :action => "show"}
+				if current_user.braintree_customer_id == nil 
+					flash.now[:addmethod]
+        	format.html {render :action => "show"}
+				else
+					flash.now[:notice] = "Your item is for sale!"
+        	format.html {render :action => "show"}
+				end
       else
         flash.now[:alert] = "Woops, looks like something went wrong."
         format.html{render :action => "create"}
