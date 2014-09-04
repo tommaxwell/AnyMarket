@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
     @product.set_user!(current_user)
     respond_to do |format|
       if @product.save
-				if !current_user.braintree_customer_id?
+				if current_user.braintree_customer_id.exists?
 					flash.now[:addmethod]
         	format.html {render :action => "show"}
 				else
