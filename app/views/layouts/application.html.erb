@@ -120,6 +120,22 @@
         }
 	});
 	
+		$("body").on("addPaymentMethod", function(f){
+        $(".container-fluid").css("opacity","0.3");
+				$("#footer-container").css("opacity","0.3");
+				$("#footer-container").css("pointer-events","none");
+        $(".container-fluid").css("pointer-events","none");
+				$(document).on('click',function(e){
+					if (!$('#add_payment_method').is(e.target)){
+						$("#add_payment_method").remove();
+						$(".container-fluid").css("opacity","1");
+						$("#footer-container").css("opacity","1");
+						$("#footer-container").css("pointer-events","auto");
+        		$(".container-fluid").css("pointer-events","auto");
+					}
+				});
+		});
+	
 	$(document).ready(function(){
 		$("body").on("onboardingModal", function(f){
         $(".container-fluid").css("opacity","0.3");
@@ -137,28 +153,6 @@
 				});
 		});
 	});
-	
-		 $("body").on("addPaymentMethod", function(){
-        $(".container-fluid").css("opacity","0.3");
-				$("#footer-container").css("opacity","0.3");
-				$("#footer-container").css("pointer-events","none");
-        $(".container-fluid").css("pointer-events","none");
-				$(document).on('click',function(d){
-					if (!$('#add_payment_method').is(d.target)){
-						$("#add_payment_method").remove();
-						$(".container-fluid").css("opacity","1");
-						$("#footer-container").css("opacity","1");
-						$("#footer-container").css("pointer-events","auto");
-        		$(".container-fluid").css("pointer-events","auto");
-					}
-					else{
-						$(".container-fluid").css("opacity","0.3");
-						$("#footer-container").css("opacity","0.3");
-						$("#footer-container").css("pointer-events","none");
-        		$(".container-fluid").css("pointer-events","none");
-					}
-				});
-		}); 
 	
   
   $("#listings-toggle").click(function(event){
