@@ -7,15 +7,15 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if @product.save
 				if !current_user.braintree_customer_id?
-					flash.now[:addmethod] = ""
-					redirect_to "show"
+					flash.now[:addmethod]
+        	format.html {render :action => "show"}
 				else
 					flash.now[:notice] = "Your item is for sale!"
-					redirect_to "show"
+        	format.html {render :action => "show"}
 				end
       else
         flash.now[:alert] = "Woops, looks like something went wrong."
-				format.html{redirect_to "create"}
+        format.html{render :action => "create"}
       end
     end
   end
