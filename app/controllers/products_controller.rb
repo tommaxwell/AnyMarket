@@ -14,8 +14,8 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if @product.save
 				if !current_user.braintree_customer_id?
-					flash.now[:addmethod]
-					redirect_to "/products/" + @product.id 
+					flash.now[:addmethod] 
+					redirect_to view_item_path(@product.id)
 				else
 					format.html {render :action => "show"}
 				end
