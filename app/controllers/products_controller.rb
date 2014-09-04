@@ -29,6 +29,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.set_user!(current_user)
       if @product.save
+				session[:stored_product_id] = "/products/" + @product.id.to_s
 				redirect_to view_item_path(@product.id)
       else
         flash.now[:alert] = "Woops, looks like something went wrong."
