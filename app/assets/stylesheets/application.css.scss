@@ -1097,6 +1097,23 @@ text-decoration:none;
 	}
 }
 
+#add_payment_method{
+	#inner-preview{
+		margin:30px;
+		h3{
+			font-weight:bold;
+		}
+		p{
+			margin:20px 0 20px 0;
+			font-size:16px;
+		}
+		input[type="submit"]{
+			margin:15px 0 15px 0;
+			@extend #submit_item_btn;
+		}
+	}
+}
+
 #camera-icon-preview {
 	margin-left:10px;
 	position:relative;
