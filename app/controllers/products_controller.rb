@@ -17,8 +17,7 @@ class ProductsController < ApplicationController
 					set_flash_message :addmethod
 					redirect_to view_item_path(@product.id)
 				else
-					flash.now[:notice] = "Your item is for sale!"
-					redirect_to view_item_path(@product.id)
+					format.html {render :action => "show"}
 				end
       else
         flash.now[:alert] = "Woops, looks like something went wrong."
