@@ -8,14 +8,14 @@ class ProductsController < ApplicationController
       if @product.save
 				if current_user.braintree_customer_id.present?
 					flash.now[:notice] = "Your item is for sale!"
-        	format.html {render :action => "show"}
+					redirect_to view_item_path
 				else
 					flash.now[:addmethod]
-        	format.html {render :action => "show"}
+					redirect_to view_item_path
 				end
       else
         flash.now[:alert] = "Woops, looks like something went wrong."
-        format.html{render :action => "create"}
+        format.html {render :action => "create"}
       end
     end
   end
