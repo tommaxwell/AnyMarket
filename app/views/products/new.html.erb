@@ -4,10 +4,6 @@
 	<h4>Click the confirmation link in the email we've sent you to begin listing.</h4><br />
 	<h4>Be sure to check your spam inbox.</h4>
 </div>
-<div id="no-payment-method">
-	<h3>We need a way to give you that sweet moola.</h3><br />
-	<h4>Please <a href="/customers/new">add a payment method</a> so we can pay you.</h4>
-</div>
 <div id="listing-form-wrapper">
   <h3 id="list-header">List An Item For Sale</h3>
     <i><p id="onemantrash" style="color:#bbb">One man's trash is another man's treasure.</p></i>
@@ -26,12 +22,7 @@
         <%= f.label "Category" %><br />
         <%= f.collection_select :category_id, Category.all, :id, :name, {:prompt => 'Choose a category'}, {:required => true} %>
       </div><br />
-        <% if !current_user.braintree_customer_id? %>
-        <%= f.submit "List!", :id => "submit", :disabled => true, :id => "submit_item_btn" %><br /><br />
-        <i>Woops, looks like you haven't added your credit/debit card. Click <a href="/customer/new">here</a>.</i>
-        <% else %>
         <%= f.submit "List!", :id => "submit",:id => "submit_item_btn" %>
-        <% end %>
     <% end %>
 </div>
 <div id="how-it-works">
