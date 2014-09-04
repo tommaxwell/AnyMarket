@@ -21,7 +21,7 @@ class CustomerController < ApplicationController
 			current_user.first_name = @result.customer.first_name
 			current_user.last_name = @result.customer.last_name
       current_user.save!
-			redirect_to session.delete(:return_to)
+			render :action => "confirm"
     elsif current_user.has_payment_info?
       current_user.with_braintree_data!
       _set_customer_edit_tr_data
