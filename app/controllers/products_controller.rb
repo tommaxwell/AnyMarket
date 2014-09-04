@@ -18,7 +18,6 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @product.set_user!(current_user)
-    respond_to do |format|
       if @product.save
 				if !current_user.braintree_customer_id?
 					flash.now[:addmethod] = ""
@@ -28,9 +27,8 @@ class ProductsController < ApplicationController
 				end
       else
         flash.now[:alert] = "Woops, looks like something went wrong."
-        format.html {render :action => "create"}
+				format.html {render :action => "new"}
       end
-    end
   end
   
   def destroy
