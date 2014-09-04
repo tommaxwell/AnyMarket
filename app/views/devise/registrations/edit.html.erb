@@ -40,4 +40,8 @@
 
 <%= link_to "Back", :back %>
 
-<a href="/customer/<%= current_user.braintree_customer_id %>/edit">Edit payment info</a>
+<% if current_user.braintree_customer_id? %>
+	<a href="/customer/<%= current_user.braintree_customer_id %>/edit">Edit payment info</a>
+<% else %>
+	<a href="/customer/new">Edit payment info</a>
+<% end %>
