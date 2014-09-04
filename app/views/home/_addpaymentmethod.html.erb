@@ -1,25 +1,7 @@
 <div id="add_payment_method">
 	<div id="inner-preview">
-		<%= form_for :credit_card,
-      :url => Braintree::TransparentRedirect.url,
-      :params => @result && @result.params[:credit_card],
-      :builder => ApplicationHelper::BraintreeFormBuilder,
-      :existing => @credit_card,
-      :errors => @result && @result.errors.for(:credit_card) do |f| %>
-  <%= field_set_tag "Credit Card" do %>
-    <dl>
-      <dt><%= f.label :number, 'Number' %></dt>
-      <dd><%= f.text_field :number, :class => "clean" %></dd>
-      <dt><%= f.label :expiration_date, 'Expiration Date (MM/YY)' %></dt>
-      <dd><%= f.text_field :expiration_date, :class => "clean" %></dd>
-      <dt><%= f.label :cvv, 'CVV' %></dt>
-      <dd><%= f.text_field :cvv, :class => "clean" %></dd>
-    </dl>
-  <% end %>
-		<%= hidden_field_tag :tr_data, Braintree::TransparentRedirect.
-                                   update_credit_card_data(:redirect_url => confirm_credit_card_info_url,
-                                                           :payment_method_token => @credit_card.token) %>
-  <%= f.submit 'Save Payment Info' %>
-<% end %>
+		<h3>Your item is now for sale! One more thing...</h3>
+		<p>AnyMarket deposits payouts to the bank account associated with a credit or debit card, so you'll need to add one of those to get paid.</p>
+		<a href="/customers/new"><input type="submit" value="Add one now" id="purchase-button"></a>
 	</div>
 </div>
