@@ -1055,7 +1055,7 @@ text-decoration:none;
 	cursor:pointer;
 }
 
-#photo_preview, #onboarding_modal {
+#photo_preview, #onboarding_modal, #add_payment_method {
 	@extend #send_question_wrapper;
 	z-index:1000;
 	width:600px;
