@@ -154,7 +154,8 @@
 				});
 		});
 	
-	$("body").on("addPaymentMethod", function(e){
+	$("body").on("addPaymentMethod", function(){
+		$(document).on('click', function(e){
 			if (!$('#add_payment_method').is(e.target)){
 				$("#add_payment_method").remove();
 				$(".container-fluid").css("opacity","1");
@@ -168,6 +169,7 @@
         $(".container-fluid").css("pointer-events","none");
 			}
 		});
+	});
 	
   
   $("#listings-toggle").click(function(event){
