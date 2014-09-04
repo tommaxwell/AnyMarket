@@ -29,6 +29,8 @@
   content: '';
 }
 
+.dropdown-menu:before > .dropdown-menu.navbar-right:before {right: 12px; left: auto;} .dropdown-menu:after > .dropdown-menu.navbar-right:after {right: 13px; left: auto;}
+
 .dropdown-menu:after {
   position: absolute;
   top: -6px;
