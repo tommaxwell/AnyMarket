@@ -126,7 +126,7 @@
 				$("#footer-container").css("pointer-events","none");
         $(".container-fluid").css("pointer-events","none");
 				$(document).on('click',function(d){
-					if (!$('#add_payment_method').is(d.target)){
+					if ($('#add_payment_method input[type="submit"]').is(d.target)){
 						$("#add_payment_method").remove();
 						$(".container-fluid").css("opacity","1");
 						$("#footer-container").css("opacity","1");
