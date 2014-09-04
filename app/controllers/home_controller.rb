@@ -46,4 +46,10 @@ class HomeController < ApplicationController
 		end
 	end
 	
+	def salecomplete
+		respond_to do |format|
+			format.js
+		end
+	end
+	
 end

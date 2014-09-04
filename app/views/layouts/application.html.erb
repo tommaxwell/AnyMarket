@@ -144,6 +144,29 @@
 	});	
 	
 	$(document).ready(function(){
+		$("body").on("saleComplete", function(f){
+        $(".container-fluid").css("opacity","0.3");
+				$("#footer-container").css("opacity","0.3");
+				$("#footer-container").css("pointer-events","none");
+        $(".container-fluid").css("pointer-events","none");
+				$(document).on('click',function(e){
+					if (!$('#onboarding_modal').is(e.target) && $('#onboarding_modal').has(e.target).length === 0 || $("#skip-for-now").is(e.target)){
+						$("#onboarding_modal").remove();
+						$(".container-fluid").css("opacity","1");
+						$("#footer-container").css("opacity","1");
+						$("#footer-container").css("pointer-events","auto");
+        		$(".container-fluid").css("pointer-events","auto");
+					}else{
+						$(".container-fluid").css("opacity","0.3");
+						$("#footer-container").css("opacity","0.3");
+						$("#footer-container").css("pointer-events","none");
+        		$(".container-fluid").css("pointer-events","none");
+					}
+				});
+		});
+	});	
+	
+	$(document).ready(function(){
 		$("body").on("onboardingModal", function(f){
         $(".container-fluid").css("opacity","0.3");
 				$("#footer-container").css("opacity","0.3");
@@ -245,6 +268,10 @@
 		
 	<% if flash[:addmethod] %>
 		$.get("/home/addpaymentmethod", null, "script");
+	<% end %>
+		
+	<% if flash[:salecomplete] %>
+		$.get("/home/salecomplete", null, "script");
 	<% end %>
 			
 	

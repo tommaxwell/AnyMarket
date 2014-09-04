@@ -17,7 +17,8 @@ class TransactionsController < ApplicationController
     @result = Braintree::TransparentRedirect.confirm(request.query_string)
 
     if @result.success?
-      render :confirm
+			flash[:salecomplete] = ""
+			redirect_to root_path
       @product = Product.find(params[:id])
       @product.sold_value = true
       @product.save

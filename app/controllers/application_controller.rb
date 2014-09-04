@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 	before_filter :categories
 	
-	add_flash_types :onboard, :addmethod
+	add_flash_types :onboard, :addmethod, :salecomplete
   
   def user
     @user = current_user
