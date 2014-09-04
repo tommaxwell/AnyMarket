@@ -40,4 +40,10 @@ class HomeController < ApplicationController
 		end
 	end
 	
+	def addpaymentmethod
+		respond_to do |format|
+			format.js
+		end
+	end
+	
 end

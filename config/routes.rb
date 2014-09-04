@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 	
 	get "/home/onboarding_modal(.:format)" => "home#onboarding_modal"
 	get "/how-it-works(.:format)" => "home#how_it_works"
+	get "/home/addpaymentmethod(.:format)" => "home#addpaymentmethod"
   
   #users
   get "/users/:id(.:format)" => "users#profile"

@@ -220,6 +220,10 @@
 	<% if flash[:onboard] %>
 		$.get("/home/onboarding_modal", null, "script");
 	<% end %>
+		
+	<% if flash[:addmethod] %>
+		$.get("/home/addpaymentmethod", null, "script");
+	<% end %>
 			
 	
 </script>
