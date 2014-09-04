@@ -1,11 +1,14 @@
 class ProductsController < ApplicationController
 	before_action :authenticate_user!, :only => [:create, :destroy, :edit, :update, :new]
-	before_filter(:only => [:show]) {
-		if Product.find(params[:id]).user_id === current_user.id && !current_user.braintree_customer_id? 
+	before_filter :check_braintree, only: [:show]
+	
+	def check_braintree
+		@product = Product.find(params[:id])
+		if @product.user_id === current_user.id and current_user.braintree_customer_id.blank?
 			flash[:addmethod]
 		else
 		end
-			}
+	end
 	
 
 	def show
@@ -97,10 +100,6 @@ class ProductsController < ApplicationController
   end
   
   private
-	
-	def braintree_check? 
-		Product.find(params[:id]).user_id === current_user.id && !current_user.braintree_customer_id?
-	end
   
   # all the attributes that must be submitted for the product to be listed
   def product_params 

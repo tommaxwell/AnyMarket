@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
 	before_filter :categories
 	
 	add_flash_types :onboard, :addmethod
-	
   
   def user
     @user = current_user
