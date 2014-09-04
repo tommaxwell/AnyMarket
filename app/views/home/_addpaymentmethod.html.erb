@@ -1,7 +1,6 @@
-<div id="onboarding_modal">
+<div id="add_payment_method">
 	<div id="inner-preview">
 		<%= form_for :credit_card,
-      :html => {class:"edit_user_form"},
       :url => Braintree::TransparentRedirect.url,
       :params => @result && @result.params[:credit_card],
       :builder => ApplicationHelper::BraintreeFormBuilder,
@@ -17,6 +16,9 @@
       <dd><%= f.text_field :cvv, :class => "clean" %></dd>
     </dl>
   <% end %>
+		<%= hidden_field_tag :tr_data, Braintree::TransparentRedirect.
+                                   update_credit_card_data(:redirect_url => confirm_credit_card_info_url,
+                                                           :payment_method_token => @credit_card.token) %>
   <%= f.submit 'Save Payment Info' %>
 <% end %>
 	</div>
