@@ -2,7 +2,6 @@ class CustomerController < ApplicationController
   before_filter :authenticate_user!
 
   def new
-		session[:return_to] ||= request.referer
     _set_customer_new_tr_data
     @skip_alert = true
   end
