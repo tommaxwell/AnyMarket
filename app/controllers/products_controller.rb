@@ -8,10 +8,10 @@ class ProductsController < ApplicationController
       if @product.save
 				if current_user.braintree_customer_id.present?
 					flash.now[:notice] = "Your item is for sale!"
-					redirect_to view_item_path
+					redirect_to view_item_path(@product.id)
 				else
 					flash.now[:addmethod]
-					redirect_to view_item_path
+					redirect_to view_item_path(@product.id)
 				end
       else
         flash.now[:alert] = "Woops, looks like something went wrong."
