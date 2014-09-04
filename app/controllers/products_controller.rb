@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
     @product.set_user!(current_user)
       if @product.save
 				if !current_user.braintree_customer_id?
-					redirect_to view_item_path(@product.id), addmethod: ''
+					redirect_to "/customer/new"
 				else
 					redirect_to view_item_path(@product.id)
 				end
