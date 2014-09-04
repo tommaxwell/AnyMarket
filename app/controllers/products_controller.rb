@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if @product.save
 				if !current_user.braintree_customer_id?
-					flash.now[:addmethod]
+					flash.now[:addmethod] = ""
         	format.html {render :action => "show"}
 				else
 					flash.now[:notice] = "Your item is for sale!"
