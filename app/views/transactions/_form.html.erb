@@ -10,7 +10,7 @@
       :params => @result && @result.params[:transaction],
       :builder => ApplicationHelper::BraintreeFormBuilder,
 :errors => @result && @result.errors.for(:transaction), :id => "confirm_purchase_info" do |f| %>
-  <h4>General Customer Info</h4>
+  <h4>Your Customer Info</h4>
   <dl>
     <dt>First Name</dt>
     <dd><%= current_user.first_name %></dd>
