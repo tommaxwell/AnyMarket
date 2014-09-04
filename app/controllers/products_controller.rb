@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 	before_action :authenticate_user!, :only => [:create, :destroy, :edit, :update, :new]
-	before_filter :check_braintree, only: [:show]
+	before_filter :check_braintree, :only => [:show]
 	
 	def check_braintree
 		@product = Product.find(params[:id])
