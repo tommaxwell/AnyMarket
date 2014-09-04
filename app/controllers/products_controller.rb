@@ -14,10 +14,10 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if @product.save
 				if current_user.braintree_customer_id?
-					flash.now[:notice] = "Your item is for sale!"
+					flash[:notice] = "Your item is for sale!"
 					redirect_to view_item_path(@product.id)
 				else
-					flash.now[:addmethod]
+					flash[:addmethod]
 					redirect_to view_item_path(@product.id)
 				end
       else
