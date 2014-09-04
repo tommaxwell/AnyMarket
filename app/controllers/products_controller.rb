@@ -1,8 +1,12 @@
 class ProductsController < ApplicationController
 	before_action :authenticate_user!, :only => [:create, :destroy, :edit, :update, :new]
 	
+
 	def show
     @product = Product.find(params[:id])
+		if braintree_check? 
+			flash[:addmethod]
+		end
     respond_to do |format|
       format.html
     end
@@ -19,11 +23,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.set_user!(current_user)
       if @product.save
-				if !current_user.braintree_customer_id?
-					redirect_to "/customer/new"
-				else
-					redirect_to view_item_path(@product.id)
-				end
+				redirect_to view_item_path(@product.id)
       else
         flash.now[:alert] = "Woops, looks like something went wrong."
 				format.html {render :action => "new"}
@@ -94,6 +94,10 @@ class ProductsController < ApplicationController
   end
   
   private
+	
+	def braintree_check? 
+		Product.find(params[:id]).user_id === current_user.id && !current_user.braintree_customer_id?
+	end
   
   # all the attributes that must be submitted for the product to be listed
   def product_params 
