@@ -120,22 +120,23 @@
         }
 	});
 	
+	$(document).ready(function(){
 		$("body").on("addPaymentMethod", function(f){
         $(".container-fluid").css("opacity","0.3");
 				$("#footer-container").css("opacity","0.3");
 				$("#footer-container").css("pointer-events","none");
         $(".container-fluid").css("pointer-events","none");
-				$(document).on('click',function(d){
-					if ($('#add_payment_method input[type="submit"]').is(d.target)){
-						$("#add_payment_method").remove();
+				$(document).on('click',function(e){
+					if ($('#onboarding_modal input[type="submit"]').is(e.target)){
+						$("#onboarding_modal").remove();
 						$(".container-fluid").css("opacity","1");
 						$("#footer-container").css("opacity","1");
 						$("#footer-container").css("pointer-events","auto");
         		$(".container-fluid").css("pointer-events","auto");
 					}
-					});
 				});
 		});
+	});	
 	
 	$(document).ready(function(){
 		$("body").on("onboardingModal", function(f){
