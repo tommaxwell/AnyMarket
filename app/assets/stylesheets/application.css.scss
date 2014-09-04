@@ -459,7 +459,7 @@ div.listing {
     position:relative;
     bottom:4px;
     margin-right:10px;
-		1px solid #bbb;
+		border:1px solid #bbb;
   }
 
 .nounderline{
@@ -1367,6 +1367,7 @@ text-decoration:none;
 		height:200px;
 		width:auto;
 		display:inline-block;
+		border-radius:3px;
 	}
 }
 
