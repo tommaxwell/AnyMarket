@@ -399,15 +399,6 @@ div.listing {
 			color:#428bca;
 		}
   }
-	
-	#forgot_password_url{
-				position:relative;
-				display:inline-block;
-				margin-top:15px;
-			}
-	#forgot_password_url:hover{
-		color:#428bca;
-	}
 
   #product_right {
     position:relative;
@@ -1444,4 +1435,13 @@ text-decoration:none;
 		margin:0 20px 0 20px !important;
 		top:20px;
 	}
+}
+
+#forgot_password_url{
+	position:relative;
+	display:inline-block;
+	margin-top:15px;
+}
+#forgot_password_url:hover{
+	color:#428bca;
 }
