@@ -4,8 +4,11 @@ class ProductsController < ApplicationController
 	
 	def check_braintree
 		@product = Product.find(params[:id])
-		if @product.user_id === current_user.id and !current_user.braintree_customer_id?
-			flash.now[:addmethod] = ""
+		if signed_in?(:user)
+			if @product.user_id === current_user.id and !current_user.braintree_customer_id?
+				flash.now[:addmethod] = ""
+			else
+			end
 		else
 		end
 	end
