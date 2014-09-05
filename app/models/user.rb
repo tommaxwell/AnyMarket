@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-	:recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable, :omniauth_providers => [:facebook]
+	:recoverable, :rememberable, :trackable, :validatable, :confirmable
   
   FIELDS = [:phone, :website, :company, :fax, :addresses, :credit_cards]
   
@@ -24,20 +24,6 @@ class User < ActiveRecord::Base
   def mailboxer_email(object)
     email
   end
-
-	
-	def self.from_omniauth(auth)
-		where(auth.slice(:provider, :uid)).first_or_create do |user|
-			user.email = auth.info.email
-			user.password = Devise.friendly_token[0,20]
-			user.first_name = auth.info.first_name
-			user.last_name = auth.info.last_name
-			if auth.info.image.present?
-				user.avatar = auth.info.image
-			else
-			end
-		end
-	end
   
 	validates :email, :presence => true, :uniqueness => true, :format => {:with => /\A[\w+\-.]+@(berkeley|uw)\.edu\z/i}
   has_many :products, -> { order "created_at DESC" }
