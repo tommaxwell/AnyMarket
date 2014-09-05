@@ -24,8 +24,9 @@ class User < ActiveRecord::Base
   def mailboxer_email(object)
     email
   end
+
   
-	validates :email, :presence => true, :uniqueness => true, :format => {:with => /\A[\w+\-.]+@(berkeley|uw)\.edu\z/i}
+	validates :email, :presence => true, :uniqueness => true, :format => {:with => /^[\w+\-.]+@(berkeley|uw)\.edu$/i}, :multiline => true
   has_many :products, -> { order "created_at DESC" }
   has_attached_file :avatar, :styles => {:medium => "300x300>", :thumb => "30x30>"}, :default_url => "default.png"
   validates_attachment :avatar, :content_type => { :content_type => ["image/jpeg","image/png"]}
