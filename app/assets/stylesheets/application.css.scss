@@ -412,6 +412,14 @@ div.listing {
 					color:#333 !important;
 				}
 			}
+			#forgot_password_url{
+				position:relative;
+				display:inline-block;
+				margin-top:15px;
+			}
+			#forgot_password_url:hover{
+				color:#428bca;
+			}
       h1{
         margin-top:0;
         font-weight:bold;
