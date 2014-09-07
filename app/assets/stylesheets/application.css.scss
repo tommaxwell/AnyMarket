@@ -1447,6 +1447,9 @@ text-decoration:none;
 }
 
 #forgot-password{
+	position:relative;
+	width:500px;
+	margin:0 auto;
 	input[type="submit"]{
 		width:auto !important;
 	}
