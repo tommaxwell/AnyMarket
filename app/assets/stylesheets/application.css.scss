@@ -1448,9 +1448,27 @@ text-decoration:none;
 
 #forgot-password{
 	position:relative;
-	width:500px;
+	width:300px;
 	margin:0 auto;
+	margin-top:100px;
+	margin-bottom:100px;
+	h3{
+		margin-bottom:0;
+	}
+	h4{
+		color:#bbb;
+	}
 	input[type="submit"]{
 		width:auto !important;
+		margin-bottom:20px;
+	}
+	form{
+		width:100%;
+	}
+	input[type="email"]{
+		margin:10px 0 10px 0;
+		padding:6px 20px 6px 20px;
+		border:1px solid #bbb;
+		border-radius:3px;
 	}
 }
