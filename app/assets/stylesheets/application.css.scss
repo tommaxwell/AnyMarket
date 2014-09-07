@@ -1445,3 +1445,9 @@ text-decoration:none;
 #forgot_password_url:hover{
 	color:#428bca;
 }
+
+#forgot-password{
+	input[type="submit"]{
+		width:auto !important;
+	}
+}
