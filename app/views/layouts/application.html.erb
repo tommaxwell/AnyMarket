@@ -221,6 +221,9 @@
     // 40 is the max message length
     var remaining = 40 - jQuery('#name_input').val().length;
     jQuery('.countdown').text(remaining + ' characters remaining.');
+		if(remaining <= 10){
+			$(".countdown").css("color","red");
+		}
 	}
 	
 	jQuery(document).ready(function($) {
