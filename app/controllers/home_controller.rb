@@ -1,5 +1,16 @@
 class HomeController < ApplicationController	
-	before_filter :categories
+	before_filter :categories, :check_confirmed, :only => [:index]
+	
+	def check_confirmed
+		if signed_in?(:user)
+			@user = current_user.id
+			if @user.confirmed_at === nil? 
+				flash.now[:onboard] = ""
+			else
+			end
+		else
+		end
+	end
 	
 	def about
 		respond_to do |format|
