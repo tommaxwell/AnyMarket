@@ -3,8 +3,7 @@ class HomeController < ApplicationController
 	
 	def check_confirmed
 		if signed_in?(:user)
-			@user = current_user.id
-			if @user.confirmed_at === nil? 
+			if current_user.confirmed_at === nil? 
 				flash.now[:onboard] = ""
 			else
 			end
