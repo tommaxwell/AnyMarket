@@ -21,7 +21,10 @@ class CustomerController < ApplicationController
 			current_user.first_name = @result.customer.first_name
 			current_user.last_name = @result.customer.last_name
       current_user.save!
-			redirect_to session.delete(:stored_product_id)
+			if session[:stored_product_id]
+				redirect_to session.delete(:stored_product_id)
+			else
+				redirect_to "/customer/" + @result.customer.id.to_str + "/edit"
     elsif current_user.has_payment_info?
       current_user.with_braintree_data!
       _set_customer_edit_tr_data
