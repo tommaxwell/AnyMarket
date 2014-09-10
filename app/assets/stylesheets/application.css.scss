@@ -948,6 +948,10 @@ text-decoration:none;
 	}
 }
 
+#sign_up_fields {
+	@extend #sign_up_and_pitch > form;
+}
+
 .counter {
 	position:relative;
 	float:left;
