@@ -959,6 +959,14 @@ text-decoration:none;
 				border:1px solid #bbb;
 				border-radius:3px;
 			}
+			div.field_with_errors input{
+				width:300px;
+				max-width:300px;
+				margin: 5px 0 5px 0;
+				padding:6px 20px 6px 10px;
+				border:1px solid #bbb;
+				border-radius:3px;
+			}
 			input[type="text"]:focus{
 				border:1px solid #999;
 			}
