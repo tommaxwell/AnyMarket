@@ -24,12 +24,6 @@ class RegistrationsController < Devise::RegistrationsController
       respond_with resource
     end
   end
-  
-  def after_inactive_sign_up_path_for(user)
-		respond_to do |format|
-			 format.html {render :action => "/"}
-    end
-  end
 	
 	private
   
