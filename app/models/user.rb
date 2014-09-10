@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	after_validation :set_school
+	#after_validation :set_school
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
