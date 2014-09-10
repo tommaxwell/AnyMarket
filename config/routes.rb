@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-	devise_for :users, :controllers => { registrations: 'registrations' }
+	devise_for :users, :controllers => { :registrations => 'registrations' }
 	default_url_options :host => "anymarket.co"
 
   root "home#index" 
