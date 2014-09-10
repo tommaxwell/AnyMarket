@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root "home#index" 
 	
-	get "/users/confirmation(.:format)" => "#confirmations#show", :as => "user_confirmation"
+	get "/users/confirmation(.:format)" => "confirmations#show", :as => "user_confirmation"
 	
 	get "/terms(.:format)" => "home#terms"
 	get "/about(.:format)" => "home#about"
