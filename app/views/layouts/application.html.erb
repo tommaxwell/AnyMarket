@@ -173,7 +173,7 @@
 				$("#footer-container").css("pointer-events","none");
         $(".container-fluid").css("pointer-events","none");
 				$(document).on('click',function(e){
-					if (!$('#onboarding_modal').is(e.target) && $('#onboarding_modal').has(e.target).length === 0 || $("#onboarding_modal > input[type='submit']").is(e.target)){
+					if (!$('#onboarding_modal').is(e.target) && $('#onboarding_modal').has(e.target).length === 0 || $("#onboarding_modal input").is(e.target)){
 						$("#onboarding_modal").remove();
 						$(".container-fluid").css("opacity","1");
 						$("#footer-container").css("opacity","1");
