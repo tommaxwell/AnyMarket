@@ -66,7 +66,7 @@
 				<div class="listing">
 								<a href="/users/<%= f.user_id %>" class="nounderline">
 									<% if User.find(f.user_id).avatar? %>
-		<span class="user-image-as-background" size="150" style="background-image: url(<%=  User.find(f.user_id).avatar.url(:medium).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/')%>); width: 30px; height: 30px"></span>
+		<span class="user-image-as-background" size="50" style="background-image: url(<%=  User.find(f.user_id).avatar.url(:medium).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/')%>); width: 30px; height: 30px"></span>
 	<% else %>
 		<span class="user-image-as-background" size="30" style="background-image: url('/default.png'); width: 30px; height: 30px"></span>
 	<% end %>
