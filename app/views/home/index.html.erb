@@ -66,7 +66,11 @@
 				<% @user = User.find(f.user_id) %>
 				<div class="listing">
 								<a href="/users/<%= f.user_id %>" class="nounderline">
+									<% if @user.avatar? %>
 										<span class="user-image-as-background" size="30" style="background-image: url(<%=  @user.avatar.url(:medium).sub('http://s3.amazonaws.com/anymarket/','http://anymarket.s3.amazonaws.com/')%>); width: 30px; height: 30px"></span>
+									<% else %>
+										<span class="user-image-as-background" size="30" style="background-image: url('/default.png'); width: 30px; height: 30px"></span>
+									<% end %>
 					</a><h4><%= link_to f.name, view_item_path(f.id) %></h4><strong><p class="price"><%= number_to_currency(f.decimal_price, precision: 2) %></p></strong>
 							</div>
 			<% end %>
