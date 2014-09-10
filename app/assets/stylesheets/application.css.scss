@@ -949,7 +949,29 @@ text-decoration:none;
 }
 
 #sign_up_fields {
-	@extend #sign_up_and_pitch > form;
+			position:relative;
+			top:30px;
+			input[type="text"], input[type="password"]{
+				width:300px;
+				max-width:300px;
+				margin: 5px 0 5px 0;
+				padding:6px 20px 6px 10px;
+				border:1px solid #bbb;
+				border-radius:3px;
+			}
+			input[type="text"]:focus{
+				border:1px solid #999;
+			}
+			input[type="password"]:focus{
+				border:1px solid #999;
+			}
+			input[type="submit"]{
+				width:300px;
+				position:relative;
+				top:5px;
+				padding-top:8px;
+				padding-bottom:8px;
+			}
 }
 
 .counter {
