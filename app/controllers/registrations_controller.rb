@@ -1,12 +1,4 @@
 class RegistrationsController < Devise::RegistrationsController
-  before_filter :authenticate_user!, :except => [:after_inactive_sign_up_path_for]
-	
-	def new 
-		respond_to do |format|
-			format.js
-			format.html
-		end
-	end
 	
 	def create
     build_resource(sign_up_params)
@@ -33,6 +25,11 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
   
+  def after_inactive_sign_up_path_for(user)
+		respond_to do |format|
+			 format.html {render :action => "/"}
+    end
+  end
 	
 	private
   
