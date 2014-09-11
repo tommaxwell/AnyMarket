@@ -18,6 +18,4 @@
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 
-<a href="#" id="login-button">Login</a>
-<a href="/">Sign up</a>
-<a href="/users/confirmation/new">Didn't receive confirmation instructions?</a>
+<%= render "devise/shared/links" %>

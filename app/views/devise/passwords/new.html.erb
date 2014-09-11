@@ -13,8 +13,6 @@
 		<%= f.submit "Send me reset password instructions", :id => "submit_item_btn"  %>
 	<% end %>
 
-	<a href="#" id="login-button">Login</a>
-	<a href="/">Sign up</a>
-	<a href="/users/confirmation/new">Didn't receive confirmation instructions?</a>
+	<%= render "devise/shared/links" %>
 	
 </div>
